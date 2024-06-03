@@ -1,6 +1,6 @@
 from django.db import models
-import googlemaps
-from googleplaces import GooglePlaces
+#from googlemaps import Client
+#from googleplaces import GooglePlaces
 
 # Create your models here.
 
@@ -13,7 +13,7 @@ class Resturant(models.Model):
     email = models.CharField(max_length=100)
     cuisine = models.CharField(max_length=100)
     def getGeoCode(self):
-        gmaps = googlemaps.Client(key='AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A')
+        gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
         #gmaps.find_place("Atlanta", 'textquery')
         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
         gmaps.find_place()
