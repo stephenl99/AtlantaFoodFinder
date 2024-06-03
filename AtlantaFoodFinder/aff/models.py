@@ -16,7 +16,6 @@ class Resturant(models.Model):
         gmaps = googlemaps.Client(key='AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A')
         #gmaps.find_place("Atlanta", 'textquery')
         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
-        gmaps.find_place()
         return result
 
     #gp = GooglePlaces("AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A")
