@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
 from django.views import View
+from .models import Resturant
+from .models import RestaurantList
 
 
 def index(request):
@@ -10,10 +12,16 @@ def index(request):
     #return HttpResponse(template.render({}, request))
     #return HttpResponse("Are you hungry Atlanta?")
 
-class MapView(View):
+def MapView(request):
+    r = RestaurantList()
+    list = Resturant.objects.all()
     template_name = "aff/index.html"
-    def get(self,request):
-        context = {
-        }
-
-        return render(request, self.template_name, context)
+    context = {
+        "list": list,
+    }
+    return render(request, template_name, context)
+    #def get(self,request):
+     #   context = {
+      #      "list": self.list,
+       # }
+        #return render(request, self.template_name, context)

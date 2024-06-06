@@ -1,51 +1,59 @@
 let map;
 
+const coordinates = [[33.846334999999996,-84.36357779999999], [33.8428749,-84.3785385],
+[33.896640500000004,-84.280918], [33.772758,-84.380375], [33.640879018,-84.4255140424],
+[33.8551066087,-84.3133151086],
+[33.7599229,-84.3864441], [33.827582299999996,-84.328604], [33.7826388,-84.41155069999999],
+[33.788608261,-84.3690906035]];
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
-  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
 
   map = new Map(document.getElementById("map"), {
     center: { lat: 33.7488, lng: -84.3877 },
     zoom: 8,
   });
 
-  new google.maps.Marker({
-    map: map,
-    position: {lat: 33, lng: -84},
-    title: 'test'
-  });
-
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    type: ['restaurant']
-  };
-
-  var request2 = {
+  var Atlanta = {
     location: new google.maps.LatLng(33.7488, -84.3877),
     radius: '10000',
     type: ['restaurant']
   };
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
+  showRestaurants()
+
   window.initMap = initMap;
 }
 
-function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
+function getData() {
+  const sqlite3 = require('sqlite3').verbose();
+  let db = new sqlite3.Database('db.sqlite', sqlite3.OPEN_READWRITE);
+  let sql = 'SELECT latitude, longitude';
+  db.get(sql, [], (err, row) => {
+    if (err) {
+      return console.error(err.message);
     }
-  }
+    return row;
+  });
 }
 
-function createMarker(place) {
-  new google.maps.Marker({
-    map: map,
-    position: {lat: place.lat, lng: place.lng},
-    title: 'test'
-  });
+function showRestaurants() {
+  for (var i = 0; i < 9; i++) {
+    var x = coordinates[i][0];
+    var y = coordinates[i][1];
+    new google.maps.Marker({
+      map: map,
+      position: {lat: x, lng: y},
+      title: 'test'
+    });
+  }
+  //list = getData();
+  //list.forEach((row) => {
+    //new google.maps.Marker({
+      //  map: map,
+        //position: {lat: row.latitude, lng: row.longitude},
+        //title: 'test'
+    //});
+  //})
 }
 
 initMap()
