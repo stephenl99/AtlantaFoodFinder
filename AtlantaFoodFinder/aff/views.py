@@ -4,6 +4,7 @@ from django.template import loader
 from django.views import View
 from .models import Resturant
 from .models import RestaurantList
+import json
 
 
 def index(request):
@@ -14,7 +15,7 @@ def index(request):
 
 def MapView(request):
     r = RestaurantList()
-    list = Resturant.objects.all()
+    list = r.makeList()
     template_name = "aff/index.html"
     context = {
         "list": list,

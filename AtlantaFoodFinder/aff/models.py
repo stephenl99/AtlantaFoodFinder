@@ -7,8 +7,12 @@ import csv
 # Create your models here.
 
 class Resturant(models.Model):
+    name = "restaurant"
     lat = 0
     lon = 0
+
+    def __str__(self):
+        return self.name
     #def getGeoCode(self):
         #gmaps = googlemaps.Client(key='AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A')
         #gmaps.find_place("Atlanta", 'textquery')
@@ -24,15 +28,19 @@ class RestaurantList(models.Model):
     listLon = []
     def makeList(self):
         list = []
-        listLat = []
-        listLon = []
+        list2 = []
         conn = sqlite3.connect('db.sqlite')
         cur = conn.cursor()
-        cur.execute("SELECT latitude, longitude from yelp_atl_restaurants")
+        cur.execute("SELECT name, latitude, longitude from yelp_atl_restaurants")
         rows = cur.fetchall()
         for row in rows:
             list.append(row)
-        return list
+            r = Resturant()
+            r.name = row[0]
+            r.lat = row[1]
+            r.lon = row[2]
+            list2.append(r)
+        return list2
         #with open("restaurantCoordinates.csv", 'w') as restaurantCoordinates:
             #csvwriter = csv.writer(restaurantCoordinates)
             #for row in rows:
