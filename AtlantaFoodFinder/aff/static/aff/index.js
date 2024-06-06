@@ -1,18 +1,3 @@
-// let map;
-// let mark;
-// async function initMap() {
-//   const { Map } = await google.maps.importLibrary("maps");
-//
-//   const myLatLng = { lat: -25.363, lng: 131.044 };
-//
-//   map = new Map(document.getElementById("map"), {
-//     center: { lat: 33.7488, lng: -84.3877 },
-//     zoom: 12,
-//   });
-//   mark = new google.maps.importLibrary
-// }
-//
-// initMap()
 
 
 
@@ -20,11 +5,25 @@
 let map;
 
 async function initMap() {
-  //Atlanta center position
-  const position = { lat: 33.753746, lng:  -84.386330};
+
+
+  const lats = await fetch('./latitude.txt');
+  const latitudes = await lats.text();
+  const longs = await fetch('./longitude.txt');
+  const longitudes = await longs.text();
+  const first = longitudes.split('\n')[0]
+  const l = parseFloat(first)
+
+
+  const position = { lat: l, lng: -84};
+
+  const position3 = { lat: 33.753746, lng:  -84.386330};
   const position2 = { lat: 33.000, lng:  -82.000};
-  // Request needed libraries.
-  //@ts-ignore
+  // fetch('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/longitude.txt')
+  // .then(response => response.text())
+  // .then(text => console.log(text))
+  // // Request needed libraries.
+  // //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
