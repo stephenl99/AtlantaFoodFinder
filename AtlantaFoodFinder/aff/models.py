@@ -4,56 +4,56 @@ from googleplaces import GooglePlaces
 from django.http import JsonResponse
 import sqlite3
 
-#
-# def getLatitude(self):
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT latitude FROM yelp_atl_restaurants")
-#     latitude = cur.fetchall()
-#     con.close()
-#     return JsonResponse({'latitude': latitude})
-#
-#
-# def getLongitude(self):
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT longitude FROM yelp_atl_restaurants")
-#     longitude = cur.fetchall()
-#     return longitude
-#
-#
-# def writeLatitude():
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT latitude FROM yelp_atl_restaurants")
-#     latitude = cur.fetchall()
-#     cur.close()
-#     con.close()
-#     open('./latitude.txt', 'w').close()
-#     with open('./latitude.txt', 'w') as f:
-#
-#         for row in latitude:
-#             f.write(str(row[0]) + '\n')
-#     f.close()
-#
-# def writeLongitude():
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT longitude FROM yelp_atl_restaurants")
-#     longitude = cur.fetchall()
-#     cur.close()
-#     con.close()
-#     open('./longitude.txt', 'w').close()
-#     with open('./longitude.txt', 'w') as f:
-#         for row in longitude:
-#             f.write(str(row[0]) + '\n')
-#     f.close()
+
+def getLatitude(self):
+    con = sqlite3.connect("/Users/stephenlinder/Downloads/database.db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT latitude FROM yelp_atl_restaurants")
+    latitude = cur.fetchall()
+    con.close()
+    return JsonResponse({'latitude': latitude})
+
+
+def getLongitude(self):
+    con = sqlite3.connect("/Users/stephenlinder/Downloads/database.db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT longitude FROM yelp_atl_restaurants")
+    longitude = cur.fetchall()
+    return longitude
+
+
+def writeLatitude():
+    con = sqlite3.connect("/Users/stephenlinder/Downloads/database.db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT latitude FROM yelp_atl_restaurants")
+    latitude = cur.fetchall()
+    cur.close()
+    con.close()
+    open('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/latitude.txt', 'w').close()
+    with open('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/latitude.txt', 'w') as f:
+
+        for row in latitude:
+            f.write(str(row[0]) + '\n')
+    f.close()
+
+def writeLongitude():
+    con = sqlite3.connect("/Users/stephenlinder/Downloads/database.db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT longitude FROM yelp_atl_restaurants")
+    longitude = cur.fetchall()
+    cur.close()
+    con.close()
+    open('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/longitude.txt', 'w').close()
+    with open('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/longitude.txt', 'w') as f:
+        for row in longitude:
+            f.write(str(row[0]) + '\n')
+    f.close()
 
 # writeLatitude()
 # with open('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/latitude.txt', 'r') as f:
 #     fline = f.readline().strip()
 #     print(fline)
-#Create your models here.
+# Create your models here.
 
 class Resturant(models.Model):
     name = models.CharField(max_length=100)
