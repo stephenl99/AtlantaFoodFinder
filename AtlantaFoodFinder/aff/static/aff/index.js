@@ -17,10 +17,11 @@ async function initMap() {
   const long = parseFloat(firstLong)
 
 
+
   const position = { lat: l, lng: long};
 
   const position3 = { lat: 33.753746, lng:  -84.386330};
-  const position2 = { lat: 33.000, lng:  -82.000};
+  const position2 = { lat: l, lng:  long};
 
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -32,6 +33,16 @@ async function initMap() {
     mapId: "DEMO_MAP_ID",
   });
 
+  for (var i = 0; i < 15; i++) {
+    const lat = latitudes.split('\n')[i]
+    const long = longitudes.split('\n')[i]
+    const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
+    const marker = new AdvancedMarkerElement({
+    map: map,
+    position: positionVariable,
+    title: "Some restaurant",
+    });
+  }
 
   //Info block stuff
   const contentString =
