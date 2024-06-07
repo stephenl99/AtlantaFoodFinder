@@ -7,9 +7,9 @@ let map;
 async function initMap() {
 
 
-  const lats = await fetch('../latitude/latitude.txt');
+  const lats = await fetch('aff/static/latitude.txt');
   const latitudes = await lats.text();
-  const longs = await fetch('../player.txt');
+  const longs = await fetch('aff/static/longitude.txt');
   const longitudes = await longs.text();
   const first = longitudes.split('\n')[0]
   const l = parseFloat(first)
@@ -17,13 +17,9 @@ async function initMap() {
 
   const position = { lat: l, lng: -84};
 
-  //const position = { lat: 33.753746, lng:  -84.386330};
+  const position3 = { lat: 33.753746, lng:  -84.386330};
   const position2 = { lat: 33.000, lng:  -82.000};
-  // fetch('/Users/stephenlinder/Desktop/DjangoProjects/CS2340Project/longitude.txt')
-  // .then(response => response.text())
-  // .then(text => console.log(text))
-  // // Request needed libraries.
-  // //@ts-ignore
+
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
