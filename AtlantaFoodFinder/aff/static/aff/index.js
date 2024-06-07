@@ -7,15 +7,17 @@ let map;
 async function initMap() {
 
 
-  const lats = await fetch('aff/static/latitude.txt');
+  const lats = await fetch('aff/../static/latitude.txt');
   const latitudes = await lats.text();
-  const longs = await fetch('aff/static/longitude.txt');
+  const longs = await fetch('aff/../static/longitude.txt');
   const longitudes = await longs.text();
-  const first = longitudes.split('\n')[0]
-  const l = parseFloat(first)
+  const firstLat = latitudes.split('\n')[0]
+  const l = parseFloat(firstLat)
+  const firstLong = longitudes.split('\n')[0]
+  const long = parseFloat(firstLong)
 
 
-  const position = { lat: l, lng: -84};
+  const position = { lat: l, lng: long};
 
   const position3 = { lat: 33.753746, lng:  -84.386330};
   const position2 = { lat: 33.000, lng:  -82.000};
