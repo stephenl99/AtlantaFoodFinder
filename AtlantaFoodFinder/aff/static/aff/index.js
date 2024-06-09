@@ -1,6 +1,4 @@
 
-
-
 // Initialize and add the map
 let map;
 
@@ -45,12 +43,56 @@ async function initMap() {
     const lat = latitudes.split('\n')[i]
     const long = longitudes.split('\n')[i]
     const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
+    const property = {
+      type: "store-alt",
+      address: "some address, Atlanta, GA",
+      description: "ex: cozy coffee shop ",
+      name: " restaurant name ",
+      cuisine: "cuisine of restaurant",
+      rating: 5,
+    }
     const marker = new AdvancedMarkerElement({
     map: map,
     position: positionVariable,
+      content: buildContent(property),
     title: "Some restaurant",
     });
+    marker.addListener("click", () => {
+      toggleHighlight(AdvancedMarkerElement, property);
+    });
   }
+  function buildContent(property) {
+  const content = document.createElement("div");
+
+  content.classList.add("property");
+  content.innerHTML = `
+    <div class="icon">
+        <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
+        <span class="fa-sr-only">${property.type}</span>
+    </div>
+    <div class="details">
+        <div class="name">${property.name}</div>
+        <div class="address">${property.address}</div>
+        <div class="features">
+        <div>
+            <i aria-hidden="true" class="fa fa-bed fa-lg bed" title="bedroom"></i>
+            <span class="fa-sr-only">bedroom</span>
+            <span>${property.rating}</span>
+        </div>
+        </div>
+    </div>
+    `;
+  return content;
+}
+  function toggleHighlight(markerView, property) {
+  if (markerView.content.classList.contains("highlight")) {
+    markerView.content.classList.remove("highlight");
+    markerView.zIndex = null;
+  } else {
+    markerView.content.classList.add("highlight");
+    markerView.zIndex = 1;
+  }
+}
 
   //Info block stuff
   const contentString =
