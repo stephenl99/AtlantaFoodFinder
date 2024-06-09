@@ -2,8 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
 from django.views import View
+
 from django.http import JsonResponse
 from . import models
+
+import json
+
 
 def my_ajax_view(request):
 
@@ -16,10 +20,16 @@ def index(request):
     #return HttpResponse(template.render({}, request))
     #return HttpResponse("Are you hungry Atlanta?")
 
-class MapView(View):
+def MapView(request):
+    r = RestaurantList()
+    list = r.makeList()
     template_name = "aff/index.html"
-    def get(self,request):
-        context = {
-        }
-
-        return render(request, self.template_name, context)
+    context = {
+        "list": list,
+    }
+    return render(request, template_name, context)
+    #def get(self,request):
+     #   context = {
+      #      "list": self.list,
+       # }
+        #return render(request, self.template_name, context)
