@@ -1,1 +1,0 @@
-SELECT * FROM yelp_atl_restaurants LIMIT 1000;
