@@ -1,22 +1,23 @@
-
-
-
 // Initialize and add the map
 let map;
 
+//const lats = await fetch('aff/../static/latitude.txt');
+//const latitudes = await lats.text();
+//const longs = await fetch('aff/../static/longitude.txt');
+//const longitudes = await longs.text();
+//const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 async function initMap() {
-
-
   const lats = await fetch('aff/../static/latitude.txt');
   const latitudes = await lats.text();
   const longs = await fetch('aff/../static/longitude.txt');
   const longitudes = await longs.text();
+  const n = await fetch('aff/../static/name.txt');
+  const names = await n.text();
+  //const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const firstLat = latitudes.split('\n')[0]
   const l = parseFloat(firstLat)
   const firstLong = longitudes.split('\n')[0]
   const long = parseFloat(firstLong)
-
-
 
   const position = { lat: l, lng: long};
 
@@ -24,7 +25,6 @@ async function initMap() {
   const position2 = { lat: l, lng:  long};
 
   const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   // The map, centered in Atlanta
   map = new Map(document.getElementById("map"), {
@@ -33,17 +33,8 @@ async function initMap() {
     mapId: "DEMO_MAP_ID",
   });
 
-  for (var i = 0; i < 15; i++) {
-    const lat = latitudes.split('\n')[i]
-    const long = longitudes.split('\n')[i]
-    const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
-    const marker = new AdvancedMarkerElement({
-    map: map,
-    position: positionVariable,
-    title: "Some restaurant",
-    });
-  }
-
+  placeMarkers(1, latitudes, longitudes);
+  getRestaurant(names, latitudes, longitudes);
   //Info block stuff
   const contentString =
     '<div id="content">' +
@@ -74,30 +65,68 @@ async function initMap() {
 
 
   // The marker, on a random restaurant
-  const marker = new AdvancedMarkerElement({
-    map: map,
-    position: position,
-    title: "Some restaurant",
-  });
-  marker.addListener("click", () => {
-    infowindow.open({
-      anchor: marker,
-      map,
-    });
-  });
+  //const marker = new AdvancedMarkerElement({
+    //map: map,
+    //position: position,
+    //title: "Some restaurant",
+  //});
+  //marker.addListener("click", () => {
+    //infowindow.open({
+      //anchor: marker,
+      //map,
+    //});
+  //});
 
   //marker2, to show multiple markers
   // The marker, on a random restaurant
-  const marker2 = new AdvancedMarkerElement({
-    map: map,
-    position: position2,
-    title: "A different restaurant",
-  });
-  marker2.addListener("click", () => {
-    infowindow.open({
-      anchor: marker2,
-      map,
+  //const marker2 = new AdvancedMarkerElement({
+    //map: map,
+    //position: position2,
+    //title: "A different restaurant",
+  //});
+  //marker2.addListener("click", () => {
+    //infowindow.open({
+      //anchor: marker2,
+      //map,
+    //});
+  //});
+}
+
+async function placeMarkers(number, latitudes, longitudes) {
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  for (var i = 0; i < number; i++) {
+    const lat = latitudes.split('\n')[i]
+    const long = longitudes.split('\n')[i]
+    const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
+    const marker = new AdvancedMarkerElement({
+      map: map,
+      position: positionVariable,
+      title: "Some restaurant",
     });
+  }
+}
+
+async function getRestaurant(names, latitudes, longitudes) {
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  var input = document.getElementById('restaurant');
+  filter = input.value.toUpperCase();
+  input.addEventListener("dblclick", function(event) {
+    for (var i = 0; i < 50; i++) {
+      var actName = names.split('\n')[i].toUpperCase();
+      if (actName == filter) {
+        alert("found");
+        const lat = latitudes.split('\n')[i]
+        const long = longitudes.split('\n')[i]
+        const location = {lat: parseFloat(lat), lng: parseFloat(long)};
+        const marker = new AdvancedMarkerElement({
+          map: map,
+          position: location,
+          title: actName,
+        });
+        i = 50;
+      }
+    }
+    alert("not found");
   });
 }
 
