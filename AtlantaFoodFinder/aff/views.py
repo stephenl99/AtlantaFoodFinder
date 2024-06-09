@@ -2,11 +2,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
 from django.views import View
-from .models import Resturant
-from .models import RestaurantList
+
+from django.http import JsonResponse
+from . import models
+
 import json
 
 
+def my_ajax_view(request):
+
+    #data = {'result': 'Hello from Python!'}
+    data = models.Getters.getLongitude()
+    return JsonResponse(data)
 def index(request):
     #template = loader.get_template("html.html")
     return render(request, "aff/html.html")

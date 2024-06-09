@@ -1,18 +1,3 @@
-// let map;
-// let mark;
-// async function initMap() {
-//   const { Map } = await google.maps.importLibrary("maps");
-//
-//   const myLatLng = { lat: -25.363, lng: 131.044 };
-//
-//   map = new Map(document.getElementById("map"), {
-//     center: { lat: 33.7488, lng: -84.3877 },
-//     zoom: 12,
-//   });
-//   mark = new google.maps.importLibrary
-// }
-//
-// initMap()
 
 
 
@@ -25,11 +10,24 @@ const coordinates = [[33.846334999999996,-84.36357779999999], [33.8428749,-84.37
 [33.7599229,-84.3864441], [33.827582299999996,-84.328604], [33.7826388,-84.41155069999999],
 [33.788608261,-84.3690906035]];
 async function initMap() {
-  //Atlanta center position
-  const position = { lat: 33.753746, lng:  -84.386330};
-  const position2 = { lat: 33.000, lng:  -82.000};
-  // Request needed libraries.
-  //@ts-ignore
+
+
+  const lats = await fetch('aff/../static/latitude.txt');
+  const latitudes = await lats.text();
+  const longs = await fetch('aff/../static/longitude.txt');
+  const longitudes = await longs.text();
+  const firstLat = latitudes.split('\n')[0]
+  const l = parseFloat(firstLat)
+  const firstLong = longitudes.split('\n')[0]
+  const long = parseFloat(firstLong)
+
+
+
+  const position = { lat: l, lng: long};
+
+  const position3 = { lat: 33.753746, lng:  -84.386330};
+  const position2 = { lat: l, lng:  long};
+
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
@@ -43,6 +41,16 @@ async function initMap() {
     mapId: "DEMO_MAP_ID",
   });
 
+  for (var i = 0; i < 15; i++) {
+    const lat = latitudes.split('\n')[i]
+    const long = longitudes.split('\n')[i]
+    const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
+    const marker = new AdvancedMarkerElement({
+    map: map,
+    position: positionVariable,
+    title: "Some restaurant",
+    });
+  }
 
   //Info block stuff
   const contentString =
