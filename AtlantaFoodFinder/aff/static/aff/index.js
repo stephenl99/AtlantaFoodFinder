@@ -12,6 +12,8 @@ async function initMap() {
   const categories = await cats.text();
   const r = await fetch('aff/../static/stars.txt');
   const stars = await r.text();
+  const a = await fetch('aff/../static/address.txt');
+  const addresses = await a.text();
   //const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   const firstLat = latitudes.split('\n')[0]
   const l = parseFloat(firstLat)
@@ -30,7 +32,7 @@ async function initMap() {
   });
 
   placeMarkers(1, latitudes, longitudes);
-  getRestaurant(names, latitudes, longitudes, categories, stars);
+  getRestaurant(names, latitudes, longitudes, categories, stars, addresses);
   //Info block stuff
   const contentString =
     '<div id="content">' +
@@ -69,15 +71,17 @@ async function placeMarkers(number, latitudes, longitudes) {
   }
 }
 
-async function getRestaurant(names, latitudes, longitudes, categories, stars) {
+async function getRestaurant(names, latitudes, longitudes, categories, stars, addresses) {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   var input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
     for (var i = 0; i < 50; i++) {
       var actName = names.split('\n')[i].toUpperCase();
-      if (actName == filter) {
-        alert("found");
+      var category = categories.split('\n')[i].toUpperCase();
+      var address = addresses.split('\n')[i].toUpperCase();
+      if (actName == filter || category.includes(filter) || address.includes(filter)) {
+        //alert("found");
         const lat = latitudes.split('\n')[i]
         const long = longitudes.split('\n')[i]
         const star = stars.split('\n')[i]
@@ -96,10 +100,10 @@ async function getRestaurant(names, latitudes, longitudes, categories, stars) {
           title: actName,
           //content: buildContent(property),
         });
-        i = 50;
+        //i = 50;
       }
     }
-    alert("not found");
+    //alert("not found");
   });
 }
 
