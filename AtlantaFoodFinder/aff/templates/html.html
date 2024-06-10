@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    /* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: darkgrey;
+}
+    /* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Atlanta Food Finder</title>
 </head>
 <body>
+<h1 style="text-align: center">Atlanta Food Finder</h1>
+<div class="topnav">
+  <a href="{% url 'map_view' %}" style="font-size: large">Go to Map</a>
+  <a href="http://localhost:8000/login/?next={{request.path}}" style="float:right; font-size: large">Login</a>
+</div>
+</body>
+<body>
+<div style="display: flex; justify-content: center;">
 <iframe
-  width="600"
-  height="450"
+  width="1200"
+  height="600"
   style="border:0"
   loading="lazy"
   allowfullscreen
@@ -15,9 +45,11 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A
     &q=Atlanta+GA">
 </iframe>
-<div class="linkholder">
-    <a href="{% url 'map_view' %}"> go to map</a>
 </div>
-<a href="http://localhost:8000/login/?next={{request.path}}">Login</a>
+<!--
+<div class="linkholder">
+    <pre><a href="{% url 'map_view' %}">Go to map</a>   <a href="http://localhost:8000/login/?next={{request.path}}">Login</a></pre>
+</div>
+-->
 </body>
 </html>
