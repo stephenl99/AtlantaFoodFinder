@@ -27,10 +27,10 @@
     <title>Atlanta Food Finder</title>
 </head>
 <body>
-<h1 style="text-align: center">Atlanta Food Finder</h1>
+{% include "header.html"%}
 <div class="topnav">
-  <a href="{% url 'map_view' %}" style="font-size: large">Go to Map</a>
   <a href="http://localhost:8000/login/?next={{request.path}}" style="float:right; font-size: large">Login</a>
+  <a href="{% url 'map_view' %}" style="float:right; font-size: large">Go to Map</a>
 </div>
 </body>
 <body>
