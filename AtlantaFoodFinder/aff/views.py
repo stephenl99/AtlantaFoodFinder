@@ -16,7 +16,6 @@ def index(request):
     #return HttpResponse(template.render({}, request))
     #return HttpResponse("Are you hungry Atlanta?")
 
-
 # signup page
 def user_signup(request):
     if request.method == 'POST':
@@ -39,7 +38,7 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-                return redirect('index')
+                return redirect('map_view')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})

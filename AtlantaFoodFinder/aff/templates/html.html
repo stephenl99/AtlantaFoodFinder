@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    h1 {text-align: center}
+    img {
+
+    }
+</style>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Atlanta Food Finder</title>
 </head>
 <body>
-<iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A
-    &q=Atlanta+GA">
-</iframe>
+<h1>
+    Welcome to AFF!
+</h1>
+{#<iframe#}
+{#  width="600"#}
+{#  height="450"#}
+{#  style="border:0"#}
+{#  loading="lazy"#}
+{#  allowfullscreen#}
+{#  referrerpolicy="no-referrer-when-downgrade"#}
+{#  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A#}
+{#    &q=Atlanta+GA">#}
+{#</iframe>#}
+<img src= "/aff/static/atl_skyline.png" alt="Pcture of Atlanta skyline">
 <div class="linkholder">
-    <a href="{% url 'map_view' %}"> go to map</a>
+    <a href="{% url 'map_view' %}"> go to map (Testing purposes only)</a>
 </div>
 <a href="http://localhost:8000/login/?next={{request.path}}">Login</a>
 </body>
