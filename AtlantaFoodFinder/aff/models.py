@@ -1,17 +1,17 @@
 from django.db import models
 from googlemaps import Client
-from googleplaces import GooglePlaces
+#from googleplaces import GooglePlaces
 from django.http import JsonResponse
 import sqlite3
 
 #
-# def getLatitude(self):
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT latitude FROM yelp_atl_restaurants")
-#     latitude = cur.fetchall()
-#     con.close()
-#     return JsonResponse({'latitude': latitude})
+#def getLatitude(self):
+     #con = sqlite3.connect("./database.db.sqlite")
+     #cur = con.cursor()
+    # cur.execute("SELECT name FROM yelp_atl_restaurants")
+   #  latitude = cur.fetchall()
+  #   con.close()
+ #    return JsonResponse({'latitude': latitude})
 #
 #
 # def getLongitude(self):
@@ -22,19 +22,21 @@ import sqlite3
 #     return longitude
 #
 #
-# def writeLatitude():
-#     con = sqlite3.connect("./database.db.sqlite")
-#     cur = con.cursor()
-#     cur.execute("SELECT latitude FROM yelp_atl_restaurants")
-#     latitude = cur.fetchall()
-#     cur.close()
-#     con.close()
-#     open('./latitude.txt', 'w').close()
-#     with open('./latitude.txt', 'w') as f:
-#
-#         for row in latitude:
-#             f.write(str(row[0]) + '\n')
-#     f.close()
+def writeName():
+    con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT categories FROM yelp_atl_restaurants")
+    name = cur.fetchall()
+    cur.close()
+    con.close()
+    open('static/categories.txt', 'w').close()
+    with open('static/categories.txt', 'w') as f:
+       for row in name:
+           f.write(str(row[0]) + '\n')
+    f.close()
+
+
+#writeName()
 #
 # def writeLongitude():
 #     con = sqlite3.connect("./database.db.sqlite")
@@ -55,21 +57,21 @@ import sqlite3
 #     print(fline)
 #Create your models here.
 
-class Resturant(models.Model):
-    name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
-    zipcode = models.CharField(max_length=100)
-    addressName = str(address) + ", " + str(zipcode) + ", Atlanta, Georgia"
-    phone = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
-    cuisine = models.CharField(max_length=100)
-
-    def getGeoCode(self):
-        gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
-        gmaps.find_place("Atlanta", 'textquery')
-        result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
-        gmaps.find_place()
-        return result
+# class Resturant(models.Model):
+#     name = models.CharField(max_length=100)
+#     address = models.CharField(max_length=100)
+#     zipcode = models.CharField(max_length=100)
+#     addressName = str(address) + ", " + str(zipcode) + ", Atlanta, Georgia"
+#     phone = models.CharField(max_length=100)
+#     email = models.CharField(max_length=100)
+#     cuisine = models.CharField(max_length=100)
+#
+#     def getGeoCode(self):
+#         gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
+#         gmaps.find_place("Atlanta", 'textquery')
+#         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
+#         gmaps.find_place()
+#         return result
 
     #gp = GooglePlaces("AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A")
     #q = gp.nearby_search(location='Atlanta',keyword='Resturant',radius=500)

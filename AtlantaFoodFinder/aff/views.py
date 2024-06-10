@@ -7,7 +7,6 @@ from django.views import View
 from django.http import JsonResponse
 from . import models
 
-
 def index(request):
     #template = loader.get_template("html.html")
     # return render(request, "aff/../templates/html.html")
@@ -49,10 +48,12 @@ def user_logout(request):
     logout(request)
     return redirect('login')
 
-class MapView(View):
+# class MapView(View):
+def MapView(request):
     template_name = "aff/index.html"
-    def get(self,request):
-        context = {
-        }
-
-        return render(request, self.template_name, context)
+    return render(request, template_name)
+    #def get(self,request):
+     #   context = {
+      #      "list": self.list,
+       # }
+        #return render(request, self.template_name, context)
