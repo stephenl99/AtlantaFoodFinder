@@ -32,7 +32,7 @@ async function initMap() {
         mapId: "DEMO_MAP_ID",
     });
 
-    placeMarkers(40, latitudes, longitudes);
+    placeMarkers(40, latitudes, longitudes, names);
     getRestaurant(names, latitudes, longitudes, categories, stars, addresses);
     //Info block stuff
     const contentString =
@@ -59,16 +59,17 @@ async function initMap() {
 }
 
 
-async function placeMarkers(number, latitudes, longitudes) {
+async function placeMarkers(number, latitudes, longitudes, names) {
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     for (var i = 0; i < number; i++) {
         const lat = latitudes.split('\n')[i]
         const long = longitudes.split('\n')[i]
+        const name = names.split('\n')[i]
         const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
         const marker = new AdvancedMarkerElement({
             map: map,
             position: positionVariable,
-            title: "Some restaurant",
+            title: name,
         });
     }
 }
