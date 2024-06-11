@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    h1 {text-align: center}
-    img {
+html{
+    height:100%
+}
+h1 {text-align: center}
+body {
+    margin: 0;
+    height:100%
+}
+.bg {
+  /* The image used */
+  background-image: url("/aff/static/atl_skyline.png");
 
-    }
-</style>
-<style>
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
    /* Style the top navigation bar */
 .topnav {
  overflow: hidden;
@@ -33,7 +47,7 @@
     <meta charset="UTF-8">
     <title>Atlanta Food Finder</title>
 </head>
-<body>
+<body style="overflow: hidden">
 <h1>
     Welcome to AFF!
 </h1>
@@ -54,14 +68,17 @@
  <a href="{% url 'map_view' %}" style="font-size: large">Go to Map</a>
 </div>
 </body>
+<!--
 <p style="text-align:center;">
 <img src= "/aff/static/atl_skyline.png" alt="Picture of Atlanta skyline">
 </p>
+-->
 <!--
 <div class="linkholder">
     <a href="{% url 'map_view' %}"> Go to map (Testing purposes only)</a>
 </div>
 <a href="http://localhost:8000/login/?next={{request.path}}">Login</a>
 -->
+<div class="bg"></div>
 </body>
 </html>
