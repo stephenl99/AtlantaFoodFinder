@@ -25,12 +25,12 @@ import sqlite3
 def writeName():
     con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
     cur = con.cursor()
-    cur.execute("SELECT categories FROM yelp_atl_restaurants")
+    cur.execute("SELECT business_id FROM yelp_atl_restaurants")
     name = cur.fetchall()
     cur.close()
     con.close()
-    open('static/categories.txt', 'w').close()
-    with open('static/categories.txt', 'w') as f:
+    open('static/business_id.txt', 'w').close()
+    with open('static/business_id.txt', 'w') as f:
        for row in name:
            f.write(str(row[0]) + '\n')
     f.close()
