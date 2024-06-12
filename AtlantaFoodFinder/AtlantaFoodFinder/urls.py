@@ -19,7 +19,7 @@ from django.urls import include, path
 from aff import views
 
 urlpatterns = [
-    path("aff/", include("aff.urls")),
+    path("aff/", include("aff.urls"), name='aff'),
     path("admin/", admin.site.urls),
     path('login/', views.user_login, name='login'),
     path('signup/', views.user_signup, name='signup'),

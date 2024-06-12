@@ -47,7 +47,7 @@ def user_login(request):
 # logout page
 def user_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('index')
 
 
 def user_resetpassword(request):

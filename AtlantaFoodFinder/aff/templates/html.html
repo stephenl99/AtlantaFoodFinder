@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html{
     height:100%
 }
-h1 {text-align: center}
+h1 {
+    text-align: center;
+}
 body {
     margin: 0;
     height:100%
@@ -63,9 +66,15 @@ body {
 {#</iframe>#}
 <body>
 <div class="topnav">
+ {% if user.is_authenticated %}
+ <a href="http://localhost:8000/logout/" style="float:right; font-size: large">Logout</a>
+ <a style="float:right; font-size:large" class="fa">{{ user.username }} &#xf2bd;</a>
+ <a href="{% url 'map_view' %}" style="font-size: large">Go to Map</a>
+ {% else %}
  <a href="http://localhost:8000/signup/" style="float:right; font-size: large">Register</a>
  <a href="http://localhost:8000/login/?next={{request.path}}" style="float:right; font-size: large">Login</a>
  <a href="{% url 'map_view' %}" style="font-size: large">Go to Map</a>
+ {% endif %}
 </div>
 </body>
 <!--
