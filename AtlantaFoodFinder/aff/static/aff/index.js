@@ -1,5 +1,6 @@
 // Initialize and add the map
 let map;
+let markersList = [];
 
 async function initMap() {
     const lats = await fetch('aff/../static/latitude.txt');
@@ -68,11 +69,16 @@ async function placeMarkers(number, latitudes, longitudes, names) {
             map,
           });
         });
+       markersList.push(marker);
     }
 }
 
 async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes) {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  for (var j = 0; j < markersList.length; j++) {
+      //alert(j);
+      markersList[j].map = null;
+  }
   var input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
@@ -118,6 +124,7 @@ async function getRestaurantGeneral(latitudes, longitudes, names, categories, st
               map,
             });
           });
+                 markersList.push(marker);
       }
     }
   });
