@@ -150,18 +150,18 @@ async function choiceCuisine(name) {
                 position: location,
                 title: 'actName',
             });
-            const contentString = categories.split('\n')[i];
-            const infowindow = new google.maps.InfoWindow({
-                content: contentString,
-                ariaLabel: name,
-            });
-            marker.addListener("click", () => {
-                infowindow.open({
-                    anchor: marker,
-                    map,
-                });
-            });
-            //alert(i + ", " + name);
+            //const contentString = categories.split('\n')[i];
+            //const infowindow = new google.maps.InfoWindow({
+              //  content: contentString,
+                //ariaLabel: name,
+            //});
+            //marker.addListener("click", () => {
+              //  infowindow.open({
+                //    anchor: marker,
+                  //  map,
+                //});
+            //});
+            alert(i + ", " + lat);
         }
     }
     alert(name);
