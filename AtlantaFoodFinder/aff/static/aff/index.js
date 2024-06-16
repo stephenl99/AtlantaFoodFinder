@@ -2,21 +2,20 @@
 let map;
 
 async function initMap() {
-  const lats = await fetch('aff/../static/latitude.txt');
-  const latitudes = await lats.text();
-  const longs = await fetch('aff/../static/longitude.txt');
-  const longitudes = await longs.text();
-  const n = await fetch('aff/../static/name.txt');
-  const names = await n.text();
-  const cats = await fetch('aff/../static/categories.txt');
-  const categories = await cats.text();
-  const r = await fetch('aff/../static/stars.txt');
-  const stars = await r.text();
-  const a = await fetch('aff/../static/address.txt');
-  const addresses = await a.text();
-  const at = await fetch('aff/../static/attributes.txt');
-  const attributes = await at.text();
-  //const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const lats = await fetch('aff/../static/latitude.txt');
+    const latitudes = await lats.text();
+    const longs = await fetch('aff/../static/longitude.txt');
+    const longitudes = await longs.text();
+    const n = await fetch('aff/../static/name.txt');
+    const names = await n.text();
+    const cats = await fetch('aff/../static/categories.txt');
+    const categories = await cats.text();
+    const r = await fetch('aff/../static/stars.txt');
+    const stars = await r.text();
+    const a = await fetch('aff/../static/address.txt');
+    const addresses = await a.text();
+    const at = await fetch('aff/../static/attributes.txt');
+    const attributes = await at.text();
   const firstLat = latitudes.split('\n')[0]
   const l = parseFloat(firstLat)
   const firstLong = longitudes.split('\n')[0]
@@ -33,8 +32,8 @@ async function initMap() {
         mapId: "DEMO_MAP_ID",
     });
 
-  placeMarkers(1, latitudes, longitudes, names);
-  getRestaurant(names, latitudes, longitudes, categories, stars, addresses, attributes);
+  placeMarkers(10, latitudes, longitudes, names);
+  getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes);
 }
 
 async function placeMarkers(number, latitudes, longitudes, names) {
@@ -72,7 +71,7 @@ async function placeMarkers(number, latitudes, longitudes, names) {
     }
 }
 
-async function getRestaurant(names, latitudes, longitudes, categories, stars, addresses, attributes) {
+async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes) {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   var input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
@@ -122,6 +121,50 @@ async function getRestaurant(names, latitudes, longitudes, categories, stars, ad
       }
     }
   });
+}
+
+async function display_list() {
+    var list = document.getElementById("cuisine_id");
+    if (list.style.display == "block") {
+        list.style.display = "none"
+    } else {
+        list.style.display = "block";
+    }
+}
+
+async function choiceCuisine(name) {
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const lats = await fetch('aff/../static/latitude.txt');
+    const latitudes = await lats.text();
+    const longs = await fetch('aff/../static/longitude.txt');
+    const longitudes = await longs.text();
+    const cats = await fetch('aff/../static/categories.txt');
+    const categories = await cats.text();
+    for (var i = 0; i < 100; i++) {
+        if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
+            const lat = latitudes.split('\n')[i]
+            const long = longitudes.split('\n')[i]
+            const location = {lat: parseFloat(lat), lng: parseFloat(long)};
+            marker = new AdvancedMarkerElement({
+                map: map,
+                position: location,
+                title: 'actName',
+            });
+            const contentString = categories.split('\n')[i];
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                ariaLabel: name,
+            });
+            marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                });
+            });
+            //alert(i + ", " + name);
+        }
+    }
+    alert(name);
 }
 
 initMap();

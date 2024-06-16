@@ -9,7 +9,18 @@
   </head>
   <body>
 <div id="search">
-  <input type="text" id="restaurant" onkeyup="getRestaurant()" placeholder="Search for restaurant">
+  <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search for restaurant">
+    <div class="cuisine_type_list">
+        <button class="list_button" onclick="display_list()">
+            Select cuisine
+        </button>
+        <div id="cuisine_id" class="cuisine">
+            <li><button onclick="choiceCuisine('Chinese')">Chinese</button></li>
+            <li><button onclick="choiceCuisine('Cuban')">Cuban</button></li>
+            <li><button onclick="choiceCuisine('Korean')">Korean</button></li>
+            <li><button onclick="choiceCuisine('Mexican')">Mexican</button></li>
+        </div>
+    </div>
 </div>
   <script src="{% static 'aff/test.js' %}"></script>
     <div id="map"></div>
