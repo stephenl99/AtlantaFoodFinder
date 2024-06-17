@@ -24,6 +24,11 @@
   width: 300px;
   height: 25px;
 }
+
+#restaurantRadius {
+  width: 300px;
+  height: 25px;
+}
 /*
  * Optional: Makes the sample page fill the window.
  */
