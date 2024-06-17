@@ -14,6 +14,16 @@
   width: 300px;
   height: 25px;
 }
+
+#restaurantCuisine {
+  width: 300px;
+  height: 25px;
+}
+
+#restaurantStar {
+  width: 300px;
+  height: 25px;
+}
 /*
  * Optional: Makes the sample page fill the window.
  */
