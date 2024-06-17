@@ -45,6 +45,8 @@ async function initMap() {
   getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  choiceCuisine("empty");
 }
 
 async function showPosition(position) {
@@ -121,24 +123,21 @@ async function display_list() {
 
 async function choiceCuisine(name) {
     clearMarkers();
-    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
     const lats = await fetch('aff/../static/latitude.txt');
     const latitudes = await lats.text();
     const longs = await fetch('aff/../static/longitude.txt');
     const longitudes = await longs.text();
+    const n = await fetch('aff/../static/name.txt');
+    const names = await n.text();
     const cats = await fetch('aff/../static/categories.txt');
     const categories = await cats.text();
-    for (var i = 0; i < 100; i++) {
+    const r = await fetch('aff/../static/stars.txt');
+    const stars = await r.text();
+    for (var i = 0; i < 1000; i++) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             const lat = latitudes.split('\n')[i]
             const long = longitudes.split('\n')[i]
-            const location = {lat: parseFloat(lat), lng: parseFloat(long)};
-            const marker = new AdvancedMarkerElement({
-                map: map,
-                position: location,
-                title: 'actName',
-            });
-            markersList.push(marker);
+            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
         }
     }
 }
