@@ -1,6 +1,7 @@
 // Initialize and add the map
 let map;
 markersList = [];
+favorites = [];
 userLat = 0.0;
 userLong = 0.0;
 
@@ -234,6 +235,7 @@ async function makeMarker(lat, long, name, category, star) {
           '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
           '<div id="bodyContent">' +
           "<p>" + category + ", " + star + "</p>" +
+          "<p><button onclick='addToFavorites(name)'>Add to favorites</button></p>" +
           "</div>";
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
@@ -246,6 +248,11 @@ async function makeMarker(lat, long, name, category, star) {
         });
     });
     markersList.push(marker);
+}
+
+function addToFavorites(name) {
+    favorites.push(name);
+    alert(favorites.length);
 }
 
 function clearMarkers() {
