@@ -138,7 +138,7 @@ async function choiceCuisine(name) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             const lat = latitudes.split('\n')[i]
             const long = longitudes.split('\n')[i]
-            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
+            makeMarker(parseFloat(lat), parseFloat(long), names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
         }
     }
 }
@@ -157,7 +157,7 @@ async function getRestaurantCuisine(latitudes, longitudes, names, categories, st
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
       }
     }
   });
@@ -177,7 +177,7 @@ async function getRestaurantRating(latitudes, longitudes, names, categories, sta
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
       }
     }
   });
@@ -196,7 +196,7 @@ async function getRestaurantRadius(latitudes, longitudes, names, categories, sta
           var category = categories.split('\n')[i].toUpperCase();
           var address = addresses.split('\n')[i].toUpperCase();
           const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
       }
     }
   });
@@ -251,6 +251,8 @@ async function makeMarker(lat, long, name, category, star) {
 }
 
 function addToFavorites(name) {
+    //import Restaurant from "./test";
+    //var temp = Restaurant(name);
     favorites.push(name);
     alert(favorites.length);
 }
