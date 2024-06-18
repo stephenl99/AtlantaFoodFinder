@@ -22,18 +22,18 @@ import sqlite3
 #     return longitude
 #
 #
-def writeName():
-    con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
-    cur = con.cursor()
-    cur.execute("SELECT business_id FROM yelp_atl_restaurants")
-    name = cur.fetchall()
-    cur.close()
-    con.close()
-    open('static/business_id.txt', 'w').close()
-    with open('static/business_id.txt', 'w') as f:
-       for row in name:
-           f.write(str(row[0]) + '\n')
-    f.close()
+# def writeName():
+#     con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
+#     cur = con.cursor()
+#     cur.execute("SELECT business_id FROM yelp_atl_restaurants")
+#     name = cur.fetchall()
+#     cur.close()
+#     con.close()
+#     open('static/business_id.txt', 'w').close()
+#     with open('static/business_id.txt', 'w') as f:
+#        for row in name:
+#            f.write(str(row[0]) + '\n')
+#     f.close()
 
 
 #writeName()
@@ -57,7 +57,7 @@ def writeName():
 #     print(fline)
 #Create your models here.
 
-# class Resturant(models.Model):
+# class Restaurant(models.Model):
 #     name = models.CharField(max_length=100)
 #     address = models.CharField(max_length=100)
 #     zipcode = models.CharField(max_length=100)
@@ -65,13 +65,16 @@ def writeName():
 #     phone = models.CharField(max_length=100)
 #     email = models.CharField(max_length=100)
 #     cuisine = models.CharField(max_length=100)
-#
-#     def getGeoCode(self):
-#         gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
-#         gmaps.find_place("Atlanta", 'textquery')
-#         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
-#         gmaps.find_place()
-#         return result
+#     def __init__(self):
+#         super().__init__()
+#         self.name =
+
+# def getGeoCode(self):
+    #     gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
+    #     gmaps.find_place("Atlanta", 'textquery')
+    #     result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
+    #     gmaps.find_place()
+    #     return result
 
     #gp = GooglePlaces("AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A")
     #q = gp.nearby_search(location='Atlanta',keyword='Resturant',radius=500)

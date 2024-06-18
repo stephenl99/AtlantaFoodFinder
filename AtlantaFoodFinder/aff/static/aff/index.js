@@ -60,7 +60,7 @@ async function showPosition(position) {
 async function placeMarkers(number, latitudes, longitudes, names) {
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     const {InfoWindow} = await google.maps.importLibrary("maps")
-    for (var i = 0; i < number; i++) {
+    for (var i = 0; i < number - 1; i++) {
         const lat = latitudes.split('\n')[i]
         const long = longitudes.split('\n')[i]
         const name = names.split('\n')[i]
@@ -222,12 +222,23 @@ function deg2rad(deg) {
 
 async function makeMarker(lat, long, name, category, star) {
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    if (typeof lat === 'string' || lat instanceof String) {
+
+    }
+    if (isNaN(parseFloat(long))) {
+
+    }
     const location = {lat: parseFloat(lat), lng: parseFloat(long)};
     const marker = new AdvancedMarkerElement({
         map: map,
         position: location,
         title: name,
     });
+    let latitude = lat;
+    let longitude = long;
+    let realName = name;
+    let realCategory = category;
+    let realStar = star;
     const contentString =
           '<div id="content">' +
           '<div id="siteNotice">' +
@@ -235,7 +246,7 @@ async function makeMarker(lat, long, name, category, star) {
           '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
           '<div id="bodyContent">' +
           "<p>" + category + ", " + star + "</p>" +
-          "<p><button onclick='addToFavorites(name)'>Add to favorites</button></p>" +
+          "<p><button onclick='addToFavorites(latitude, longitude, realName, realCategory, star)'>Add to favorites</button></p>" +
           "</div>";
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
@@ -250,11 +261,48 @@ async function makeMarker(lat, long, name, category, star) {
     markersList.push(marker);
 }
 
-function addToFavorites(name) {
-    favorites.push(name);
-    alert(favorites.length);
+function addToFavorites(lat, long, name, category, star) {
+    alert(star);
+    const temp = new Restaurant(lat, long, name, category, star);
+    favorites.push(temp);
+    const n = temp.getName();
 }
-
+class Restaurant {
+    constructor(lat, long, name, category, star) {
+        this.lat = parseFloat(lat);
+        this.long = parseFloat(long);
+        this.name = name;
+        this.category = category;
+        this.star = star;
+    }
+    getLat() {
+        return this.lat;
+    }
+    getLong() {
+        return this.long;
+    }
+    getName() {
+        return this.name;
+    }
+    getCategory() {
+        return this.category;
+    }
+    getStar() {
+        return this.star;
+    }
+}
+function displayFavorites() {
+    clearMarkers();
+    for (let i = 0; i < favorites.length; i++) {
+        let res = favorites[i];
+        const lat = res.getLat();
+        const long = res.getLong();
+        const name = res.getName();
+        const cat = res.getCategory();
+        const star = res.getStar();
+        makeMarker(lat, long, name, cat, star);
+    }
+}
 function clearMarkers() {
     for (var j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
