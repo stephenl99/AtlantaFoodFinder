@@ -228,44 +228,18 @@ async function makeMarker(lat, long, name, category, star) {
         position: location,
         title: name,
     });
-    // const button = document.createElement('button');
-    // button.textContent = "Add favorite";
-    // //button.addEventListener('click', addToFavorites(lat, long, name, category, star));
-    // const contentString =
-    //     `<div>
-    //         <p>This is a string containing a button:</p>
-    //         <p><button id ="myButton" onclick= "event.stopPropagation();
-    //         ${addToFavorites(lat, long, name, category, star)};
-    //         alert('you got here');
-    //
-    //         ">work for the love of god</button> </p>
-    //     </div>
-    //     `;
-    const markerDiv = document.createElement('div');
-    document.body.appendChild(markerDiv);
-    markerDiv.innerHTML = `
-    <p>whatever</p>
-    <button class="favorite-button">Addff to Favorites</button>
-  `;
-    const favoriteButton = markerDiv.querySelector('.favorite-button');
-    favoriteButton.addEventListener('click', function() {
-        addToFavorites(lat, long, name, category, star);
-    });
-    const contentString = markerDiv.innerHTML;
+    var contentString = `
+        <div>
+            <h3>${name}</h3>
+            <p><strong>Categories:</strong> ${category}</p>
+            <p><strong>Rating:</strong> ${star}</p>
+            <button onclick="addToFavorites('${lat}', '${long}','${name}', '${category}', '${star}')">Add to Favorites</button>
+        </div>
+    `;
 
 
-        // '<div id="content">' +
-        // '<div id="siteNotice">' +
-        // "</div>" +
-        // '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
-        // '<div id="bodyContent">' +
-        // "<p>" + category + ", " + star + "</p>" + ${button.outerHTML}
-        // "<p><button onclick='${addToFavorites(lat, long, name, category, star)}'>Add to favorites</button></p>" +
-        // "</div>";
-    // const container = document.createElement('div');
-    // container.innerHTML = contentString;
-    // const newButton = document.getElementById('myButton');
-    // newButton.addEventListener('click', addToFavorites(lat, long, name, category, star));
+
+
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
         ariaLabel: name,
@@ -284,7 +258,7 @@ function addToFavorites(lat, long, name, category, star) {
     favorites.push(temp);
     console.log(favorites.length);
     alert(favorites.length);
-    // alert(temp.getName());
+    alert(temp.getName());
     // alert(isNaN(parseFloat(lat)));
 }
 class Restaurant {
@@ -320,6 +294,7 @@ async function displayFavorites() {
         const name = res.getName();
         const cat = res.getCategory();
         const star = res.getStar();
+        alert(res.getName());
         await makeMarker(lat, long, name, cat, star);
     }
 }
