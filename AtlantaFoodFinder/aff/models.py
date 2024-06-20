@@ -22,19 +22,6 @@ import sqlite3
 #     return longitude
 #
 #
-def writeName():
-    con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
-    cur = con.cursor()
-    cur.execute("SELECT business_id FROM yelp_atl_restaurants")
-    name = cur.fetchall()
-    cur.close()
-    con.close()
-    open('static/business_id.txt', 'w').close()
-    with open('static/business_id.txt', 'w') as f:
-       for row in name:
-           f.write(str(row[0]) + '\n')
-    f.close()
-
 
 #writeName()
 #
@@ -57,21 +44,36 @@ def writeName():
 #     print(fline)
 #Create your models here.
 
-# class Resturant(models.Model):
-#     name = models.CharField(max_length=100)
-#     address = models.CharField(max_length=100)
-#     zipcode = models.CharField(max_length=100)
-#     addressName = str(address) + ", " + str(zipcode) + ", Atlanta, Georgia"
-#     phone = models.CharField(max_length=100)
-#     email = models.CharField(max_length=100)
-#     cuisine = models.CharField(max_length=100)
-#
-#     def getGeoCode(self):
-#         gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
-#         gmaps.find_place("Atlanta", 'textquery')
-#         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
-#         gmaps.find_place()
-#         return result
+class newResturant(models.Model):
+    name = models.CharField(max_length=100)
+    lat = models.FloatField()
+    long = models.FloatField()
+    address = models.CharField(max_length=100)
+    categories = models.CharField(max_length=100)
+    stars = models.CharField(max_length=100)
 
-    #gp = GooglePlaces("AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A")
-    #q = gp.nearby_search(location='Atlanta',keyword='Resturant',radius=500)
+def populate():
+    con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
+    cur = con.cursor()
+    cur.execute("SELECT name FROM yelp_atl_restaurants")
+    name = cur.fetchall()
+    cur.execute("SELECT latitude FROM yelp_atl_restaurants")
+    latitude = cur.fetchall()
+    cur.execute("SELECT longitude FROM yelp_atl_restaurants")
+    longitude = cur.fetchall()
+    cur.execute("SELECT categories FROM yelp_atl_restaurants")
+    categories = cur.fetchall()
+    cur.execute("SELECT stars FROM yelp_atl_restaurants")
+    stars = cur.fetchall()
+    cur.close()
+    con.close()
+    for i in range(1):
+        r = newResturant(name[i], latitude[i], longitude[i])
+        print(r.lat, r.long, r.address, r.categories, r.stars)
+    #open('static/business_id.txt', 'w').close()
+    #with open('static/business_id.txt', 'w') as f:
+     #  for row in name:
+      #     f.write(str(row[0]) + '\n')
+    #f.close()
+
+#populate()

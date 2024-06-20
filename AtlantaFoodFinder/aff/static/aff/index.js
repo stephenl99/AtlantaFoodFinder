@@ -47,7 +47,7 @@ async function initMap() {
   getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  choiceCuisine("empty");
+  //choiceCuisine("empty");
 }
 
 async function showPosition(position) {
@@ -136,6 +136,7 @@ async function choiceCuisine(name) {
     const stars = await r.text();
     for (var i = 0; i < 1000; i++) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
+            //alert(i);
             const lat = latitudes.split('\n')[i]
             const long = longitudes.split('\n')[i]
             makeMarker(parseFloat(lat), parseFloat(long), names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
@@ -228,15 +229,14 @@ async function makeMarker(lat, long, name, category, star) {
         position: location,
         title: name,
     });
-    const contentString =
-          '<div id="content">' +
-          '<div id="siteNotice">' +
-          "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
-          '<div id="bodyContent">' +
-          "<p>" + category + ", " + star + "</p>" +
-          "<p><button onclick='addToFavorites(name)'>Add to favorites</button></p>" +
-          "</div>";
+    const contentString = `
+          <div>
+            <h3>${name}</h3>
+            <p><strong>Categories:</strong> ${category}</p>
+            <p><strong>Rating:</strong> ${star}</p>
+            <button onclick="addToFavorites('${name}')">Add to Favorites</button>
+        </div>
+    `;
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
         ariaLabel: name,
@@ -254,7 +254,11 @@ function addToFavorites(name) {
     //import Restaurant from "./test";
     //var temp = Restaurant(name);
     favorites.push(name);
-    alert(favorites.length);
+    alert(favorites.length + ", " + name);
+}
+
+function writeReview() {
+    alert("a");
 }
 
 function clearMarkers() {
