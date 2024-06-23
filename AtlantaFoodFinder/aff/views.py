@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.forms import SetPasswordForm
 from AtlantaFoodFinder.forms import SignupForm, LoginForm
 from django.views import View
-from django.http import JsonResponse
+from json import dumps
 from . import models
 
 def index(request):
@@ -69,7 +69,12 @@ def user_resetpassword(request):
 # class MapView(View):
 def MapView(request):
     template_name = "aff/index.html"
-    return render(request, template_name)
+    user = request.user
+    values = {
+        "data": user.username,
+    }
+    data = dumps(values)
+    return render(request, template_name,{'data': data})
     #def get(self,request):
      #   context = {
       #      "list": self.list,

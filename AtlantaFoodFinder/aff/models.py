@@ -44,13 +44,13 @@ import sqlite3
 #     print(fline)
 #Create your models here.
 
-class newResturant(models.Model):
-    name = models.CharField(max_length=100)
-    lat = models.FloatField()
-    long = models.FloatField()
-    address = models.CharField(max_length=100)
-    categories = models.CharField(max_length=100)
-    stars = models.CharField(max_length=100)
+#class newResturant(models.Model):
+    #name = models.CharField(max_length=100)
+    #lat = models.FloatField()
+    #long = models.FloatField()
+    #address = models.CharField(max_length=100)
+    #categories = models.CharField(max_length=100)
+    #stars = models.CharField(max_length=100)
 
 def populate():
     con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
@@ -67,9 +67,9 @@ def populate():
     stars = cur.fetchall()
     cur.close()
     con.close()
-    for i in range(1):
-        r = newResturant(name[i], latitude[i], longitude[i])
-        print(r.lat, r.long, r.address, r.categories, r.stars)
+    #for i in range(1):
+        #r = newResturant(name[i], latitude[i], longitude[i])
+        #print(r.lat, r.long, r.address, r.categories, r.stars)
     #open('static/business_id.txt', 'w').close()
     #with open('static/business_id.txt', 'w') as f:
      #  for row in name:

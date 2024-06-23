@@ -254,11 +254,11 @@ function addToFavorites(name) {
     //import Restaurant from "./test";
     //var temp = Restaurant(name);
     favorites.push(name);
-    alert(favorites.length + ", " + name);
+    alert(favorites.length + ", " + name + ", " + name1);
 }
 
-function writeReview() {
-    alert("a");
+async function name(userName) {
+    alert("working, " + userName);
 }
 
 function clearMarkers() {
