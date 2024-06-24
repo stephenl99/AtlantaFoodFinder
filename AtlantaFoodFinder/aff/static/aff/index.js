@@ -4,6 +4,7 @@ markersList = [];
 favorites = [];
 userLat = 0.0;
 userLong = 0.0;
+let userName = "temp";
 
 async function initMap() {
     const lats = await fetch('aff/../static/latitude.txt');
@@ -254,11 +255,12 @@ function addToFavorites(name) {
     //import Restaurant from "./test";
     //var temp = Restaurant(name);
     favorites.push(name);
-    alert(favorites.length + ", " + name + ", " + name1);
+    alert(favorites.length + ", " + name + ", " + userName);
 }
 
-async function name(userName) {
-    alert("working, " + userName);
+async function name(inputName) {
+    userName = inputName;
+    //alert("working, " + userName);
 }
 
 function clearMarkers() {
