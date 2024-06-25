@@ -1,38 +1,44 @@
 // Initialize and add the map
 let map;
-markersList = [];
+let markersList = [];
 favorites = [];
 userLat = 0.0;
 userLong = 0.0;
 
+
+let latitudes;
+let longitudes;
+let names;
+let categories;
+let stars;
+let addresses;
+let attributes;
+let length;
 async function initMap() {
     const lats = await fetch('aff/../static/latitude.txt');
-    const latitudes = await lats.text();
+    latitudes = await lats.text();
     const longs = await fetch('aff/../static/longitude.txt');
-    const longitudes = await longs.text();
+    longitudes = await longs.text();
     const n = await fetch('aff/../static/name.txt');
-    const names = await n.text();
+    names = await n.text();
     const cats = await fetch('aff/../static/categories.txt');
-    const categories = await cats.text();
+    categories = await cats.text();
     const r = await fetch('aff/../static/stars.txt');
-    const stars = await r.text();
+    stars = await r.text();
     const a = await fetch('aff/../static/address.txt');
-    const addresses = await a.text();
+    addresses = await a.text();
     const at = await fetch('aff/../static/attributes.txt');
-    const attributes = await at.text();
-    const firstLat = latitudes.split('\n')[0]
-    const l = parseFloat(firstLat)
-    const firstLong = longitudes.split('\n')[0]
-    const long = parseFloat(firstLong)
+    attributes = await at.text();
+    //length = names.split('\n').length;
+    length = 1000;
 
-    const position = { lat: l, lng: long};
 
     const {Map} = await google.maps.importLibrary("maps");
 
     // The map, centered in Atlanta
     map = new Map(document.getElementById("map"), {
-        zoom: 8,
-        center: position,
+        zoom: 9,
+        center: {lat: 33.7488, lng: -84.3877},
         mapId: "DEMO_MAP_ID",
     });
 
@@ -43,18 +49,18 @@ async function initMap() {
     }
 
   //placeMarkers(1, latitudes, longitudes, names);
-  getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  choiceCuisine("empty");
+  await getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  await getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  await getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  await getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  //await choiceCuisine("empty");
 }
 
 async function showPosition(position) {
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
-    userLat = position.coords.latitude;
-    userLong = position.coords.longitude;
-    makeMarker(userLat, userLong, "You", "Your device", 1);
+    let userLat = position.coords.latitude;
+    let userLong = position.coords.longitude;
+    await makeMarker(userLat, userLong, "You", "Your device", 1);
 }
 
 async function placeMarkers(number, latitudes, longitudes, names) {
@@ -95,14 +101,14 @@ async function placeMarkers(number, latitudes, longitudes, names) {
 
 async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes) {
   clearMarkers();
-  var input = document.getElementById('restaurant');
+  const input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
-    for (var i = 0; i < 1000; i++) {
-      var actName = names.split('\n')[i].toUpperCase();
-      var category = categories.split('\n')[i].toUpperCase();
-      var address = addresses.split('\n')[i].toUpperCase();
-      const description = attributes.split('\n')[i];
+    for (var i = 0; i < length; i++) {
+        const actName = names.split('\n')[i].toUpperCase();
+        const category = categories.split('\n')[i].toUpperCase();
+        const address = addresses.split('\n')[i].toUpperCase();
+        const description = attributes.split('\n')[i];
       if (actName == filter || actName.includes(filter) || category.includes(filter) || address.includes(filter)) {
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
@@ -124,20 +130,10 @@ async function display_list() {
 
 async function choiceCuisine(name) {
     clearMarkers();
-    const lats = await fetch('aff/../static/latitude.txt');
-    const latitudes = await lats.text();
-    const longs = await fetch('aff/../static/longitude.txt');
-    const longitudes = await longs.text();
-    const n = await fetch('aff/../static/name.txt');
-    const names = await n.text();
-    const cats = await fetch('aff/../static/categories.txt');
-    const categories = await cats.text();
-    const r = await fetch('aff/../static/stars.txt');
-    const stars = await r.text();
-    for (var i = 0; i < 1000; i++) {
+    for (let i = 0; i < length; i++) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
-            const lat = latitudes.split('\n')[i]
-            const long = longitudes.split('\n')[i]
+            const lat = latitudes.split('\n')[i];
+            const long = longitudes.split('\n')[i];
             await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
         }
     }
@@ -148,7 +144,7 @@ async function getRestaurantCuisine(latitudes, longitudes, names, categories, st
   var input = document.getElementById('restaurantCuisine');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < length; i++) {
       var actName = names.split('\n')[i].toUpperCase();
       var category = categories.split('\n')[i].toUpperCase();
       var address = addresses.split('\n')[i].toUpperCase();
@@ -168,12 +164,12 @@ async function getRestaurantRating(latitudes, longitudes, names, categories, sta
   var input = document.getElementById('restaurantStar');
   filter = input.value;
   input.addEventListener("dblclick", function(event) {
-    for (var i = 0; i < 1000; i++) {
-      var actName = names.split('\n')[i].toUpperCase();
-      var category = categories.split('\n')[i].toUpperCase();
-      var address = addresses.split('\n')[i].toUpperCase();
-      var star = stars.split('\n')[i];
-      if (star.includes(filter)) {
+    for (var i = 0; i < length; i++) {
+        const actName = names.split('\n')[i].toUpperCase();
+        const category = categories.split('\n')[i].toUpperCase();
+        const address = addresses.split('\n')[i].toUpperCase();
+        const star = stars.split('\n')[i];
+        if (star.includes(filter)) {
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
@@ -188,7 +184,7 @@ async function getRestaurantRadius(latitudes, longitudes, names, categories, sta
   var input = document.getElementById('restaurantRadius');
   filter = input.value;
   input.addEventListener("dblclick", function(event) {
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < length; i++) {
         const lat = latitudes.split('\n')[i]
         const long = longitudes.split('\n')[i]
       if (getDistanceFromLatLonInKm(userLat, userLong, lat, long) <= parseFloat(filter)) {
@@ -221,23 +217,23 @@ function deg2rad(deg) {
 }
 
 async function makeMarker(lat, long, name, category, star) {
+    let newName = name.replaceAll("'", "`");
+    let newCategory = category.replaceAll("'", "`");
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     const location = {lat: parseFloat(lat), lng: parseFloat(long)};
     const marker = new AdvancedMarkerElement({
         map: map,
         position: location,
-        title: name,
+        title: newName,
     });
-    var contentString = `
+    const contentString = `
         <div>
-            <h3>${name}</h3>
-            <p><strong>Categories:</strong> ${category}</p>
+            <h3>${newName}</h3>
+            <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
-            <button onclick="addToFavorites('${lat}', '${long}','${name}', '${category}', '${star}')">Add to Favorites</button>
+            <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}')">Add to Favorites</button>
         </div>
     `;
-
-
 
 
     const infowindow = new google.maps.InfoWindow({
@@ -292,14 +288,14 @@ async function displayFavorites() {
         const lat = res.getLat();
         const long = res.getLong();
         const name = res.getName();
-        const cat = res.getCategory();
+        const category = res.getCategory();
         const star = res.getStar();
+        await makeMarker(lat, long, name, category, star);
         alert(res.getName());
-        await makeMarker(lat, long, name, cat, star);
     }
 }
 function clearMarkers() {
-    for (var j = 0; j < markersList.length; j++) {
+    for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
     }
 }
