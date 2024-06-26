@@ -13,6 +13,7 @@ let categories;
 let stars;
 let addresses;
 let attributes;
+let business_ids;
 let length;
 async function initMap() {
     const lats = await fetch('aff/../static/latitude.txt');
@@ -29,6 +30,8 @@ async function initMap() {
     addresses = await a.text();
     const at = await fetch('aff/../static/attributes.txt');
     attributes = await at.text();
+    const bid = await fetch('aff/../static/business_id.txt');
+    business_ids = await bid.text();
     //length = names.split('\n').length;
     length = 1000;
 
@@ -49,10 +52,10 @@ async function initMap() {
     }
 
   //placeMarkers(1, latitudes, longitudes, names);
-  await getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  await getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  await getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
-  await getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  await getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
+  await getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
+  await getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
+  await getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
   //await choiceCuisine("empty");
 }
 
@@ -99,7 +102,7 @@ async function placeMarkers(number, latitudes, longitudes, names) {
     }
 }
 
-async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes) {
+async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
   clearMarkers();
   const input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
@@ -113,7 +116,8 @@ async function getRestaurantGeneral(latitudes, longitudes, names, categories, st
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          const business_id = business_ids.split('\n')[i]
+          makeMarker(lat, long, actName, category, star, business_id);
       }
     }
   });
@@ -134,32 +138,33 @@ async function choiceCuisine(name) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             const lat = latitudes.split('\n')[i];
             const long = longitudes.split('\n')[i];
-            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i]);
+            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i]);
         }
     }
 }
 
-async function getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes) {
+async function getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
   clearMarkers();
   var input = document.getElementById('restaurantCuisine');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
     for (var i = 0; i < length; i++) {
-      var actName = names.split('\n')[i].toUpperCase();
-      var category = categories.split('\n')[i].toUpperCase();
-      var address = addresses.split('\n')[i].toUpperCase();
-      const description = attributes.split('\n')[i];
+        const actName = names.split('\n')[i].toUpperCase();
+        const category = categories.split('\n')[i].toUpperCase();
+        const address = addresses.split('\n')[i].toUpperCase();
+        const description = attributes.split('\n')[i];
       if (category.includes(filter)) {
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          const business_id = business_ids.split('\n')[i]
+          makeMarker(lat, long, actName, category, star, business_id);
       }
     }
   });
 }
 
-async function getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes) {
+async function getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
   clearMarkers();
   var input = document.getElementById('restaurantStar');
   filter = input.value;
@@ -170,16 +175,17 @@ async function getRestaurantRating(latitudes, longitudes, names, categories, sta
         const address = addresses.split('\n')[i].toUpperCase();
         const star = stars.split('\n')[i];
         if (star.includes(filter)) {
-          const lat = latitudes.split('\n')[i]
-          const long = longitudes.split('\n')[i]
-          const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          const lat = latitudes.split('\n')[i];
+          const long = longitudes.split('\n')[i];
+          const star = stars.split('\n')[i];
+          const business_id = business_ids.split('\n')[i];
+          makeMarker(lat, long, actName, category, star, business_id);
       }
     }
   });
 }
 
-async function getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes) {
+async function getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
   clearMarkers();
   var input = document.getElementById('restaurantRadius');
   filter = input.value;
@@ -191,8 +197,9 @@ async function getRestaurantRadius(latitudes, longitudes, names, categories, sta
           var actName = names.split('\n')[i].toUpperCase();
           var category = categories.split('\n')[i].toUpperCase();
           var address = addresses.split('\n')[i].toUpperCase();
-          const star = stars.split('\n')[i]
-          makeMarker(lat, long, actName, category, star);
+          const star = stars.split('\n')[i];
+          const business_id = business_ids.split('\n')[i];
+          makeMarker(lat, long, actName, category, star, business_id);
       }
     }
   });
@@ -216,9 +223,11 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-async function makeMarker(lat, long, name, category, star) {
+async function makeMarker(lat, long, name, category, star, business_id) {
     let newName = name.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
+    let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
+    //alert(newBusiness_id);
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     const location = {lat: parseFloat(lat), lng: parseFloat(long)};
     const marker = new AdvancedMarkerElement({
@@ -231,7 +240,8 @@ async function makeMarker(lat, long, name, category, star) {
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
-            <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}')">Add to Favorites</button>
+            <p><a href="${newBusiness_id}">Leave a review on Yelp</a></p>
+            <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}', '${business_id}')">Add to Favorites</button>
         </div>
     `;
 
@@ -249,8 +259,8 @@ async function makeMarker(lat, long, name, category, star) {
     markersList.push(marker);
 }
 
-function addToFavorites(lat, long, name, category, star) {
-    const temp = new Restaurant(lat, long, name, category, star);
+function addToFavorites(lat, long, name, category, star, business_id) {
+    const temp = new Restaurant(lat, long, name, category, star, business_id);
     favorites.push(temp);
     console.log(favorites.length);
     alert(favorites.length);
@@ -258,12 +268,13 @@ function addToFavorites(lat, long, name, category, star) {
     // alert(isNaN(parseFloat(lat)));
 }
 class Restaurant {
-    constructor(lat, long, name, category, star) {
+    constructor(lat, long, name, category, star, business_id) {
         this.lat = parseFloat(lat);
         this.long = parseFloat(long);
         this.name = name;
         this.category = category;
         this.star = star;
+        this.business_id = business_id;
     }
     getLat() {
         return this.lat;
@@ -280,6 +291,9 @@ class Restaurant {
     getStar() {
         return this.star;
     }
+    getID() {
+        return this.business_id;
+    }
 }
 async function displayFavorites() {
     clearMarkers();
@@ -290,7 +304,8 @@ async function displayFavorites() {
         const name = res.getName();
         const category = res.getCategory();
         const star = res.getStar();
-        await makeMarker(lat, long, name, category, star);
+        const business_id = res.getID();
+        await makeMarker(lat, long, name, category, star, business_id);
         alert(res.getName());
     }
 }
