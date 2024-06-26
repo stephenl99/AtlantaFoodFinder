@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
@@ -7,10 +8,17 @@ from AtlantaFoodFinder.forms import SignupForm, LoginForm
 from django.views import View
 from json import dumps
 from . import models
+from .models import favoriteRestaurant
+from .models import user
+import sqlite3
+from django.contrib.auth import get_user_model
+#User = get_user_model()
+#User.add_to_class('favorites', [])
 
 def index(request):
     #template = loader.get_template("html.html")
     # return render(request, "aff/../templates/html.html")
+    #print(currUser.favorites)
     return render(request, "aff/../../templates/html.html")
 
     #return HttpResponse(template.render({}, request))
@@ -66,17 +74,27 @@ def user_resetpassword(request):
         return redirect('login')
 
 
-# class MapView(View):
 def MapView(request):
     template_name = "aff/index.html"
-    user = request.user
-    values = {
-        "data": user.username,
-    }
-    data = dumps(values)
-    return render(request, template_name,{'data': data})
-    #def get(self,request):
-     #   context = {
-      #      "list": self.list,
-       # }
-        #return render(request, self.template_name, context)
+    if favoriteRestaurant.objects.filter(associatedUser=request.user.username).exists():
+        list = []
+        for r in favoriteRestaurant.objects.filter(associatedUser=request.user.username):
+            print(r.associatedUser)
+            list.append(r.restaurant)
+        values = {
+            "data": request.user.username,
+            "favorites": list,
+        }
+        data = dumps(values)
+        return render(request, template_name,{'data': data})
+    else:
+        return render(request, template_name)
+
+def processMapView(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        print(name)
+        newRestaurant = favoriteRestaurant.objects.create(associatedUser=request.user.username, restaurant=name)
+        print(newRestaurant.associatedUser)
+        newRestaurant.save()
+        return redirect('map_view')

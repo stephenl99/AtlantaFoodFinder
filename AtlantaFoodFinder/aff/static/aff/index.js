@@ -1,7 +1,7 @@
 // Initialize and add the map
 let map;
 markersList = [];
-favorites = [];
+let favorites = [];
 userLat = 0.0;
 userLong = 0.0;
 let userName = "temp";
@@ -21,6 +21,8 @@ async function initMap() {
     const addresses = await a.text();
     const at = await fetch('aff/../static/attributes.txt');
     const attributes = await at.text();
+    const list = await fetch('aff/../static/userFavoritesList.txt');
+    const userLists = await list.text();
     const firstLat = latitudes.split('\n')[0]
     const l = parseFloat(firstLat)
     const firstLong = longitudes.split('\n')[0]
@@ -252,20 +254,32 @@ async function makeMarker(lat, long, name, category, star) {
 }
 
 function addToFavorites(name) {
-    //import Restaurant from "./test";
-    //var temp = Restaurant(name);
+    //const fs = require('fs');
+    //fs.writeFile('userFavoritesList.txt', "hello", err => {
+      //  if (err) throw err;
+    //});
     favorites.push(name);
     alert(favorites.length + ", " + name + ", " + userName);
 }
 
-async function name(inputName) {
+async function name(inputName, fav) {
     userName = inputName;
-    //alert("working, " + userName);
+    favorites = fav;
+    alert(userName + ", " + favorites);
 }
 
 function clearMarkers() {
     for (var j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
+    }
+}
+
+class affUser {
+    name = "";
+    favorites = [];
+    constructor(name, favorites) {
+        this.name = name;
+        this.favorites = favorites;
     }
 }
 
