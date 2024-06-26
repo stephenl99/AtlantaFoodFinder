@@ -51,7 +51,6 @@ async function initMap() {
         alert("Browser does not support geolocation.");
     }
 
-  //placeMarkers(1, latitudes, longitudes, names);
   await getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
   await getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
   await getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
@@ -60,10 +59,22 @@ async function initMap() {
 }
 
 async function showPosition(position) {
-    const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
+    const {AdvancedMarkerElement, PinElement} = await google.maps.importLibrary("marker");
     let userLat = position.coords.latitude;
     let userLong = position.coords.longitude;
-    await makeMarker(userLat, userLong, "You", "Your device", 1);
+    const location = {lat: userLat, lng: userLong};
+    const pinChanges = new PinElement({
+        background: "#4cbbd3",
+        borderColor: "#FFFFFF",
+        glyphColor: "#FFFFFF",
+        scale: 1.5,
+  });
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: location,
+        content: pinChanges.element,
+        title: "Your Location",
+    });
 }
 
 async function placeMarkers(number, latitudes, longitudes, names) {
