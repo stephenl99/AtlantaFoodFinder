@@ -227,6 +227,7 @@ async function makeMarker(lat, long, name, category, star, business_id) {
     let newName = name.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
     let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
+    let leaveReview = "https://www.yelp.com/writeareview/biz/" + business_id + "?return_url=%2Fbiz%2F" + business_id + "&review_origin=biz-details-war-button";
     //alert(newBusiness_id);
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     const location = {lat: parseFloat(lat), lng: parseFloat(long)};
@@ -240,7 +241,7 @@ async function makeMarker(lat, long, name, category, star, business_id) {
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
-            <p><a href="${newBusiness_id}">Leave a review on Yelp</a></p>
+            <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}', '${business_id}')">Add to Favorites</button>
         </div>
     `;
