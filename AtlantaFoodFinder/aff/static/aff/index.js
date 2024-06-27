@@ -298,7 +298,7 @@ async function showFavorites() {
                 const lat = latitudes.split('\n')[i]
                 const long = longitudes.split('\n')[i]
                 const star = stars.split('\n')[i]
-                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
+                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
             }
         }
     }
