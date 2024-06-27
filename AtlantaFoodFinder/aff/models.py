@@ -55,13 +55,21 @@ class favoriteRestaurant(models.Model):
 #     print(fline)
 #Create your models here.
 
-#class newResturant(models.Model):
-    #name = models.CharField(max_length=100)
-    #lat = models.FloatField()
-    #long = models.FloatField()
-    #address = models.CharField(max_length=100)
-    #categories = models.CharField(max_length=100)
-    #stars = models.CharField(max_length=100)
+# class Resturant(models.Model):
+#     name = models.CharField(max_length=100)
+#     address = models.CharField(max_length=100)
+#     zipcode = models.CharField(max_length=100)
+#     addressName = str(address) + ", " + str(zipcode) + ", Atlanta, Georgia"
+#     phone = models.CharField(max_length=100)
+#     email = models.CharField(max_length=100)
+#     cuisine = models.CharField(max_length=100)
+#
+#     def getGeoCode(self):
+#         gmaps = Client(key='AIzaSyCKFWHaszPZ-MmMklaiANsxo2fz8vhwTq8')
+#         gmaps.find_place("Atlanta", 'textquery')
+#         result = gmaps.geocode(str(self.address) + ", " + str(self.zipcode) + ", Atlanta, Georgia")[0]
+#         gmaps.find_place()
+#         return result
 
 def populate():
     con = sqlite3.connect("/Users/christopherlinder/Downloads/db.sqlite")
