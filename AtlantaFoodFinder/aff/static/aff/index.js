@@ -52,10 +52,10 @@ async function initMap() {
         alert("Browser does not support geolocation.");
     }
 
-  await getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
-  await getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
-  await getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
-  await getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids);
+  await getRestaurantGeneral();
+  await getRestaurantCuisine();
+  await getRestaurantRating();
+  await getRestaurantRadius();
   //await choiceCuisine("empty");
 }
 
@@ -78,53 +78,17 @@ async function showPosition(position) {
     });
 }
 
-async function placeMarkers(number, latitudes, longitudes, names) {
-    const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
-    const {InfoWindow} = await google.maps.importLibrary("maps")
-    for (var i = 0; i < number; i++) {
-        const lat = latitudes.split('\n')[i]
-        const long = longitudes.split('\n')[i]
-        const name = names.split('\n')[i]
-        const positionVariable = {lat: parseFloat(lat), lng: parseFloat(long)}
-        const contentString =
-          '<div id="content">' +
-          '<div id="siteNotice">' +
-          "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
-          '<div id="bodyContent">' +
-          "<p> information about the restaurant and cuisine, etc </p>" +
-          "</div>";
-
-        const infowindow = new google.maps.InfoWindow({
-          content: contentString,
-          ariaLabel: name,
-        });
-        const marker = new AdvancedMarkerElement({
-            map: map,
-            position: positionVariable,
-            title: name,
-        });
-       marker.addListener("click", () => {
-          infowindow.open({
-            anchor: marker,
-            map,
-          });
-        });
-       markersList.push(marker);
-    }
-}
-
-async function getRestaurantGeneral(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
+async function getRestaurantGeneral() {
   clearMarkers();
   const input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", function(event) {
     for (var i = 0; i < length; i++) {
-        const actName = names.split('\n')[i].toUpperCase();
+        const actName = this.names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
         const address = addresses.split('\n')[i].toUpperCase();
         const description = attributes.split('\n')[i];
-      if (actName == filter || actName.includes(filter) || category.includes(filter) || address.includes(filter)) {
+      if (actName === filter || actName.includes(filter) || category.includes(filter) || address.includes(filter)) {
           const lat = latitudes.split('\n')[i]
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
@@ -137,7 +101,7 @@ async function getRestaurantGeneral(latitudes, longitudes, names, categories, st
 
 async function display_list() {
     var list = document.getElementById("cuisine_id");
-    if (list.style.display == "block") {
+    if (list.style.display === "block") {
         list.style.display = "none"
     } else {
         list.style.display = "block";
@@ -155,7 +119,7 @@ async function choiceCuisine(name) {
     }
 }
 
-async function getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
+async function getRestaurantCuisine() {
   clearMarkers();
   var input = document.getElementById('restaurantCuisine');
   filter = input.value.toUpperCase();
@@ -176,7 +140,7 @@ async function getRestaurantCuisine(latitudes, longitudes, names, categories, st
   });
 }
 
-async function getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
+async function getRestaurantRating() {
   clearMarkers();
   var input = document.getElementById('restaurantStar');
   filter = input.value;
@@ -197,18 +161,18 @@ async function getRestaurantRating(latitudes, longitudes, names, categories, sta
   });
 }
 
-async function getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes, business_ids) {
+async function getRestaurantRadius() {
   clearMarkers();
-  var input = document.getElementById('restaurantRadius');
-  filter = input.value;
+    const input = document.getElementById('restaurantRadius');
+    let filter = input.value;
   input.addEventListener("dblclick", function(event) {
-    for (var i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
         const lat = latitudes.split('\n')[i]
         const long = longitudes.split('\n')[i]
       if (getDistanceFromLatLonInKm(userLat, userLong, lat, long) <= parseFloat(filter)) {
-          var actName = names.split('\n')[i].toUpperCase();
-          var category = categories.split('\n')[i].toUpperCase();
-          var address = addresses.split('\n')[i].toUpperCase();
+          const actName = this.names.split('\n')[i].toUpperCase();
+          const category = categories.split('\n')[i].toUpperCase();
+          const address = addresses.split('\n')[i].toUpperCase();
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
           makeMarker(lat, long, actName, category, star, business_id);
@@ -289,22 +253,10 @@ async function name(inputName, fav) {
 
 async function showFavorites() {
     clearMarkers();
-    const lats = await fetch('aff/../static/latitude.txt');
-    const latitudes = await lats.text();
-    const longs = await fetch('aff/../static/longitude.txt');
-    const longitudes = await longs.text();
-    const n = await fetch('aff/../static/name.txt');
-    const names = await n.text();
-    const cats = await fetch('aff/../static/categories.txt');
-    const categories = await cats.text();
-    const r = await fetch('aff/../static/stars.txt');
-    const stars = await r.text();
-    const id = await fetch('aff/../static/business_id.txt');
-    const ids = await id.text();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     for (var i = 0; i < 100; i++) {
-        var tempID = String(ids.split('\n')[i]);
+        var tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
         for (var j = 0; j < favorites.length; j++) {
             var s = favorites[j];
@@ -313,10 +265,11 @@ async function showFavorites() {
                 alert("working, " + s);
                 var actName = names.split('\n')[i].toUpperCase();
                 var category = categories.split('\n')[i].toUpperCase();
-                const lat = latitudes.split('\n')[i]
-                const long = longitudes.split('\n')[i]
-                const star = stars.split('\n')[i]
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
+                const lat = latitudes.split('\n')[i];
+                const long = longitudes.split('\n')[i];
+                const star = stars.split('\n')[i];
+                const business_id = business_ids.split('\n')[i];
+                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id);
             }
         }
     }
