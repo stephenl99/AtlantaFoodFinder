@@ -21,8 +21,8 @@ async function initMap() {
     const addresses = await a.text();
     const at = await fetch('aff/../static/attributes.txt');
     const attributes = await at.text();
-    const list = await fetch('aff/../static/userFavoritesList.txt');
-    const userLists = await list.text();
+    const id = await fetch('aff/../static/business_id.txt');
+    const ids = await id.text();
     const firstLat = latitudes.split('\n')[0]
     const l = parseFloat(firstLat)
     const firstLong = longitudes.split('\n')[0]
@@ -50,6 +50,7 @@ async function initMap() {
   getRestaurantCuisine(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantRating(latitudes, longitudes, names, categories, stars, addresses, attributes);
   getRestaurantRadius(latitudes, longitudes, names, categories, stars, addresses, attributes);
+  //showFavorites(latitudes, longitudes, names, categories, stars);
   //choiceCuisine("empty");
 }
 
@@ -268,18 +269,44 @@ async function name(inputName, fav) {
     alert(userName + ", " + favorites);
 }
 
-function clearMarkers() {
-    for (var j = 0; j < markersList.length; j++) {
-      markersList[j].map = null;
+async function showFavorites() {
+    clearMarkers();
+    const lats = await fetch('aff/../static/latitude.txt');
+    const latitudes = await lats.text();
+    const longs = await fetch('aff/../static/longitude.txt');
+    const longitudes = await longs.text();
+    const n = await fetch('aff/../static/name.txt');
+    const names = await n.text();
+    const cats = await fetch('aff/../static/categories.txt');
+    const categories = await cats.text();
+    const r = await fetch('aff/../static/stars.txt');
+    const stars = await r.text();
+    const id = await fetch('aff/../static/business_id.txt');
+    const ids = await id.text();
+    //alert(ids.split('\n')[0]);
+    //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
+    for (var i = 0; i < 100; i++) {
+        var tempID = String(ids.split('\n')[i]);
+        //alert(tempID);
+        for (var j = 0; j < favorites.length; j++) {
+            var s = favorites[j];
+            //alert(s);
+            if (s === tempID) {
+                alert("working, " + s);
+                var actName = names.split('\n')[i].toUpperCase();
+                var category = categories.split('\n')[i].toUpperCase();
+                const lat = latitudes.split('\n')[i]
+                const long = longitudes.split('\n')[i]
+                const star = stars.split('\n')[i]
+                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star);
+            }
+        }
     }
 }
 
-class affUser {
-    name = "";
-    favorites = [];
-    constructor(name, favorites) {
-        this.name = name;
-        this.favorites = favorites;
+function clearMarkers() {
+    for (var j = 0; j < markersList.length; j++) {
+      markersList[j].map = null;
     }
 }
 
