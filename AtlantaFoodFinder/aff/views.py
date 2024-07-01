@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import SetPasswordForm
-from AtlantaFoodFinder.forms import SignupForm, LoginForm
+from AtlantaFoodFinder.forms import SignupForm, LoginForm, CustomSetPasswordForm
 from django.views import View
 from json import dumps
 from . import models
@@ -59,19 +59,18 @@ def user_logout(request):
 
 
 def user_resetpassword(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
-            fm = SetPasswordForm(user=request.user, data=request.POST)
-            if fm.is_valid():
-                fm.save()
-                # Update user session
-                update_session_auth_hash(request, fm.user)
-                return redirect('login')
-        else:
-            fm = SetPasswordForm(user=request.user)
-        return render(request, 'reset.html', {'form': fm})
-    else:
-        return redirect('login')
+   if request.method == "POST":
+       fm = CustomSetPasswordForm(user=request.user, data=request.POST)
+       if fm.is_valid():
+           fm.save()
+           # Update user session
+           update_session_auth_hash(request, fm.user)
+           return redirect('login')
+   else:
+       fm = CustomSetPasswordForm(user=request.user)
+
+
+   return render(request, 'reset.html', {'form': fm})
 
 
 def MapView(request):
