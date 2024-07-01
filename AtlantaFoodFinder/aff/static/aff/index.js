@@ -1,7 +1,7 @@
 // Initialize and add the map
 let map;
 markersList = [];
-favorites = [];
+let favorites = [];
 let userLat = 0.0;
 let userLong = 0.0;
 let userName = "temp";
@@ -256,7 +256,7 @@ async function showFavorites() {
     clearMarkers();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < length; i++) {
         var tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
         for (var j = 0; j < favorites.length; j++) {
