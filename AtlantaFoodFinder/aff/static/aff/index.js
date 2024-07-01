@@ -217,6 +217,7 @@ async function makeMarker(lat, long, name, category, star, business_id) {
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
+            <p><strong>Business ID:</strong> ${business_id}</p>
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}', '${business_id}')">Add to Favorites</button>
         </div>
