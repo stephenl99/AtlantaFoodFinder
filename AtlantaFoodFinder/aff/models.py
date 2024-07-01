@@ -1,16 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
-from googlemaps import Client
 #from googleplaces import GooglePlaces
 from django.http import JsonResponse
 import sqlite3
 
 #User.add_to_class('favorites', [])
-class user(AbstractUser):
-    #REQUIRED_FIELDS = []
-    name = ""
-    favorites = []
-#
+# class user(AbstractUser):
+#     #REQUIRED_FIELDS = []
+#     name = ""
+#     favorites = []
+# #
 
 class favoriteRestaurant(models.Model):
     associatedUser = models.CharField(max_length=255)

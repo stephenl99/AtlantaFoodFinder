@@ -9,7 +9,7 @@ from django.views import View
 from json import dumps
 from . import models
 from .models import favoriteRestaurant
-from .models import user
+# from .models import user
 import sqlite3
 from django.contrib.auth import get_user_model
 #User = get_user_model()
