@@ -2,8 +2,8 @@
 let map;
 let markersList = [];
 favorites = [];
-userLat = 0.0;
-userLong = 0.0;
+let userLat = 0.0;
+let userLong = 0.0;
 let userName = "temp";
 
 
@@ -15,7 +15,8 @@ let stars;
 let addresses;
 let attributes;
 let business_ids;
-let length;
+let length = 1000;
+//let length = names.split('\n').length;
 async function initMap() {
     const lats = await fetch('aff/../static/latitude.txt');
     latitudes = await lats.text();
@@ -33,8 +34,6 @@ async function initMap() {
     attributes = await at.text();
     const bid = await fetch('aff/../static/business_id.txt');
     business_ids = await bid.text();
-    //length = names.split('\n').length;
-    length = 1000;
 
 
     const {Map} = await google.maps.importLibrary("maps");
@@ -56,13 +55,14 @@ async function initMap() {
   await getRestaurantCuisine();
   await getRestaurantRating();
   await getRestaurantRadius();
-  //await choiceCuisine("empty");
+  await choiceCuisine("empty");
+  await clearMarkers();
 }
 
 async function showPosition(position) {
     const {AdvancedMarkerElement, PinElement} = await google.maps.importLibrary("marker");
-    let userLat = position.coords.latitude;
-    let userLong = position.coords.longitude;
+    userLat = position.coords.latitude;
+    userLong = position.coords.longitude;
     const location = {lat: userLat, lng: userLong};
     const pinChanges = new PinElement({
         background: "#4cbbd3",
@@ -82,9 +82,11 @@ async function getRestaurantGeneral() {
   clearMarkers();
   const input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
-  input.addEventListener("dblclick", function(event) {
+  input.addEventListener("dblclick", getRestaurantGeneralHelper);
+}
+async function getRestaurantGeneralHelper() {
     for (var i = 0; i < length; i++) {
-        const actName = this.names.split('\n')[i].toUpperCase();
+        const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
         const address = addresses.split('\n')[i].toUpperCase();
         const description = attributes.split('\n')[i];
@@ -96,9 +98,7 @@ async function getRestaurantGeneral() {
           makeMarker(lat, long, actName, category, star, business_id);
       }
     }
-  });
 }
-
 async function display_list() {
     var list = document.getElementById("cuisine_id");
     if (list.style.display === "block") {
@@ -123,7 +123,10 @@ async function getRestaurantCuisine() {
   clearMarkers();
   var input = document.getElementById('restaurantCuisine');
   filter = input.value.toUpperCase();
-  input.addEventListener("dblclick", function(event) {
+  input.addEventListener("dblclick", getRestaurantCuisineHelper);
+}
+
+async function getRestaurantCuisineHelper() {
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
@@ -137,14 +140,14 @@ async function getRestaurantCuisine() {
           makeMarker(lat, long, actName, category, star, business_id);
       }
     }
-  });
 }
-
 async function getRestaurantRating() {
   clearMarkers();
   var input = document.getElementById('restaurantStar');
   filter = input.value;
-  input.addEventListener("dblclick", function(event) {
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}
+async function getRestaurantRatingHelper() {
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
@@ -155,32 +158,30 @@ async function getRestaurantRating() {
           const long = longitudes.split('\n')[i];
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          makeMarker(lat, long, actName, category, star, business_id);
+          await makeMarker(lat, long, actName, category, star, business_id);
       }
     }
-  });
 }
-
 async function getRestaurantRadius() {
-  clearMarkers();
+    clearMarkers();
     const input = document.getElementById('restaurantRadius');
-    let filter = input.value;
-  input.addEventListener("dblclick", function(event) {
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRadiusHelper);
+}
+async function getRestaurantRadiusHelper() {
     for (let i = 0; i < length; i++) {
-        const lat = latitudes.split('\n')[i]
-        const long = longitudes.split('\n')[i]
+        const lat = latitudes.split('\n')[i];
+        const long = longitudes.split('\n')[i];
       if (getDistanceFromLatLonInKm(userLat, userLong, lat, long) <= parseFloat(filter)) {
-          const actName = this.names.split('\n')[i].toUpperCase();
+          const actName = names.split('\n')[i].toUpperCase();
           const category = categories.split('\n')[i].toUpperCase();
           const address = addresses.split('\n')[i].toUpperCase();
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          makeMarker(lat, long, actName, category, star, business_id);
+          await makeMarker(lat, long, actName, category, star, business_id);
       }
     }
-  });
 }
-
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
