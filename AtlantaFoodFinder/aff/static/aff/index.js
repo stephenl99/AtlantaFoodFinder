@@ -1,6 +1,6 @@
 // Initialize and add the map
 let map;
-let markersList = [];
+markersList = [];
 favorites = [];
 let userLat = 0.0;
 let userLong = 0.0;
@@ -68,7 +68,6 @@ async function showPosition(position) {
         background: "#4cbbd3",
         borderColor: "#FFFFFF",
         glyphColor: "#FFFFFF",
-        scale: 1.5,
   });
     const marker = new AdvancedMarkerElement({
         map: map,
@@ -79,12 +78,12 @@ async function showPosition(position) {
 }
 
 async function getRestaurantGeneral() {
-  clearMarkers();
   const input = document.getElementById('restaurant');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", getRestaurantGeneralHelper);
 }
 async function getRestaurantGeneralHelper() {
+    clearMarkers();
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
@@ -120,13 +119,13 @@ async function choiceCuisine(name) {
 }
 
 async function getRestaurantCuisine() {
-  clearMarkers();
   var input = document.getElementById('restaurantCuisine');
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", getRestaurantCuisineHelper);
 }
 
 async function getRestaurantCuisineHelper() {
+    clearMarkers();
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
@@ -142,12 +141,12 @@ async function getRestaurantCuisineHelper() {
     }
 }
 async function getRestaurantRating() {
-  clearMarkers();
   var input = document.getElementById('restaurantStar');
   filter = input.value;
   input.addEventListener("dblclick", getRestaurantRatingHelper);
 }
 async function getRestaurantRatingHelper() {
+    clearMarkers();
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
@@ -163,12 +162,12 @@ async function getRestaurantRatingHelper() {
     }
 }
 async function getRestaurantRadius() {
-    clearMarkers();
     const input = document.getElementById('restaurantRadius');
     filter = input.value;
   input.addEventListener("dblclick", getRestaurantRadiusHelper);
 }
 async function getRestaurantRadiusHelper() {
+    clearMarkers();
     for (let i = 0; i < length; i++) {
         const lat = latitudes.split('\n')[i];
         const long = longitudes.split('\n')[i];
@@ -280,6 +279,7 @@ function clearMarkers() {
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
     }
+    markersList = [];
 }
 
 initMap();
