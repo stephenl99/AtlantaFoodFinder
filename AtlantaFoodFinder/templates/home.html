@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="actions2">
-            <button class="button16">
+            <button class="button16" id="button3">
               <div class="button17">Explore</div>
             </button>
             <div class="button18">
@@ -270,7 +270,13 @@
             window.location.href = "{% url 'map_view' %}";
         });
   }
-      
+      var button3 = document.getElementById("button3");
+      if (button3) {
+        button3.addEventListener("click", function (e) {
+            window.location.href = "{% url 'map_view' %}";
+        });
+  }
+
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {
