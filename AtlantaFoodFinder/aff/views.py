@@ -97,3 +97,7 @@ def processMapView(request):
         print(newRestaurant.associatedUser)
         newRestaurant.save()
         return redirect('map_view')
+
+def about(request):
+    template_name = "aff/about.html"
+    return render(request, "aff/../../templates/about.html")
