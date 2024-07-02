@@ -31,7 +31,7 @@
             <button class="button38" id="button1">
               <div class="button39">About</div>
             </button>
-            <button class="button40">
+            <button class="button40" id="button2">
               <div class="button41">Explore</div>
             </button>
             <button class="button42">
@@ -41,7 +41,7 @@
               <div class="button45">Login</div>
             </button>
             <button class="button46">
-              <div class="button47">Register</div>
+              <div class="button47">Sign Up</div>
             </button>
           </div>
         </div>
@@ -125,7 +125,7 @@
               <div class="link-two2">About</div>
               <div class="link-three2">Explore</div>
               <div class="link-four2">Login</div>
-              <div class="link-five2">Register</div>
+              <div class="link-five2">Sign Up</div>
             </div>
           </div>
           <div class="social-links-wrapper">
@@ -197,6 +197,13 @@
           window.location.href = "../about/";
         });
       }
+
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+            window.location.href = "{% url 'map_view' %}";
+        });
+  }
       
       var button4 = document.getElementById("button4");
       if (button4) {

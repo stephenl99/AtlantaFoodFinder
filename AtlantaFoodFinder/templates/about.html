@@ -32,7 +32,7 @@
               <button class="button70">
                 <div class="button71">About</div>
               </button>
-              <button class="button72">
+              <button class="button72" id="button2">
                 <div class="button73">Explore</div>
               </button>
               <button class="button74">
@@ -556,7 +556,14 @@
           window.location.href = "../aff/";
         });
       }
-      
+
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+            window.location.href = "{% url 'map_view' %}";
+        });
+  }
+
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {

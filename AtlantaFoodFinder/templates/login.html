@@ -31,7 +31,7 @@
             <button class="button22" id="button1">
               <div class="button23">About</div>
             </button>
-            <button class="button24">
+            <button class="button24" id = "button2">
               <div class="button25">Explore</div>
             </button>
             <button class="button26">
@@ -70,12 +70,12 @@
               <div class="input1">
                 <div class="row2">
                   <div class="password">Password*</div>
-                  <div class="forgot-your-password" id="forgotYourPassword">
-                    Forgot your password?
-                  </div>
                 </div>
                 <input class="text-input1" type="text" />
               </div>
+                <div class="forgot-your-password" id="forgotYourPassword">
+                    Forgot your password?
+                  </div>
               <div class="container">
                 <div class="buttons">
                   <button class="button32">
@@ -187,7 +187,7 @@
       var button = document.getElementById("button");
       if (button) {
         button.addEventListener("click", function (e) {
-          window.location.href = "../aff";
+          window.location.href = "../aff/";
         });
       }
       
@@ -197,7 +197,13 @@
           window.location.href = "../about";
         });
       }
-      
+
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+            window.location.href = "{% url 'map_view' %}";
+        });
+  }
       var button5 = document.getElementById("button5");
       if (button5) {
         button5.addEventListener("click", function (e) {

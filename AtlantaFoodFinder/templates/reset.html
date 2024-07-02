@@ -31,7 +31,7 @@
             <button class="button54" id="button1">
               <div class="button55">About</div>
             </button>
-            <button class="button56">
+            <button class="button56" id="button2">
               <div class="button57">Explore</div>
             </button>
             <button class="button58">
@@ -199,7 +199,14 @@
           window.location.href = "../about/";
         });
       }
-      
+
+      var button2 = document.getElementById("button2");
+      if (button2) {
+        button2.addEventListener("click", function (e) {
+            window.location.href = "{% url 'map_view' %}";
+        });
+  }
+
       var button4 = document.getElementById("button4");
       if (button4) {
         button4.addEventListener("click", function (e) {
