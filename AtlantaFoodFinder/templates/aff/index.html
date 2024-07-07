@@ -56,12 +56,5 @@
       }
       name(temp1, temp2);
   </script>
-  <form method="post" action="{% url 'processMapView' %}">
-        {% csrf_token %}
-        <label for="name">Business ID:</label>
-        <input type="text" name="name" required>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
   </body>
 </html>

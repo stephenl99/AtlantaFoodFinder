@@ -219,11 +219,12 @@ async function makeMarker(lat, long, name, category, star, business_id) {
             <p><strong>Rating:</strong> ${star}</p>
             <p><strong>Business ID:</strong> ${business_id}</p>
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
-            <button onclick="addToFavorites('${lat}', '${long}','${newName}', '${newCategory}', '${star}', '${business_id}')">Add to Favorites</button>
+            <form method="get" action=${"'processMapView/'"}>
+                <input type="hidden" name="name" value=${business_id} required>
+                <button type="submit">Add to favorites</button>
+            </form>
         </div>
     `;
-
-
     const infowindow = new google.maps.InfoWindow({
         content: contentString,
         ariaLabel: name,

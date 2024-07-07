@@ -90,8 +90,8 @@ def MapView(request):
         return render(request, template_name)
 
 def processMapView(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
+    if request.method == 'GET':
+        name = request.GET.get('name')
         print(name)
         newRestaurant = favoriteRestaurant.objects.create(associatedUser=request.user.username, restaurant=name)
         print(newRestaurant.associatedUser)
