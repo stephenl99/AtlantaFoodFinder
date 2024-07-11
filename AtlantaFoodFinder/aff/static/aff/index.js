@@ -212,7 +212,7 @@ async function makeMarker(lat, long, name, category, star, business_id) {
         position: location,
         title: newName,
     });
-    const contentString = `
+    var contentString = `
         <div>
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
@@ -222,6 +222,10 @@ async function makeMarker(lat, long, name, category, star, business_id) {
             <form method="get" action=${"'processMapView/'"}>
                 <input type="hidden" name="name" value=${business_id} required>
                 <button type="submit">Add to favorites</button>
+            </form>
+            <form method="get" action=${"'removeMapView/'"}>
+                <input type="hidden" name="name" value=${business_id} required>
+                <button type="submit">Remove from favorites</button>
             </form>
         </div>
     `;

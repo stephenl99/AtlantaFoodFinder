@@ -92,10 +92,16 @@ def MapView(request):
 def processMapView(request):
     if request.method == 'GET':
         name = request.GET.get('name')
-        print(name)
         newRestaurant = favoriteRestaurant.objects.create(associatedUser=request.user.username, restaurant=name)
-        print(newRestaurant.associatedUser)
         newRestaurant.save()
+        return redirect('map_view')
+
+def removeMapView(request):
+    if request.method == 'GET':
+        name = request.GET.get('name')
+        print(name)
+        if favoriteRestaurant.objects.filter(restaurant=name).exists():
+            favoriteRestaurant.objects.filter(associatedUser=request.user.username, restaurant=name).delete()
         return redirect('map_view')
 
 def about(request):
