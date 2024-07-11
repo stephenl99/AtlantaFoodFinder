@@ -94,7 +94,7 @@ async function getRestaurantGeneralHelper() {
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
           const business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id);
+          makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
@@ -113,7 +113,7 @@ async function choiceCuisine(name) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             const lat = latitudes.split('\n')[i];
             const long = longitudes.split('\n')[i];
-            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i]);
+            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i], addresses.split('\n')[i]);
         }
     }
 }
@@ -136,7 +136,7 @@ async function getRestaurantCuisineHelper() {
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
           const business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id);
+          makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
@@ -157,7 +157,7 @@ async function getRestaurantRatingHelper() {
           const long = longitudes.split('\n')[i];
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id);
+          await makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
@@ -177,7 +177,7 @@ async function getRestaurantRadiusHelper() {
           const address = addresses.split('\n')[i].toUpperCase();
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id);
+          await makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
@@ -199,9 +199,10 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-async function makeMarker(lat, long, name, category, star, business_id) {
+async function makeMarker(lat, long, name, category, star, business_id, address) {
     let newName = name.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
+    let newAddress = address.replaceAll("'", "`");
     let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
     let leaveReview = "https://www.yelp.com/writeareview/biz/" + business_id + "?return_url=%2Fbiz%2F" + business_id + "&review_origin=biz-details-war-button";
     //alert(newBusiness_id);
@@ -217,6 +218,7 @@ async function makeMarker(lat, long, name, category, star, business_id) {
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
+            <p><strong>Address:</strong> ${newAddress}</p>
             <p><strong>Business ID:</strong> ${business_id}</p>
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
@@ -275,7 +277,8 @@ async function showFavorites() {
                 const long = longitudes.split('\n')[i];
                 const star = stars.split('\n')[i];
                 const business_id = business_ids.split('\n')[i];
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id);
+                const address = addresses.split('\n')[i];
+                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }

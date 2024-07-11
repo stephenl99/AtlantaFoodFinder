@@ -1,23 +1,28 @@
 {% load static %}
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>AFF</title>
     <!--<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>-->
 
     <link rel="stylesheet" href="{% static '/aff/index.css' %}">
     <script type="module" src="{% static '/aff/index.js' %}"></script>
   </head>
   <body>
+{#  Following div contains all buttons#}
 <div id="search">
+{#    The following four buttons are general search by keyword, search by cuisine, rating, radius#}
   <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search by keyword">
   <input type="text" id="restaurantCuisine" onkeyup="getRestaurantCuisine()" placeholder="Search by cuisine">
   <input type="text" id="restaurantStar" onkeyup="getRestaurantRating()" placeholder="Search by rating">
   <input type="text" id="restaurantRadius" onkeyup="getRestaurantRadius()" placeholder="Search by radius (km)">
+{#    Following button displays favorites on map (showFavorites()), might not need after doing frontend stuff#}
   <button onclick="showFavorites()">Show favorites</button>
     <div class="cuisine_type_list">
+{#        The following button probably wont be needed, just shows the drop down menu for Chinese, Cuban, etc.#}
         <button class="list_button" onclick="display_list()">
             Select cuisine
         </button>
+{#        Following buttons self explanatory, displays different national cuisines.#}
         <div id="cuisine_id" class="cuisine">
             <li><button onclick="choiceCuisine('Chinese')">Chinese</button></li>
             <li><button onclick="choiceCuisine('Cuban')">Cuban</button></li>
@@ -30,17 +35,20 @@
         </div>
     </div>
 </div>
+{#You can decide if need this button, just clears markers for clarity.#}
 <div id="Account">
-{#    <button onclick="displayFavorites()">Display Favorites</button>#}
     <button onclick="clearMarkers()">Clear Markers</button>
 </div>
+{#All of the following stuff is essential, displays map, loads js file, and gets data of current user and restaurants associated#}
   <script src="{% static 'aff/test.js' %}"></script>
     <div id="map"></div>
 
     <!-- prettier-ignore -->
+{#this accesses api#}
     <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
         ({key: "AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A", v: "weekly"});</script>
   <script src="{% static 'aff/index.js' %}"></script>
+{#following gets user and favorites#}
   <script>
       var data = JSON.parse("{{data|escapejs}}");
       var y = 0;
