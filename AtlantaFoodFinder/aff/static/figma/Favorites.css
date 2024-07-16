@@ -1,0 +1,1416 @@
+.heading-goes-here {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 700;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.lorem-ipsum-dolor6 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.column8 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+  min-width: 651px;
+  max-width: 100%;
+}
+.button29 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 29px;
+}
+.button28 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 6px 19px;
+  background-color: transparent;
+  width: 69px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button28:hover {
+  background-color: rgba(51, 51, 51, 0.09);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.button31 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 58px;
+}
+.button30 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 6px 19px;
+  background-color: #000;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button30:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.actions4 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.icon-dots-horizontal-rounded {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button32 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.row4 {
+  width: 239px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+.card-header-1 {
+  align-self: stretch;
+  background-color: #fff;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 22px 23px 24px;
+  gap: 24px;
+  max-width: 100%;
+}
+.name9 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 43px;
+}
+.table-header {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px 14px;
+}
+.full-name {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.full-name1 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell1 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.full-name2 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell2 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.full-name3 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell3 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.full-name4 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell4 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.full-name5 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell5 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.table-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 258px;
+  max-width: 100%;
+}
+.company {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 63px;
+}
+.table-header1 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px 14px;
+}
+.company-name {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell6 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.company-name1 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell7 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.company-name2 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell8 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.company-name3 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell9 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.company-name4 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell10 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.company-name5 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell11 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.table-column1 {
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.number {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 47px;
+}
+.table-header2 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px 14px;
+}
+.div {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell12 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.div1 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell13 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.div2 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell14 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.div3 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell15 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.div4 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell16 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.div5 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell17 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.table-column2 {
+  width: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.team {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 54px;
+}
+.table-header3 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px 14px;
+}
+.team-name {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell18 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.team-name1 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell19 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.team-name2 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell20 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.team-name3 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell21 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.team-name4 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell22 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.team-name5 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell23 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.table-column3 {
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.date {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 34px;
+}
+.ico-24-arrows-arrow-down {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  min-height: 24px;
+}
+.table-header4 {
+  cursor: pointer;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 110px 14px 23px;
+}
+.jan-11-2050 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell24 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.jan-11-20501 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell25 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.jan-11-20502 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell26 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.jan-11-20503 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell27 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.jan-11-20504 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell28 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.jan-11-20505 {
+  align-self: stretch;
+  height: 24px;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.table-cell29 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 24px;
+}
+.table-column4 {
+  width: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.table-header5 {
+  align-self: stretch;
+  height: 56px;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.view {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell30 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.view1 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell31 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.view2 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell32 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.view3 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell33 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.view4 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell34 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.view5 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 36px;
+}
+.table-cell35 {
+  align-self: stretch;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 20px 26px 23px;
+}
+.table-column5 {
+  width: 83px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.table-container {
+  align-self: stretch;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  row-gap: 20px;
+}
+.icon-chevron-left {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button34 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 32px;
+}
+.button33 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 8px 20px;
+  background-color: transparent;
+  height: 42px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.button33:hover {
+  background-color: rgba(51, 51, 51, 0.09);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.separators {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 9px;
+}
+.content34 {
+  flex: 0.225;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 6px 14px 6px 15px;
+}
+.empty {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 9px;
+}
+.content35 {
+  flex: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 15px;
+}
+.pagination-number {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.div6 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 9px;
+}
+.content36 {
+  flex: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 15px;
+}
+.pagination-number1 {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.div7 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 9px;
+}
+.content37 {
+  flex: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 15px;
+}
+.pagination-number2 {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.pagination-numbers {
+  width: 166px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+.button36 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 34px;
+}
+.icon-chevron-right1 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button35 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 8px 20px;
+  background-color: transparent;
+  height: 42px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.button35:hover {
+  background-color: rgba(51, 51, 51, 0.09);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.page-buttons {
+  height: 40px;
+  width: 1312px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+.table-pagination {
+  align-self: stretch;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px 0px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.table {
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.table-1 {
+  height: 906px;
+  flex: 1;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 112px 64px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.favorites {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1200px) {
+  .table-1 {
+    height: auto;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .column8 {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .table-1 {
+    gap: 40px;
+    padding: 73px 32px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .heading-goes-here {
+    font-size: 19px;
+    line-height: 27px;
+  }
+
+  .table-1 {
+    gap: 20px;
+  }
+}
