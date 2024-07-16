@@ -1,0 +1,365 @@
+.company-logo-icon4 {
+  width: 63px;
+  height: 27px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.navbar2 {
+  align-self: stretch;
+  height: 72px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.log-in {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 58px;
+  font-weight: 700;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.description2 {
+  align-self: stretch;
+  position: relative;
+  font-size: 18px;
+  line-height: 150%;
+}
+.section-title2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.name2 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.text-input7 {
+  border: 1px solid #000;
+  outline: none;
+  background-color: #fff;
+  align-self: stretch;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 250px;
+}
+.input6 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.password2 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 78px;
+}
+.forgot-your-password {
+  position: relative;
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+}
+.row1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.text-input8 {
+  border: 1px solid #000;
+  outline: none;
+  background-color: #fff;
+  align-self: stretch;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 250px;
+}
+.input7 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.button15 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 44px;
+}
+.button14 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  background-color: #000;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.button14:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.icon-google2 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.button17 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.button16 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.button16:hover {
+  background-color: rgba(51, 51, 51, 0.09);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.buttons2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.dont-have-an {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+}
+.link21 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 55px;
+  white-space: nowrap;
+}
+.content14 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.container2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.form3 {
+  margin: 0;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 100%;
+}
+.content13 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 123.5px 0px;
+  box-sizing: border-box;
+  gap: 32px;
+  max-width: 100%;
+}
+.text2 {
+  width: 97px;
+  position: relative;
+  line-height: 150%;
+  display: none;
+}
+.footer3 {
+  align-self: stretch;
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+.column6 {
+  flex: 0.8222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 64px;
+  box-sizing: border-box;
+  min-width: 468px;
+  max-width: 100%;
+}
+.placeholder-image-icon2 {
+  height: 900px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 468px;
+}
+.login-7 {
+  flex: 1;
+  background-color: #b6eada;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  row-gap: 20px;
+  text-align: center;
+  font-size: 48px;
+  color: #000;
+  font-family: Roboto;
+}
+.login {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1125px) {
+  .column6 {
+    flex: 1;
+  }
+
+  .placeholder-image-icon2 {
+    flex: 1;
+  }
+
+  .login-7 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .log-in {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .content13 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .content13 {
+    gap: 16px;
+  }
+
+  .column6 {
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+
+  .placeholder-image-icon2 {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .log-in {
+    font-size: 29px;
+    line-height: 35px;
+  }
+
+  .row1 {
+    flex-wrap: wrap;
+  }
+}
