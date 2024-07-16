@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'figma/global.css' %}">
+    <link rel="stylesheet" href="{% static 'figma/Login.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+  {% include 'heading.html' %}
+    <div class="login">
+      <main class="login-7">
+        <div class="column6">
+          <div class="navbar2">
+            <img
+              class="company-logo-icon4"
+              alt=""
+              src="{% static '' %}./public/company-logo1.svg"
+            />
+          </div>
+          <div class="content13">
+            <div class="section-title2">
+              <h1 class="log-in">Log In</h1>
+              <div class="description2">
+                Log In to see your saved settings and restaurants!
+              </div>
+            </div>
+            <form class="form3" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+                <div class="input6">
+                <div class="name2">Name*</div>
+                <input class="text-input7" type="text" name="username" required />
+              </div>
+              <div class="input7">
+                <div class="row1">
+                  <div class="password2">Password*</div>
+                  <div class="forgot-your-password" id="forgotYourPassword">
+                    Forgot your password?
+                  </div>
+                </div>
+                <input class="text-input8" type="password" name="password" required />
+              </div>
+              <div class="container2">
+                <div class="buttons2">
+                  <button type="submit" class="button14">
+                    <div class="button15">Log in</div>
+                  </button>
+                  <button class="button16">
+                    <img
+                      class="icon-google2"
+                      alt=""
+                      src="{% static '' %}./public/icon--google.svg"
+                    />
+
+                    <div class="button17">Log in with Google</div>
+                  </button>
+                </div>
+                <div class="content14">
+                  <div class="dont-have-an">Don't have an account?</div>
+                  <button class="link21" href="{% url 'signup' %}" id="linkText50">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="footer3">
+            <div class="text2">© 2022 Relume</div>
+          </div>
+        </div>
+        <img
+          class="placeholder-image-icon2"
+          loading="lazy"
+          alt=""
+          src="{% static '' %}./public/placeholder-image2@2x.png"
+        />
+      </main>
+    </div>
+
+    <script>
+      var forgotYourPassword = document.getElementById("forgotYourPassword");
+      if (forgotYourPassword) {
+        forgotYourPassword.addEventListener("click", function (e) {
+          window.location.href = "../reset";
+        });
+      }
+      
+      var linkText50 = document.getElementById("linkText50");
+      if (linkText50) {
+        linkText50.addEventListener("click", function (e) {
+          window.location.href = "../signup";
+        });
+      }
+      </script>
+  {% include 'footer.html' %}
+  </body>
+</html>
