@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'figma/global.css' %}">
+    <link rel="stylesheet" href="{% static 'figma/About.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+  {% include 'heading.html' %}
+    <div class="about">
+      <header class="header-30">
+        <div class="column7">
+          <div class="content15">
+            <h1 class="medium-length-hero">
+              Connecting people with Atlanta’s culinary world.
+            </h1>
+            <div class="lorem-ipsum-dolor4">
+              Ever had trouble finding places to eat in Atlanta? FoodQuest takes
+              that worry away.
+            </div>
+          </div>
+          <div class="actions2">
+            <div class="button18">
+              <div class="button19">Button</div>
+            </div>
+            <div class="button20">
+              <div class="button21">Button</div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="layout-1">
+        <div class="container3">
+          <div class="content16">
+            <div class="section-title3">
+              <div class="subheading">About us</div>
+              <div class="content17">
+                <h1 class="heading2">About FoodQuest</h1>
+                <div class="text3">
+                  At Atlanta FoodQuest, our mission is to connect food
+                  enthusiasts with the diverse culinary delights of the greater
+                  Atlanta area. We aim to simplify the search for the perfect
+                  place to eat by providing a comprehensive, user-friendly
+                  platform that highlights the best restaurants and eateries.
+                  Through our app, we strive to celebrate Atlanta’s rich food
+                  culture and foster a community of passionate food lovers who
+                  explore, discover, and share their dining experiences. Whether
+                  you’re craving a classic Southern dish or new fusion cuisine,
+                  ATL FoodQuest is here to guide you to your next great find.
+                </div>
+              </div>
+            </div>
+            <div class="actions3">
+              <div class="button22">
+                <div class="button23">Button</div>
+              </div>
+              <div class="button24">
+                <div class="button25">Button</div>
+                <img
+                  class="icon-chevron-right"
+                  alt=""
+                  src="{% static '' %}./public/icon--chevronright.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <img
+            class="placeholder-image-icon3"
+            alt=""
+            src="{% static '' %}./public/placeholder-image3@2x.png"
+          />
+        </div>
+      </section>
+      <section class="contact-29">
+        <div class="section-title4">
+          <div class="subheading1">Tagline</div>
+          <div class="content18">
+            <h1 class="heading3">Our locations</h1>
+            <div class="text4">
+              Currently, you can search through Atlanta restaurants.
+            </div>
+          </div>
+        </div>
+        <div class="content19">
+          <div class="tabs-menu">
+            <div class="tab-horizontal">
+              <div class="content20">
+                <h3 class="heading4">Atlanta</h3>
+                <div class="tab-description">
+                  Start from Georgia Tech Campus
+                </div>
+              </div>
+              <div class="link22">View Map</div>
+            </div>
+            <div class="tab-horizontal1">
+              <div class="content21">
+                <b class="heading5">New York</b>
+                <div class="text5">123 Sample St, New York NY 10000 USA</div>
+              </div>
+              <div class="link23">View Map</div>
+            </div>
+            <div class="tab-horizontal2">
+              <div class="content22">
+                <b class="heading6">London</b>
+                <div class="text6">
+                  123 Sample St, London W1C 1DE, United Kingdom
+                </div>
+              </div>
+              <div class="link24">View Ma</div>
+            </div>
+          </div>
+          <img
+            class="placeholder-image-icon4"
+            loading="lazy"
+            alt=""
+            src="{% static '' %}./public/placeholder-image-1@2x.png"
+          />
+        </div>
+      </section>
+      <section class="team-5">
+        <div class="section-title5">
+          <div class="subheading2">Our team</div>
+          <div class="content23">
+            <h1 class="heading7">Dev Team 5</h1>
+            <div class="lorem-ipsum-dolor5">
+              A quick list of the developers and members that made this project
+              possible.
+            </div>
+          </div>
+        </div>
+        <div class="content24">
+          <div class="content25">
+            <div class="row2">
+              <div class="card">
+                <img
+                  class="placeholder-image-icon5"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-2@2x.png"
+                />
+
+                <div class="content26">
+                  <div class="title">
+                    <div class="name3">Christopher Linder</div>
+                    <div class="job-title">Product Owner</div>
+                  </div>
+                  <div class="bio">
+                    Developed the map display and implemented the favorites
+                    feature.
+                  </div>
+                </div>
+                <div class="social-icons">
+                  <img
+                    class="icon-linkedin1"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img
+                    class="icon-x1"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--x.svg"
+                  />
+
+                  <img
+                    class="icon-dribble"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+              <div class="card1">
+                <img
+                  class="placeholder-image-icon6"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-3@2x.png"
+                />
+
+                <div class="content27">
+                  <div class="title1">
+                    <div class="name4">Stephen Linder</div>
+                    <div class="job-title1">Technical Support</div>
+                  </div>
+                  <div class="bio1">
+                    Developed database reading capabilities to show users
+                    reviews, as well as pin information.
+                  </div>
+                </div>
+                <div class="social-icons1">
+                  <img
+                    class="icon-linkedin2"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img class="icon-x2" alt="" src="{% static '' %}./public/icon--x.svg" />
+
+                  <img
+                    class="icon-dribble1"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  class="placeholder-image-icon7"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-4@2x.png"
+                />
+
+                <div class="content28">
+                  <div class="title2">
+                    <div class="name5">Aryan Bhatia</div>
+                    <div class="job-title2">Administration</div>
+                  </div>
+                  <div class="bio2">
+                    Compiled resources to use for app development, as well as UI
+                    frontend features.
+                  </div>
+                </div>
+                <div class="social-icons2">
+                  <img
+                    class="icon-linkedin3"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img class="icon-x3" alt="" src="{% static '' %}./public/icon--x.svg" />
+
+                  <img
+                    class="icon-dribble2"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row3">
+              <div class="card3">
+                <img
+                  class="placeholder-image-icon8"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-5@2x.png"
+                />
+
+                <div class="content29">
+                  <div class="title3">
+                    <div class="name6">Charles McHenry</div>
+                    <div class="job-title3">Developer</div>
+                  </div>
+                  <div class="text7">
+                    Developed and implemented user information systems for login
+                    and registration, as well as development of UI.
+                  </div>
+                </div>
+                <div class="social-icons3">
+                  <img
+                    class="icon-linkedin4"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img
+                    class="icon-x4"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--x.svg"
+                  />
+
+                  <img
+                    class="icon-dribble3"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+              <div class="card4">
+                <img
+                  class="placeholder-image-icon9"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-6@2x.png"
+                />
+
+                <div class="content30">
+                  <div class="title4">
+                    <div class="name7">Milind Sharma</div>
+                    <div class="job-title4">Developer</div>
+                  </div>
+                  <div class="text8">
+                    Developed pin views for users about quick information on
+                    restaurants.
+                  </div>
+                </div>
+                <div class="social-icons4">
+                  <img
+                    class="icon-linkedin5"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img class="icon-x5" alt="" src="{% static '' %}./public/icon--x.svg" />
+
+                  <img
+                    class="icon-dribble4"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+              <div class="card5">
+                <img
+                  class="placeholder-image-icon10"
+                  loading="lazy"
+                  alt=""
+                  src="{% static '' %}./public/placeholder-image-7@2x.png"
+                />
+
+                <div class="content31">
+                  <div class="title5">
+                    <div class="name8">Prof. Pedro</div>
+                    <div class="job-title5">Advisor</div>
+                  </div>
+                  <div class="text9">
+                    Guided the team through development processes.
+                  </div>
+                </div>
+                <div class="social-icons5">
+                  <img
+                    class="icon-linkedin6"
+                    alt=""
+                    src="{% static '' %}./public/icon--linkedin.svg"
+                  />
+
+                  <img class="icon-x6" alt="" src="{% static '' %}./public/icon--x.svg" />
+
+                  <img
+                    class="icon-dribble5"
+                    alt=""
+                    src="{% static '' %}./public/icon--dribble.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content32">
+            <div class="content33">
+              <h1 class="heading8">Start Exploring!</h1>
+              <div class="text10">Start exploring restaurants here.</div>
+            </div>
+            <button class="button26" id="button">
+              <div class="button27">Explore</div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var button = document.getElementById("button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "../notfound";
+        });
+      }
+      </script>
+  {% include 'footer.html' %}
+  </body>
+</html>
