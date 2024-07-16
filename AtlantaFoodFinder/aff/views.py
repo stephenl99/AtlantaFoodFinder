@@ -107,3 +107,15 @@ def removeMapView(request):
 def about(request):
     template_name = "aff/about.html"
     return render(request, "aff/../../templates/about.html")
+
+def builder(request):
+    template_name = "aff/Notfound.html"
+    return render(request, "aff/../../templates/Notfound.html")
+
+def favorites(request):
+    template_name = "aff/Favorites.html"
+    return render(request, "aff/../../templates/Favorites.html")
+
+def explore(request):
+    template_name = "aff/explore.html"
+    return render(request, "aff/../../templates/explore.html")
