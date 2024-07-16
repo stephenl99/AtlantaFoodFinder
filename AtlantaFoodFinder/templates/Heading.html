@@ -13,140 +13,88 @@
     />
   </head>
   <body>
-    <main class="header">
-      <section class="navbar-9">
-        <section class="content1">
-          <div class="content2">
+    <div class="heading22">
+      <section class="navbar-91">
+        <div class="content72">
+          <div class="content73">
             <img
-              class="company-logo-icon1"
+              class="company-logo-icon7"
               loading="lazy"
               alt=""
-              src="{% static 'public/company-logo.svg' %}"
+              src="{% static '' %}./public/company-logo.svg"
             />
 
-            <div class="column3">
-              <button class="link-one1" id="linkOne">
-                <div class="link15">Home</div>
+            <div class="column14">
+              <button class="link-one3" id="link1">
+                <div class="link41">Home</div>
               </button>
-              <button class="link-two1" id="linkTwo">
-                <div class="link16">About</div>
+              <button class="link-two3" id="link2">
+                <div class="link42">About</div>
               </button>
-              <button class="link-three1" id="linkThree">
-                <div class="link17">Explore</div>
-              </button>
-              <div class="link-four1">
-                <button class="nav-link-dropdown">
-                  <div class="link18">Profile</div>
-                  <img
-                    class="chevron-down-icon"
-                    alt=""
-                    src="{% static 'public/chevron-down.svg' %}"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="actions1">
-            <button class="button2" id="button100">
-              <div class="button3">Log In</div>
-            </button>
-            <button class="button4" id="button200">
-              <div class="button5">Register</div>
-            </button>
-          </div>
-        </section>
-        <section class="mega-menu">
-          <div class="menu">
-            <div class="menu-list">
-              <button class="menu-item" id="menuItem">
-                <img
-                  class="icon-relume"
-                  loading="lazy"
-                  alt=""
-                  src="{% static 'public/icon--relume.svg' %}"
-                />
-
-                <div class="content3">
-                  <div class="page-one">Log In</div>
-                  <div class="lorem-ipsum-dolor">Log in to your profile.</div>
-                </div>
-              </button>
-              <button class="menu-item1" id="menuItem1">
-                <img
-                  class="icon-relume1"
-                  loading="lazy"
-                  alt=""
-                  src="{% static 'public/icon--relume.svg' %}"
-                />
-
-                <div class="content4">
-                  <div class="page-two">Favorites</div>
-                  <div class="lorem-ipsum-dolor1">
-                    See your saved restaurants.
-                  </div>
-                </div>
-              </button>
-              <button class="menu-item2" id="menuItem2">
-                <img
-                  class="icon-relume2"
-                  loading="lazy"
-                  alt=""
-                  src="{% static 'public/icon--relume.svg' %}"
-                />
-
-                <div class="content5">
-                  <div class="page-three">Review</div>
-                  <div class="lorem-ipsum-dolor2">
-                    Rate restaurants you’ve visited.
-                  </div>
-                </div>
-              </button>
-              <button class="menu-item3" id="menuItem3">
-                <img
-                  class="icon-relume3"
-                  loading="lazy"
-                  alt=""
-                  src="{% static 'public/icon--relume.svg' %}"
-                />
-
-                <div class="content6">
-                  <div class="page-four">Forgot Password</div>
-                  <div class="lorem-ipsum-dolor3">
-                    Reset your password here!
-                  </div>
-                </div>
+              <button class="link-three3" id="link3">
+                <div class="link43">Explore</div>
               </button>
             </div>
+            <button class="link-three4" id="link4">
+              <div class="link44">Favorites</div>
+            </button>
+            <button class="link-three5" id="link5">
+              <div class="link45">Ratings</div>
+            </button>
           </div>
-          <div class="content7">
-            <div class="content8">
-              <div class="looking-for-a">Want to start exploring?</div>
+          <div class="actions9">
+            <button class="button70" id="button100">
+              <div class="button71">Login</div>
+            </button>
+            <button class="button72" id="button400">
+              <div class="button73">Register</div>
+            </button>
+          </div>
+        </div>
+        <div class="mega-menu1">
+          <div class="content74">
+            <div class="content75">
+              <div class="looking-for-a1">Ready to Explore?</div>
               <button class="get-in-touch" id="getInTouch">Click Here</button>
             </div>
           </div>
-        </section>
+        </div>
       </section>
-    </main>
+    </div>
 
     <script>
-      var linkOne = document.getElementById("linkOne");
-      if(linkOne) {
-        linkOne.addEventListener("click", function (e) {
+      var link1 = document.getElementById("link1");
+      if(link1) {
+        link1.addEventListener("click", function (e) {
           window.location.href = "../aff"
         });
       }
 
-      var linkTwo = document.getElementById("linkTwo");
-      if(linkTwo) {
-        linkTwo.addEventListener("click", function (e) {
+      var link2 = document.getElementById("link2");
+      if(link2) {
+        link2.addEventListener("click", function (e) {
           window.location.href = "../about"
         });
       }
 
-      var linkThree = document.getElementById("linkThree");
-      if(linkThree) {
-        linkThree.addEventListener("click", function (e) {
+      var link3 = document.getElementById("link3");
+      if(link3) {
+        link3.addEventListener("click", function (e) {
           window.location.href = "../explore"
+        });
+      }
+
+      var link4 = document.getElementById("link4");
+      if(link4) {
+        link4.addEventListener("click", function (e) {
+          window.location.href = "../favorites"
+        });
+      }
+
+      var link5 = document.getElementById("link5");
+      if(link5) {
+        link5.addEventListener("click", function () {
+          window.open("https://www.yelp.com/writeareview");
         });
       }
 
@@ -157,9 +105,9 @@
         });
       }
 
-      var button200 = document.getElementById("button200");
-      if(button200) {
-        button200.addEventListener("click", function (e) {
+      var button400 = document.getElementById("button400");
+      if(button400) {
+        button400.addEventListener("click", function (e) {
           window.location.href = "../signup"
         });
       }
@@ -167,28 +115,28 @@
       var menuItem = document.getElementById("menuItem");
       if(menuItem) {
         menuItem.addEventListener("click", function (e) {
-          window.location.href = "../login"
+          window.location.href = "./Builder.html"
         });
       }
 
       var menuItem1 = document.getElementById("menuItem1");
       if(menuItem1) {
         menuItem1.addEventListener("click", function (e) {
-          window.location.href = "../favorites"
+          window.location.href = "./Builder.html"
         });
       }
 
       var menuItem2 = document.getElementById("menuItem2");
       if(menuItem2) {
-        menuItem2.addEventListener("click", function () {
-          window.open("https://www.yelp.com/writeareview");
+        menuItem2.addEventListener("click", function (e) {
+          window.location.href = "./Builder.html"
         });
       }
 
       var menuItem3 = document.getElementById("menuItem3");
       if(menuItem3) {
         menuItem3.addEventListener("click", function (e) {
-          window.location.href = "../reset"
+          window.location.href = "./Builder.html"
         });
       }
 
