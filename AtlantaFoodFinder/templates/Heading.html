@@ -55,9 +55,15 @@
                     <div class="button71">Login</div>
                 </a>
             {% endif %}
-            <button class="button72" id="button400">
-              <div class="button73">Register</div>
-            </button>
+            {% if user.is_authenticated %}
+                <a href="#" class="button72" id="button400">
+                    <div class="button73">{{ user.username }}</div>
+                </a>
+            {% else %}
+                <a href="{% url 'signup' %}" class="button72" id="button400">
+                    <div class="button73">Register</div>
+                </a>
+            {% endif %}
           </div>
         </div>
         <div class="mega-menu1">
