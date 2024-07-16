@@ -1,0 +1,55 @@
+.first-word {
+  position: relative;
+  line-height: 58px;
+}
+.loader-2 {
+  flex: 1;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 421px 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: 48px;
+  color: #fff;
+  font-family: Roboto;
+}
+.builder {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@media screen and (max-width: 750px) {
+  .first-word {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .loader-2 {
+    padding-top: 274px;
+    padding-bottom: 274px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .first-word {
+    font-size: 29px;
+    line-height: 35px;
+  }
+
+  .loader-2 {
+    gap: 40px;
+  }
+}
