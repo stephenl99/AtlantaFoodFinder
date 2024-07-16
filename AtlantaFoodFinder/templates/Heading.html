@@ -43,9 +43,18 @@
             </button>
           </div>
           <div class="actions9">
-            <button class="button70" id="button100">
-              <div class="button71">Login</div>
-            </button>
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="button70" id="button100">
+                        <div class="button71">Logout</div>
+                    </button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="button70" id="button100">
+                    <div class="button71">Login</div>
+                </a>
+            {% endif %}
             <button class="button72" id="button400">
               <div class="button73">Register</div>
             </button>
