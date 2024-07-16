@@ -1,0 +1,1370 @@
+.icon-filter {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.button38 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 45px;
+}
+.button37 {
+  height: 50px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  gap: 12px;
+}
+.company-logo-icon5 {
+  width: 63px;
+  height: 27px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.row5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5px 0px;
+}
+.menu-top {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px 24px;
+}
+.icon-home {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link25 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content38 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: #eee;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.icon-star {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link26 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content39 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.link27 {
+  position: relative;
+  font-size: 14px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  display: inline-block;
+  min-width: 8px;
+}
+.badge {
+  width: 24px;
+  border-radius: 50px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 7px;
+}
+.nav-link1 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.icon-pie-chart-alt-2 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link28 {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+}
+.content40 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.chevron-down-icon1 {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.menu-trigger {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  gap: 8px;
+}
+.icon-trending-up {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link29 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content41 {
+  width: 228px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link2 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.icon-bar-chart-alt-2 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link30 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content42 {
+  width: 228px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link3 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.icon-archive {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link31 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+}
+.content43 {
+  height: 24px;
+  width: 228px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link4 {
+  align-self: stretch;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px;
+}
+.menu-list2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.tooltipiconlayer {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link32 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content44 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link5 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.icon-file {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link33 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+}
+.content45 {
+  height: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link6 {
+  align-self: stretch;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+}
+.menu-list1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 16px 476px;
+}
+.buttoniconhelp-circle {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link34 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.content46 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link7 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.icon-cog {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.link35 {
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+  white-space: nowrap;
+}
+.content47 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.nav-link8 {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.menu-list3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.menu-bottom {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 16px 24px;
+}
+.sidebar-4 {
+  width: 312px;
+  background-color: #fff;
+  border-right: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 0px 0px;
+}
+.icon-search {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.type-your-message {
+  width: calc(100% - 48px);
+  border: none;
+  outline: none;
+  font-family: Roboto;
+  font-size: 16px;
+  background-color: transparent;
+  height: 24px;
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  color: #666;
+  text-align: left;
+  display: inline-block;
+  min-width: 250px;
+  padding: 0;
+  max-width: calc(100% - 36px);
+}
+.text-input9 {
+  height: 42px;
+  width: 542px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  gap: 12px;
+  max-width: calc(100% - 267px);
+}
+.icon-bell {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.nav-link9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+}
+.avatar-image-icon {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-name {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 111px;
+}
+.chevron-down-icon2 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.column9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.container4 {
+  align-self: stretch;
+  height: 72px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: 20px;
+}
+.topbar-3 {
+  align-self: stretch;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Roboto;
+}
+.text11 {
+  height: 24px;
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header1 {
+  align-self: stretch;
+  background-color: #eee;
+  border-bottom: 2px dashed #ccc;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0px 21px;
+}
+.click-and-paste {
+  height: 732px;
+  position: relative;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column10 {
+  flex: 1;
+  border: 2px dashed #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 20px;
+  min-width: 411px;
+  max-width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+}
+.click-and-paste1 {
+  align-self: stretch;
+  height: 732px;
+  position: relative;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column11 {
+  width: 384px;
+  border: 2px dashed #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 64px 0px 67px;
+  min-width: 384px;
+  max-width: 100%;
+}
+.content48 {
+  align-self: stretch;
+  background-color: #eee;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 48px 32px;
+  box-sizing: border-box;
+  gap: 48px;
+  max-width: 100%;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: calc(100% - 312px);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+.application-shell-10 {
+  align-self: stretch;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: 100%;
+  z-index: 1;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Roboto;
+}
+.heading9 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 34px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 69px;
+}
+.distance-slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 24px;
+  font-size: 24px;
+}
+.cuisine {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 47px;
+}
+.clear {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.clear-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5px 0px 0px;
+  font-size: 16px;
+}
+.row6 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+  font-size: 18px;
+}
+.checkbox-container {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 69px;
+}
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.checkbox-pair {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 8px;
+}
+.frame-input {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label1 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 58px;
+}
+.checkbox1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.checkbox-pair1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 8px;
+}
+.checkbox-containers {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label2 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 46px;
+}
+.checkbox2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input1 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label3 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 70px;
+}
+.checkbox3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input2 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label4 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 51px;
+}
+.checkbox4 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input3 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label5 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 104px;
+}
+.checkbox5 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input4 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label6 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 61px;
+}
+.checkbox6 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input5 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label7 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 85px;
+}
+.checkbox7 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.distance-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.row-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  max-width: 100%;
+}
+.modal-body {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 20px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: 16px;
+}
+.rating {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 40px;
+}
+.clear1 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.row7 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+}
+.button39 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-3 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button40 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-4 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button41 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-5 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button42 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-6 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button43 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-7 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.option-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 61px 4px 0px;
+  gap: 8px;
+  font-size: 16px;
+}
+.filter-three {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.filter-three-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 12px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.distance-km {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 88px;
+}
+.clear2 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.clear-distance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5px 0px 0px;
+  font-size: 16px;
+}
+.row8 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+}
+.progress-bar {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  background-color: #000;
+  width: 80px;
+  height: 4px;
+}
+.circle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+.slider-components {
+  margin-top: -8px;
+  margin-left: -5px;
+  height: 20px;
+  width: 85px;
+  position: relative;
+}
+.slider {
+  height: 4px;
+  flex: 1;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.slider-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 12px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.modal-inner-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  max-width: 100%;
+}
+.filter-three-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 16px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.div8 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 11px;
+}
+.distance-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 36px 8px;
+}
+.button45 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 58px;
+}
+.button44 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cancel-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 0px 0px;
+}
+.button47 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 40px;
+}
+.button46 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 12px 24px;
+  background-color: #000;
+  height: 50px;
+  width: 90px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button46:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.modal-footer {
+  align-self: stretch;
+  height: 72px;
+  border-top: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 22px 12px 24px;
+  gap: 20px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+.modal {
+  width: 418px;
+  height: 830px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px 0px 82px;
+  gap: 8px;
+  max-width: 100%;
+  z-index: 2;
+  margin-top: -828px;
+}
+.application-shell-10-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  max-width: 100%;
+  text-align: left;
+  font-size: 18px;
+  color: #000;
+  font-family: Roboto;
+}
+.explore {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 6px;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Roboto;
+}
+
+@media screen and (max-width: 900px) {
+  .menu-list1 {
+    padding-top: 20px;
+    padding-bottom: 309px;
+    box-sizing: border-box;
+  }
+
+  .sidebar-4 {
+    display: none;
+  }
+
+  .column11 {
+    flex: 1;
+  }
+
+  .content48 {
+    flex-wrap: wrap;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    box-sizing: border-box;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+
+  .application-shell-10 {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .modal {
+    padding-bottom: 53px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 700px) {
+  .column10 {
+    min-width: 100%;
+  }
+
+  .column11 {
+    min-width: 100%;
+  }
+
+  .content48 {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .menu-bottom {
+    gap: 16px;
+  }
+
+  .column11 {
+    gap: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .content48 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .heading9 {
+    font-size: 19px;
+    line-height: 27px;
+  }
+
+  .option-wrapper {
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .modal {
+    height: auto;
+  }
+}
