@@ -1,0 +1,374 @@
+.company-logo-icon3 {
+  width: 63px;
+  height: 27px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.navbar1 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 22.5px 0px;
+}
+.heading1 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  line-height: 58px;
+  font-weight: 700;
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+.description1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 18px;
+  line-height: 150%;
+}
+.section-title1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.name1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.text-input4 {
+  border: 1px solid #000;
+  outline: none;
+  background-color: #fff;
+  align-self: stretch;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 250px;
+  max-width: 100%;
+}
+.input3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  max-width: 100%;
+}
+.email1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.text-input5 {
+  border: 1px solid #000;
+  outline: none;
+  background-color: #fff;
+  align-self: stretch;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 250px;
+}
+.input4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.password1 {
+  align-self: stretch;
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.text-input6 {
+  border: 1px solid #000;
+  outline: none;
+  background-color: #fff;
+  align-self: stretch;
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 250px;
+}
+.input5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.button11 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 53px;
+}
+.button10 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  background-color: #000;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.button10:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.icon-google1 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.button13 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: left;
+}
+.button12 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  background-color: transparent;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.button12:hover {
+  background-color: rgba(51, 51, 51, 0.09);
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.buttons1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.elements {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+}
+.link20 {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: 16px;
+  text-decoration: underline;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #000;
+  text-align: center;
+  display: inline-block;
+  min-width: 44px;
+  white-space: nowrap;
+}
+.content12 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.container1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+.form2 {
+  margin: 0;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 100%;
+}
+.content11 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 71.5px 0px;
+  box-sizing: border-box;
+  gap: 32px;
+  max-width: 100%;
+}
+.text1 {
+  width: 97px;
+  position: relative;
+  line-height: 150%;
+  display: none;
+}
+.footer2 {
+  align-self: stretch;
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+.column5 {
+  flex: 0.8222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 64px;
+  box-sizing: border-box;
+  min-width: 468px;
+  max-width: 100%;
+}
+.placeholder-image-icon1 {
+  height: 900px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 468px;
+}
+.sign-up-71 {
+  flex: 1;
+  background-color: #5b8fb9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  row-gap: 20px;
+  text-align: center;
+  font-size: 48px;
+  color: #000;
+  font-family: Roboto;
+}
+.signup {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1125px) {
+  .column5 {
+    flex: 1;
+  }
+
+  .placeholder-image-icon1 {
+    flex: 1;
+  }
+
+  .sign-up-71 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .heading1 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .content11 {
+    padding-top: 46px;
+    padding-bottom: 46px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .content11 {
+    gap: 16px;
+  }
+
+  .column5 {
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+
+  .placeholder-image-icon1 {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .heading1 {
+    font-size: 29px;
+    line-height: 35px;
+  }
+}
