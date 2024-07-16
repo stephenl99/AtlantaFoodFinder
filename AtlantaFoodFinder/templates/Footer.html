@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{% static 'figma/global.css' %}">
+    <link rel="stylesheet" href="{% static 'figma/Footer.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="footer">
+      <footer class="footer-1">
+        <div class="content">
+          <div class="newsletter">
+            <img
+              class="company-logo-icon"
+              loading="lazy"
+              alt=""
+              src="{% static 'public/company-logo.svg' %}"
+            />
+
+            <div class="join-our-newsletter">
+              Join our newsletter to stay up to date on features and releases.
+            </div>
+            <div class="actions">
+              <div class="form">
+                <div class="text-input">
+                  <input
+                    class="placeholder"
+                    placeholder="Enter your email"
+                    type="text"
+                  />
+                </div>
+                <button class="button" id="button300">
+                  <div class="button1">Subscribe</div>
+                </button>
+              </div>
+              <div class="by-subscribing-you-container">
+                By subscribing you agree to with our
+                <span class="privacy-policy">Privacy Policy</span> and provide
+                consent to receive updates from our company.
+              </div>
+            </div>
+          </div>
+          <div class="links">
+            <div class="column">
+              <div class="column-one">Main</div>
+              <div class="footer-links">
+                <div class="link" id="linkContainer">
+                  <div class="link-one">Home</div>
+                </div>
+                <div class="link1" id="linkContainer1">
+                  <div class="link-two">About</div>
+                </div>
+                <div class="link2" id="linkContainer2">
+                  <div class="link-three">Explore</div>
+                </div>
+                <div class="link3" id="linkContainer3">
+                  <div class="link-four">Favorites</div>
+                </div>
+                <div class="link4">
+                  <div class="link-five"></div>
+                </div>
+              </div>
+            </div>
+            <div class="column1">
+              <div class="column-two">Extra</div>
+              <div class="footer-links1">
+                <div class="link5" id="linkContainer4">
+                  <div class="link-six">Login</div>
+                </div>
+                <div class="link6" id="linkContainer5">
+                  <div class="link-seven">Register</div>
+                </div>
+                <div class="link7" id="linkContainer6">
+                  <div class="link-eight">Forgot Password</div>
+                </div>
+                <div class="link8" id="linkContainer7">
+                  <div class="link-nine">Ratings</div>
+                </div>
+                <div class="link9">
+                  <div class="link-ten">Link Ten</div>
+                </div>
+              </div>
+            </div>
+            <div class="column2">
+              <div class="follow-us">Resources</div>
+              <div class="social-links">
+                <div class="link10">
+                  <img
+                    class="icon-facebook"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'public/icon--facebook.svg' %}"
+                  />
+
+                  <div class="facebook">Facebook</div>
+                </div>
+                <div class="link11">
+                  <img
+                    class="icon-instagram"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'public/icon--instagram.svg' %}"
+                  />
+
+                  <div class="instagram">Instagram</div>
+                </div>
+                <div class="link12">
+                  <img
+                    class="icon-x"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'public/icon--x.svg' %}"
+                  />
+
+                  <div class="x">X</div>
+                </div>
+                <div class="link13">
+                  <img
+                    class="icon-linkedin"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'public/icon--linkedin.svg' %}"
+                  />
+
+                  <div class="linkedin">LinkedIn</div>
+                </div>
+                <div class="link14">
+                  <img
+                    class="icon-youtube"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'public/icon--youtube.svg' %}"
+                  />
+
+                  <div class="youtube">Youtube</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="credits">
+          <div class="divider"></div>
+          <div class="row">
+            <div class="relume-all-rights">
+              © 2023 Relume. All rights reserved.
+            </div>
+            <div class="footer-links2">
+              <div class="privacy-policy1">Privacy Policy</div>
+              <div class="terms-of-service">Terms of Service</div>
+              <div class="cookies-settings">Cookies Settings</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      var button300 = document.getElementById("button300");
+      if (button300) {
+        button300.addEventListener("click", function (e) {
+          window.location.href = "../notfound";
+        });
+      }
+      
+      var linkContainer = document.getElementById("linkContainer");
+      if (linkContainer) {
+        linkContainer.addEventListener("click", function (e) {
+          window.location.href = "../aff";
+        });
+      }
+      
+      var linkContainer1 = document.getElementById("linkContainer1");
+      if (linkContainer1) {
+        linkContainer1.addEventListener("click", function (e) {
+          window.location.href = "../about";
+        });
+      }
+      
+      var linkContainer2 = document.getElementById("linkContainer2");
+      if (linkContainer2) {
+        linkContainer2.addEventListener("click", function (e) {
+          window.location.href = "../explore";
+        });
+      }
+      
+      var linkContainer3 = document.getElementById("linkContainer3");
+      if (linkContainer3) {
+        linkContainer3.addEventListener("click", function (e) {
+          window.location.href = "../favorites";
+        });
+      }
+
+      var linkContainer4 = document.getElementById("linkContainer4");
+      if (linkContainer4) {
+        linkContainer4.addEventListener("click", function (e) {
+          window.location.href = "../login";
+        });
+      }
+
+      var linkContainer5 = document.getElementById("linkContainer5");
+      if (linkContainer5) {
+        linkContainer5.addEventListener("click", function (e) {
+          window.location.href = "../signup";
+        });
+      }
+
+      var linkContainer6 = document.getElementById("linkContainer6");
+      if (linkContainer6) {
+        linkContainer6.addEventListener("click", function (e) {
+          window.location.href = "../reset";
+        });
+      }
+      
+      var linkContainer7 = document.getElementById("linkContainer7");
+      if (linkContainer7) {
+        linkContainer7.addEventListener("click", function () {
+          window.open("https://www.yelp.com/writeareview");
+        });
+      }
+      </script>
+  </body>
+</html>
