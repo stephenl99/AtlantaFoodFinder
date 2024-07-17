@@ -1,0 +1,642 @@
+.heading24 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 34px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 69px;
+}
+.filter-one2 {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 54px;
+}
+.clear6 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.clear-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5px 0px 0px;
+  font-size: 16px;
+}
+.row19 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+  font-size: 18px;
+}
+.frame-input14 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label16 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 69px;
+}
+.checkbox16 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input15 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label17 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 58px;
+}
+.checkbox17 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input16 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label18 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 46px;
+}
+.checkbox18 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input17 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label19 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 70px;
+}
+.checkbox19 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input18 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label20 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 51px;
+}
+.checkbox20 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input19 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label21 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 104px;
+}
+.checkbox21 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input20 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label22 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 61px;
+}
+.checkbox22 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.frame-input21 {
+  margin: 0;
+  height: 21px;
+  width: 18px;
+}
+.label23 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 85px;
+}
+.checkbox23 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.checkbox-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  font-size: 16px;
+}
+.heading-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  max-width: 100%;
+}
+.modal-inner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 0px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.filter-three4 {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 48px;
+}
+.clear7 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.row20 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+}
+.button83 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-33 {
+  flex: 1;
+  background-color: #000;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+  color: #fff;
+}
+.button84 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-34 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button85 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-42 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button86 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-52 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.button87 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 23px;
+}
+.checkbox-62 {
+  flex: 1;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 15px;
+  min-width: 54px;
+  max-width: 55px;
+}
+.option-wrapper2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 45px 4px 0px;
+  gap: 8px;
+  font-size: 16px;
+}
+.filter-three3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.filter-six2 {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 55px;
+}
+.clear8 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 37px;
+}
+.frame-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5px 0px 0px;
+  font-size: 16px;
+}
+.row21 {
+  align-self: stretch;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 18px 0px 20px;
+  gap: 16px;
+}
+.progress-bar2 {
+  width: 80px;
+  height: 4px;
+  margin: 0 !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #000;
+}
+.circle2 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  margin: 0 !important;
+  top: -8px;
+  left: -5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.slider2 {
+  height: 4px;
+  flex: 1;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 100%;
+}
+.slider-frame {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 12px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.filter-six-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  max-width: 100%;
+}
+.filter-three-wrapper1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 100%;
+}
+.empty-filter-label {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 11px;
+}
+.empty-filter-label-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 0px 12px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.filter-three-wrapper-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+  max-width: 100%;
+}
+.filter-three-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 26px 26px 24px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: 18px;
+}
+.button89 {
+  position: relative;
+  line-height: 150%;
+  display: inline-block;
+  min-width: 58px;
+}
+.button88 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 0px 0px;
+}
+.button91 {
+  position: relative;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: Roboto;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  min-width: 40px;
+}
+.button90 {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 12px 24px;
+  background-color: #000;
+  height: 50px;
+  width: 90px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button90:hover {
+  background-color: #333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+.modal-footer2 {
+  align-self: stretch;
+  height: 72px;
+  border-top: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 22px 12px 24px;
+  gap: 20px;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+  font-family: Roboto;
+}
+.modal2 {
+  align-self: stretch;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px 0px 0px;
+  gap: 38px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.click-and-paste4 {
+  width: 288px;
+  height: 852px;
+  position: relative;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.column18 {
+  width: 336px;
+  border: 2px dashed #ccc;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.sidebar1 {
+  width: 400px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  text-align: left;
+  font-size: 24px;
+  color: #000;
+  font-family: Roboto;
+}
+.filters2 {
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 2px;
+  box-sizing: border-box;
+  line-height: normal;
+  letter-spacing: normal;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+@media screen and (max-width: 450px) {
+  .heading24 {
+    font-size: 19px;
+    line-height: 27px;
+  }
+
+  .option-wrapper2 {
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .modal2 {
+    gap: 19px;
+  }
+}
+@media screen and (max-width: 352px) {
+  .option-wrapper2 {
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}

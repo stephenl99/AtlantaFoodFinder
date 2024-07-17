@@ -2,6 +2,7 @@
 <html>
   <head>
       {% include 'heading.html' %}
+      {% include 'filterBar.html' %}
     <title>AFF</title>
     <!--<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>-->
 
@@ -12,6 +13,7 @@
 
 {#  Following div contains all buttons#}
 <div id="search">
+
 {#    The following four buttons are general search by keyword, search by cuisine, rating, radius#}
   <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search by keyword">
   <input type="text" id="restaurantCuisine" onkeyup="getRestaurantCuisine()" placeholder="Search by cuisine">
@@ -51,6 +53,7 @@
         ({key: "AIzaSyAFti1ky6h6R9RLNpRgRHAOLrAR5XXMU4A", v: "weekly"});</script>
   <script src="{% static 'aff/index.js' %}"></script>
 {#following gets user and favorites#}
+
   <script>
       var data = JSON.parse("{{data|escapejs}}");
       var y = 0;
