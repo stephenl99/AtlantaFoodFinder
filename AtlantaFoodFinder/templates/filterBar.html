@@ -7,10 +7,13 @@
 
     <link rel="stylesheet" href="{% static 'figma/global.css' %}">
     <link rel="stylesheet" href="{% static 'figma/filterBar.css' %}">
+      <script type="module" src="{% static '/aff/index.js' %}"></script>
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
     />
+
   </head>
   <body>
     <div class="fiiller">
@@ -46,7 +49,12 @@
                   src="{% static '' %}./public/avatar-image@2x.png"
                 />
 
-                <div class="username">Name Surname</div>
+
+                  {% if user.is_authenticated %}
+                      <div class="text">{{ user.username }}</div>
+                  {% else %}
+                      <div class="text">username</div>
+                  {% endif %}
                 <img
                   class="chevron-down-icon5"
                   alt=""
@@ -90,22 +98,22 @@
                 <div class="checkbox-options-wrapper">
                   <div class="checkbox-options">
                     <div class="checkbox24">
-                      <input class="checkbox-icons" type="checkbox" />
+                      <input class="checkbox-icons" type="checkbox" onclick="choiceCuisine('American')" />
 
                       <div class="label24">American</div>
                     </div>
                     <div class="checkbox25">
-                      <input class="frame-input22" type="checkbox" />
+                      <input class="frame-input22" type="checkbox" onclick="choiceCuisine('Vietnamese')"/>
 
                       <div class="label25">Chinese</div>
                     </div>
                     <div class="checkbox26">
-                      <input class="frame-input23" type="checkbox" />
+                      <input class="frame-input23" type="checkbox" onclick="choiceCuisine('Cuban')"/>
 
                       <div class="label26">Cuban</div>
                     </div>
                     <div class="checkbox27">
-                      <input class="frame-input24" type="checkbox" />
+                      <input class="frame-input24" type="checkbox" onclick="choiceCuisine('Japanese')"/>
 
                       <div class="label27">Japanese</div>
                     </div>
@@ -113,22 +121,22 @@
                 </div>
                 <div class="checkbox-group">
                   <div class="checkbox28">
-                    <input class="checkbox-icons1" type="checkbox" />
+                    <input class="checkbox-icons1" type="checkbox" onclick="choiceCuisine('Korean')"/>
 
                     <div class="label28">Korean</div>
                   </div>
                   <div class="checkbox29">
-                    <input class="frame-input25" type="checkbox" />
+                    <input class="frame-input25" type="checkbox" onclick="choiceCuisine('Mediterranean')"/>
 
                     <div class="label29">Mediterranean</div>
                   </div>
                   <div class="checkbox30">
-                    <input class="frame-input26" type="checkbox" />
+                    <input class="frame-input26" type="checkbox" onclick="choiceCuisine('Mexican')"/>
 
                     <div class="label30">Mexican</div>
                   </div>
                   <div class="checkbox31">
-                    <input class="frame-input27" type="checkbox" />
+                    <input class="frame-input27" type="checkbox" onclick="choiceCuisine('Vietnamese')"/>
 
                     <div class="label31">Vietnamese</div>
                   </div>
