@@ -19,7 +19,7 @@ def index(request):
     #template = loader.get_template("html.html")
     # return render(request, "aff/../templates/html.html")
     #print(currUser.favorites)
-    return render(request, "aff/../../templates/home.html")
+    return render(request, "aff/../../templates/Home.html")
 
     #return HttpResponse(template.render({}, request))
     #return HttpResponse("Are you hungry Atlanta?")
