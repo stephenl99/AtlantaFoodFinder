@@ -140,8 +140,27 @@ async function getRestaurantCuisineHelper() {
       }
     }
 }
-async function getRestaurantRating() {
-    let input = document.getElementById('restaurantStar');
+async function getRestaurantRating5() {
+    let input = document.getElementById('restaurantStar5');
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}
+async function getRestaurantRating4() {
+    let input = document.getElementById('restaurantStar4');
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}
+async function getRestaurantRating3() {
+    let input = document.getElementById('restaurantStar3');
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}async function getRestaurantRating2() {
+    let input = document.getElementById('restaurantStar2');
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}
+async function getRestaurantRating1() {
+    let input = document.getElementById('restaurantStar1');
     filter = input.value;
   input.addEventListener("dblclick", getRestaurantRatingHelper);
 }
