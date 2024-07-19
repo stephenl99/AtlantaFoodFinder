@@ -19,6 +19,7 @@ from django.urls import include, path
 from aff import views
 
 urlpatterns = [
+    path("https://atlantafoodfinder-a281298e3c3f.herokuapp.com/", views.index, name="index"),
     path("aff/", include("aff.urls"), name='aff'),
     path("admin/", admin.site.urls),
     path('login/', views.user_login, name='login'),
