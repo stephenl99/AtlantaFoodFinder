@@ -163,7 +163,9 @@
                     <div class="button103" id="2 star button" onclick="getRestaurantRating(2.0)">2.0</div>
                   </button>
                   <button class="checkbox-63">
-                    <div class="button104" id="1 star button" onclick="getRestaurantRating(1.0)">1.0</div>
+{#                    <div class="button104" id="1 star button" onclick="getRestaurantRating(1.0)">1.0</div>#}
+                    <input type="text" id="restaurantStar" ondblclick="getRestaurantRating()" placeholder="1.0" readonly>
+
                   </button>
                 </div>
               </div>
@@ -196,12 +198,12 @@
     </div>
 
     <script>
-      var button = document.getElementById("button");
+      let button = document.getElementById("button");
       if(button) {
         button.addEventListener("click", function () {
-          var popup = document.getElementById("sidefilterPopup");
+          let popup = document.getElementById("sidefilterPopup");
           if(!popup) return;
-          var popupStyle = popup.style;
+          let popupStyle = popup.style;
           if(popupStyle) {
             popupStyle.display = "flex";
             popupStyle.zIndex = 100;
@@ -211,7 +213,7 @@
           }
           popup.setAttribute("closable", "");
 
-          var onClick = popup.onClick || function(e) {
+          let onClick = popup.onClick || function(e) {
             if(e.target === popup && popup.hasAttribute("closable")) {
               popupStyle.display = "none";
             }
