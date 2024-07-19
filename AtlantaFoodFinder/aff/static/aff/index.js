@@ -53,7 +53,11 @@ async function initMap() {
 
   await getRestaurantGeneral();
   await getRestaurantCuisine();
-  await getRestaurantRating();
+  await getRestaurantRating5();
+  await getRestaurantRating4();
+  await getRestaurantRating3();
+  await getRestaurantRating2();
+  await getRestaurantRating1();
   await getRestaurantRadius();
   await choiceCuisine("empty");
   await clearMarkers();
