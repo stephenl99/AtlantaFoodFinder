@@ -172,7 +172,7 @@ async function getRestaurantRatingHelper() {
         let category = categories.split('\n')[i].toUpperCase();
         let address = addresses.split('\n')[i].toUpperCase();
         let star = stars.split('\n')[i];
-        if (star.includes(filter)) {
+        if (parseFloat(star) - parseFloat(filter) >= 0 && parseFloat(star) - parseFloat(filter) < 1) {
           let lat = latitudes.split('\n')[i];
           let long = longitudes.split('\n')[i];
           let star = stars.split('\n')[i];
