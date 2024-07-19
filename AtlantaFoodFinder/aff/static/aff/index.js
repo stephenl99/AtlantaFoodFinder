@@ -143,6 +143,7 @@ async function getRestaurantCuisineHelper() {
 async function getRestaurantRating5() {
     let input = document.getElementById('restaurantStar5');
     filter = input.value;
+    alert(filter)
   input.addEventListener("dblclick", getRestaurantRatingHelper);
 }
 async function getRestaurantRating4() {
