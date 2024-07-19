@@ -1,1 +1,1 @@
-web: gunicorn --chdir atlantafoodfinder atlantafoodfinder.wsgi
+web: python manage.py runserver 0.0.0.0:$PORT
