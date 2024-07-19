@@ -19,7 +19,7 @@ def index(request):
     #template = loader.get_template("html.html")
     # return render(request, "aff/../templates/html.html")
     #print(currUser.favorites)
-    return render(request, "aff/../../templates/Home.html")
+    return render(request, "aff/../../templates/home.html")
 
     #return HttpResponse(template.render({}, request))
     #return HttpResponse("Are you hungry Atlanta?")
@@ -109,12 +109,12 @@ def about(request):
     return render(request, "aff/../../templates/about.html")
 
 def builder(request):
-    template_name = "aff/Notfound.html"
-    return render(request, "aff/../../templates/Notfound.html")
+    template_name = "aff/notfound.html"
+    return render(request, "aff/../../templates/notfound.html")
 
 def favorites(request):
-    template_name = "aff/Favorites.html"
-    return render(request, "aff/../../templates/Favorites.html")
+    template_name = "aff/favorites.html"
+    return render(request, "aff/../../templates/favorites.html")
 
 def explore(request):
     template_name = "aff/explore.html"
