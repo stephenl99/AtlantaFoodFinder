@@ -142,13 +142,14 @@ async function getRestaurantCuisineHelper() {
 }
 async function getRestaurantRating(rating) {
     clearMarkers();
-    alert(rating)
+    //alert(rating)
     for (var i = 0; i < length; i++) {
         const actName = names.split('\n')[i].toUpperCase();
         const category = categories.split('\n')[i].toUpperCase();
         const address = addresses.split('\n')[i].toUpperCase();
         const star = stars.split('\n')[i];
         if (star.includes(rating)) {
+            alert(rating)
           const lat = latitudes.split('\n')[i];
           const long = longitudes.split('\n')[i];
           const star = stars.split('\n')[i];
