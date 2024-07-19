@@ -140,14 +140,19 @@ async function getRestaurantCuisineHelper() {
       }
     }
 }
-async function getRestaurantRating(rating) {
+async function getRestaurantRating() {
+    let input = document.getElementById('restaurantStar');
+    filter = input.value;
+  input.addEventListener("dblclick", getRestaurantRatingHelper);
+}
+async function getRestaurantRatingHelper() {
     clearMarkers();
     for (let i = 0; i < length; i++) {
         let actName = names.split('\n')[i].toUpperCase();
         let category = categories.split('\n')[i].toUpperCase();
         let address = addresses.split('\n')[i].toUpperCase();
         let star = stars.split('\n')[i];
-        if (star.includes(rating)) {
+        if (star.includes(filter)) {
           let lat = latitudes.split('\n')[i];
           let long = longitudes.split('\n')[i];
           let star = stars.split('\n')[i];
