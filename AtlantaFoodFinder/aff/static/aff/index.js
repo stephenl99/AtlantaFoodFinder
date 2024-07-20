@@ -284,10 +284,10 @@ async function name(inputName, fav) {
 }
 
 async function showFavorites() {
-    let input = document.getElementById('getFavorites');
-    input.addEventListener("onclick", showFavoritesHelper);
-}
-async function showFavoritesHelper() {
+//    let input = document.getElementById('getFavorites');
+//     input.addEventListener("onclick", showFavoritesHelper);
+// }
+// async function showFavoritesHelper() {
     clearMarkers();
     alert("yes indeed")
     //alert(ids.split('\n')[0]);
