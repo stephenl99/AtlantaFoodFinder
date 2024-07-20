@@ -246,7 +246,7 @@ async function makeMarker(lat, long, name, category, star, business_id, address)
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
                 <input type="hidden" name="name" value=${business_id} required>
-                <button type="submit">Add to favorites</button>
+                <butto\n type="submit">Add to favorites</button>
             </form>
             <form method="get" action=${"'removeMapView/'"}>
                 <input type="hidden" name="name" value=${business_id} required>
@@ -290,6 +290,8 @@ function showFavoritesHelper() {
     clearMarkers();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
+    let htmlList = document.getElementById("favoritesList")
+    favorites.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
@@ -305,12 +307,17 @@ function showFavoritesHelper() {
                 let star = stars.split('\n')[i];
                 let business_id = business_ids.split('\n')[i];
                 let address = addresses.split('\n')[i];
-                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+                const li = document.createElement('li');
+                li.textContent = actName;
+                htmlList.appendChild(li);
+                //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }
 }
-
+function getFavorites() {
+    return favorites
+}
 function clearMarkers() {
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
