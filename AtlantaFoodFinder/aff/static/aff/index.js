@@ -307,6 +307,10 @@ async function showFavorites() {
     }
 }
 function getFavorites() {
+    let list = document.getElementById('favoritesPrint')
+    for (let i = 0; i < favorites.length; i++) {
+        list.appendChild(favorites[i])
+    }
     return favorites;
 }
 
