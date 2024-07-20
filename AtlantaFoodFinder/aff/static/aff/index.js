@@ -288,7 +288,7 @@ async function showFavorites() {
 }
 async function showFavoritesHelper() {
     clearMarkers();
-    alert("yes")
+    alert("yes indeed")
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     let htmlList = document.getElementById("favoritesList")
