@@ -304,7 +304,7 @@ async function showFavorites() {
                 let business_id = business_ids.split('\n')[i];
                 let address = addresses.split('\n')[i];
                 let item = document.createElement('li')
-                item.textContent = actName
+                item.textContent = actName + ", " + address + ", " + star
                 htmlList.appendChild(item)
                 await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
