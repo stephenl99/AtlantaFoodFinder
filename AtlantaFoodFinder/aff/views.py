@@ -114,7 +114,7 @@ def builder(request):
 
 def favorites(request):
     template_name = "aff/favorites.html"
-    return render(request, "aff/../../templates/aff/favorites.html")
+    return render(request, "aff/../../templates/aff/../templates/favorites.html")
 
 def explore(request):
     template_name = "aff/explore.html"
