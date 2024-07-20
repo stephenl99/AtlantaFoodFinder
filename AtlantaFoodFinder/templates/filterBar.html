@@ -26,12 +26,7 @@
                 alt=""
                 src="{% static '' %}./public/icon--search.svg"
               />
-
-              <input
-                class="type-your-message3"
-                placeholder="Search"
-                type="text"
-              />
+                <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search by keyword">
             </div>
             <div class="column20">
               <div class="nav-link20">
@@ -93,54 +88,7 @@
                 <div class="clear-button">
                   <div class="clear9">Clear</div>
                 </div>
-              </div>
-              <div class="checkbox-filters">
-                <div class="checkbox-options-wrapper">
-                  <div class="checkbox-options">
-                    <div class="checkbox24">
-                      <input class="checkbox-icons" type="checkbox" onclick="choiceCuisine('American')" />
-
-                      <div class="label24">American</div>
-                    </div>
-                    <div class="checkbox25">
-                      <input class="frame-input22" type="checkbox" onclick="choiceCuisine('Vietnamese')"/>
-
-                      <div class="label25">Chinese</div>
-                    </div>
-                    <div class="checkbox26">
-                      <input class="frame-input23" type="checkbox" onclick="choiceCuisine('Cuban')"/>
-
-                      <div class="label26">Cuban</div>
-                    </div>
-                    <div class="checkbox27">
-                      <input class="frame-input24" type="checkbox" onclick="choiceCuisine('Japanese')"/>
-
-                      <div class="label27">Japanese</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="checkbox-group">
-                  <div class="checkbox28">
-                    <input class="checkbox-icons1" type="checkbox" onclick="choiceCuisine('Korean')"/>
-
-                    <div class="label28">Korean</div>
-                  </div>
-                  <div class="checkbox29">
-                    <input class="frame-input25" type="checkbox" onclick="choiceCuisine('Mediterranean')"/>
-
-                    <div class="label29">Mediterranean</div>
-                  </div>
-                  <div class="checkbox30">
-                    <input class="frame-input26" type="checkbox" onclick="choiceCuisine('Mexican')"/>
-
-                    <div class="label30">Mexican</div>
-                  </div>
-                  <div class="checkbox31">
-                    <input class="frame-input27" type="checkbox" onclick="choiceCuisine('Vietnamese')"/>
-
-                    <div class="label31">Vietnamese</div>
-                  </div>
-                </div>
+              <input type="text" id="restaurantCuisine" onkeyup="getRestaurantCuisine()" placeholder="Search by cuisine">
               </div>
             </div>
             <div class="filter-three-container1">
