@@ -348,6 +348,7 @@ async function showFavoritesHtml() {
 function getFavorites() {
     return favorites
 }
+
 function clearMarkers() {
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
