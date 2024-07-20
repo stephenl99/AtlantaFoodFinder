@@ -289,11 +289,38 @@ async function showFavorites() {
 // }
 // async function showFavoritesHelper() {
     clearMarkers();
+    for (let i = 0; i < length; i++) {
+        let tempID = String(business_ids.split('\n')[i]);
+        //alert(tempID);
+        for (let j = 0; j < favorites.length; j++) {
+            let s = favorites[j];
+            //alert(s);
+            if (s === tempID) {
+                //alert("working, " + s);
+                let actName = names.split('\n')[i].toUpperCase();
+                let category = categories.split('\n')[i].toUpperCase();
+                let lat = latitudes.split('\n')[i];
+                let long = longitudes.split('\n')[i];
+                let star = stars.split('\n')[i];
+                let business_id = business_ids.split('\n')[i];
+                let address = addresses.split('\n')[i];
+                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+            }
+        }
+    }
+}
+
+async function showFavoritesHtml() {
+//    let input = document.getElementById('getFavorites');
+//     input.addEventListener("onclick", showFavoritesHelper);
+// }
+// async function showFavoritesHelper() {
+    clearMarkers();
     alert("yes indeed")
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     let htmlList = document.getElementById('favoritesList')
-    //htmlList.innerHTML = '';
+    htmlList.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
