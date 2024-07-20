@@ -296,6 +296,7 @@ async function showFavorites() {
             //alert(s);
             if (s === tempID) {
                 alert("working, " + s);
+                let realName = names.split('\n')[i];
                 let actName = names.split('\n')[i].toUpperCase();
                 let category = categories.split('\n')[i].toUpperCase();
                 let lat = latitudes.split('\n')[i];
@@ -304,7 +305,7 @@ async function showFavorites() {
                 let business_id = business_ids.split('\n')[i];
                 let address = addresses.split('\n')[i];
                 let item = document.createElement('li')
-                item.textContent = actName + ", Address: " + address + ", Star: " + star
+                item.textContent = realName + ", Address: " + address + ", Star: " + star
                 htmlList.appendChild(item)
                 await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
