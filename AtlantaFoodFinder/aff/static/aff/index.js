@@ -60,6 +60,7 @@ async function initMap() {
   await getRestaurantRating1();
   await getRestaurantRadius();
   await choiceCuisine("empty");
+  await showFavorites();
   await clearMarkers();
 }
 
