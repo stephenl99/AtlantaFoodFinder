@@ -60,7 +60,6 @@ async function initMap() {
   await getRestaurantRating1();
   await getRestaurantRadius();
   await choiceCuisine("empty");
-  await showFavorites();
   await clearMarkers();
 }
 
@@ -141,7 +140,7 @@ async function getRestaurantCuisineHelper() {
           let long = longitudes.split('\n')[i]
           let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
-          await makeMarker(lat, long, actName, category, star, business_id, address);
+          makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
@@ -283,43 +282,15 @@ async function name(inputName, fav) {
     alert(userName + ", " + favorites);
 }
 
-async function showFavorites() {
-//    let input = document.getElementById('getFavorites');
-//     input.addEventListener("onclick", showFavoritesHelper);
-// }
-// async function showFavoritesHelper() {
-    clearMarkers();
-    for (let i = 0; i < length; i++) {
-        let tempID = String(business_ids.split('\n')[i]);
-        //alert(tempID);
-        for (let j = 0; j < favorites.length; j++) {
-            let s = favorites[j];
-            //alert(s);
-            if (s === tempID) {
-                //alert("working, " + s);
-                let actName = names.split('\n')[i].toUpperCase();
-                let category = categories.split('\n')[i].toUpperCase();
-                let lat = latitudes.split('\n')[i];
-                let long = longitudes.split('\n')[i];
-                let star = stars.split('\n')[i];
-                let business_id = business_ids.split('\n')[i];
-                let address = addresses.split('\n')[i];
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
-            }
-        }
-    }
+function showFavorites() {
+    let input = document.getElementById('getFavorites');
+    input.addEventListener("dblclick", showFavoritesHelper);
 }
-
-async function showFavoritesHtml() {
-//    let input = document.getElementById('getFavorites');
-//     input.addEventListener("onclick", showFavoritesHelper);
-// }
-// async function showFavoritesHelper() {
+function showFavoritesHelper() {
     clearMarkers();
-    alert("yes indeed")
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
-    let htmlList = document.getElementById('favoritesList')
+    let htmlList = document.getElementById("favoritesList")
     htmlList.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
@@ -328,7 +299,7 @@ async function showFavoritesHtml() {
             let s = favorites[j];
             //alert(s);
             if (s === tempID) {
-                //alert("working, " + s);
+                alert("working, " + s);
                 let actName = names.split('\n')[i].toUpperCase();
                 let category = categories.split('\n')[i].toUpperCase();
                 let lat = latitudes.split('\n')[i];
@@ -339,8 +310,7 @@ async function showFavoritesHtml() {
                 const li = document.createElement('li');
                 li.textContent = actName;
                 htmlList.appendChild(li);
-                alert(li.textContent)
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }
@@ -348,7 +318,6 @@ async function showFavoritesHtml() {
 function getFavorites() {
     return favorites
 }
-
 function clearMarkers() {
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
