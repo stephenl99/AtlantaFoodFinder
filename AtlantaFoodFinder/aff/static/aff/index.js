@@ -291,7 +291,7 @@ function showFavoritesHelper() {
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     let htmlList = document.getElementById("favoritesList")
-    favorites.innerHTML = '';
+    htmlList.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
