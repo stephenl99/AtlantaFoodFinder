@@ -284,7 +284,8 @@ async function name(inputName, fav) {
 
 async function showFavorites() {
     let input = document.getElementById('getFavorites');
-    input.addEventListener("dblclick", showFavoritesHelper);
+    input.addEventListener("onclick", showFavoritesHelper);
+    alert("yes")
 }
 async function showFavoritesHelper() {
     clearMarkers();
