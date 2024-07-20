@@ -282,11 +282,11 @@ async function name(inputName, fav) {
     alert(userName + ", " + favorites);
 }
 
-async function showFavorites() {
+function showFavorites() {
     let input = document.getElementById('getFavorites');
     input.addEventListener("dblclick", showFavoritesHelper);
 }
-async function showFavoritesHelper() {
+function showFavoritesHelper() {
     clearMarkers();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
@@ -305,7 +305,7 @@ async function showFavoritesHelper() {
                 let star = stars.split('\n')[i];
                 let business_id = business_ids.split('\n')[i];
                 let address = addresses.split('\n')[i];
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }
