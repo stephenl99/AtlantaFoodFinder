@@ -306,6 +306,9 @@ async function showFavorites() {
         }
     }
 }
+function getFavorites() {
+    return favorites;
+}
 
 function clearMarkers() {
     for (let j = 0; j < markersList.length; j++) {

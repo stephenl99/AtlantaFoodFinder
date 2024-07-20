@@ -12,12 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
     />
   </head>
-  <body>
+  <body onload="getFavorites()">
   {% include 'heading.html' %}
     <div class="favorites">
       <main class="table-1">
         <form class="table">
           <div class="card-header-1">
+              <ul>
+                  <text>This is list</text>
+              </ul>
             <div class="column8">
               <h3 class="heading-goes-here">Favorites</h3>
               <div class="lorem-ipsum-dolor6">Find your saved favorites</div>
