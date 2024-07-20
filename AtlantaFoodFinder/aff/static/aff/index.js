@@ -141,7 +141,7 @@ async function getRestaurantCuisineHelper() {
           let long = longitudes.split('\n')[i]
           let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id, address);
+          await makeMarker(lat, long, actName, category, star, business_id, address);
       }
     }
 }
