@@ -246,7 +246,7 @@ async function makeMarker(lat, long, name, category, star, business_id, address)
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
                 <input type="hidden" name="name" value=${business_id} required>
-                <butto\n type="submit">Add to favorites</button>
+                <button type="submit">Add to favorites</button>
             </form>
             <form method="get" action=${"'removeMapView/'"}>
                 <input type="hidden" name="name" value=${business_id} required>
@@ -310,7 +310,7 @@ function showFavoritesHelper() {
                 const li = document.createElement('li');
                 li.textContent = actName;
                 htmlList.appendChild(li);
-                //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }
