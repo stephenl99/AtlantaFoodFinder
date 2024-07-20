@@ -114,7 +114,19 @@ def builder(request):
 
 def favorites(request):
     template_name = "aff/favorites.html"
-    return render(request, "aff/../../templates/favorites.html")
+    if favoriteRestaurant.objects.filter(associatedUser=request.user.username).exists():
+        list = []
+        for r in favoriteRestaurant.objects.filter(associatedUser=request.user.username):
+            print(r.associatedUser)
+            list.append(r.restaurant)
+        values = {
+            "data": request.user.username,
+            "favorites": list,
+        }
+        data = dumps(values)
+        return render(request, template_name,{'data': data})
+    else:
+        return render(request, "aff/../../templates/favorites.html")
 
 def explore(request):
     template_name = "aff/explore.html"

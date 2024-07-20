@@ -12,7 +12,22 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
     />
   </head>
-  <body onload="getFavorites()">
+  <script>
+      let data = JSON.parse("{{data|escapejs}}");
+      let y = 0;
+      let temp1;
+      let temp2;
+      for (let x in data) {
+          if (y == 0) {
+              temp1 = data[x];
+              y = y + 1;
+          } else {
+              temp2 = data[x];
+          }
+      }
+
+  </script>
+  <body>
   {% include 'heading.html' %}
     <div class="favorites">
       <main class="table-1">

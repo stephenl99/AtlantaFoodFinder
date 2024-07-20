@@ -284,6 +284,7 @@ async function name(inputName, fav) {
 
 async function showFavorites() {
     clearMarkers();
+    let htmlList = document.getElementById('restaurantList')
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     for (let i = 0; i < length; i++) {
@@ -301,6 +302,7 @@ async function showFavorites() {
                 let star = stars.split('\n')[i];
                 let business_id = business_ids.split('\n')[i];
                 let address = addresses.split('\n')[i];
+                htmlList.appendChild(actName)
                 await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
