@@ -285,6 +285,7 @@ async function name(inputName, fav) {
 async function showFavorites() {
     clearMarkers();
     let htmlList = document.getElementById('restaurantList')
+    htmlList.innerHTML = "";
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     for (let i = 0; i < length; i++) {
