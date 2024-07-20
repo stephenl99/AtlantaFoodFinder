@@ -56,6 +56,7 @@ async function initMap() {
   await getRestaurantRating();
   await getRestaurantRadius();
   await choiceCuisine("empty");
+  await favorite();
   await clearMarkers();
 }
 
@@ -94,7 +95,7 @@ async function getRestaurantGeneralHelper() {
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
           const business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id, address);
+          makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -113,7 +114,7 @@ async function choiceCuisine(name) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             const lat = latitudes.split('\n')[i];
             const long = longitudes.split('\n')[i];
-            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i], addresses.split('\n')[i]);
+            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i], addresses.split('\n')[i], i);
         }
     }
 }
@@ -136,7 +137,7 @@ async function getRestaurantCuisineHelper() {
           const long = longitudes.split('\n')[i]
           const star = stars.split('\n')[i]
           const business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id, address);
+          makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -157,7 +158,7 @@ async function getRestaurantRatingHelper() {
           const long = longitudes.split('\n')[i];
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id, address);
+          await makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -177,7 +178,7 @@ async function getRestaurantRadiusHelper() {
           const address = addresses.split('\n')[i].toUpperCase();
           const star = stars.split('\n')[i];
           const business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id, address);
+          await makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -199,13 +200,12 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-async function makeMarker(lat, long, name, category, star, business_id, address) {
+async function makeMarker(lat, long, name, category, star, business_id, address, index) {
     let newName = name.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
     let newAddress = address.replaceAll("'", "`");
     let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
     let leaveReview = "https://www.yelp.com/writeareview/biz/" + business_id + "?return_url=%2Fbiz%2F" + business_id + "&review_origin=biz-details-war-button";
-    //alert(newBusiness_id);
     const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
     const location = {lat: parseFloat(lat), lng: parseFloat(long)};
     const marker = new AdvancedMarkerElement({
@@ -222,11 +222,11 @@ async function makeMarker(lat, long, name, category, star, business_id, address)
             <p><strong>Business ID:</strong> ${business_id}</p>
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
-                <input type="hidden" name="name" value=${business_id} required>
+                <input type="hidden" name="name" value=${index} required>
                 <button type="submit">Add to favorites</button>
             </form>
             <form method="get" action=${"'removeMapView/'"}>
-                <input type="hidden" name="name" value=${business_id} required>
+                <input type="hidden" name="name" value=${index} required>
                 <button type="submit">Remove from favorites</button>
             </form>
         </div>
@@ -244,42 +244,34 @@ async function makeMarker(lat, long, name, category, star, business_id, address)
     markersList.push(marker);
 }
 
-function addToFavorites(name) {
-    //const fs = require('fs');
-    //fs.writeFile('userFavoritesList.txt', "hello", err => {
-      //  if (err) throw err;
-    //});
-    favorites.push(name);
-    alert(favorites.length + ", " + name + ", " + userName);
-}
-
 async function name(inputName, fav) {
     userName = inputName;
     favorites = fav;
     alert(userName + ", " + favorites);
 }
 
+async function favorite() {
+    const input = document.getElementById('favorites');
+    filter = input.value;
+    alert(filter);
+    input.addEventListener("dblclick", showFavorites);
+}
+
 async function showFavorites() {
     clearMarkers();
-    //alert(ids.split('\n')[0]);
-    //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
-    for (var i = 0; i < length; i++) {
-        var tempID = String(business_ids.split('\n')[i]);
-        //alert(tempID);
-        for (var j = 0; j < favorites.length; j++) {
-            var s = favorites[j];
-            //alert(s);
-            if (s === tempID) {
-                alert("working, " + s);
-                var actName = names.split('\n')[i].toUpperCase();
-                var category = categories.split('\n')[i].toUpperCase();
-                const lat = latitudes.split('\n')[i];
-                const long = longitudes.split('\n')[i];
-                const star = stars.split('\n')[i];
-                const business_id = business_ids.split('\n')[i];
-                const address = addresses.split('\n')[i];
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
-            }
+    for (var j = 0; j < favorites.length; j++) {
+        var s = favorites[j];
+        //alert("working, " + s);
+        if (s >= 0 && s <= 5000) {
+            alert("working, " + s);
+            var actName = names.split('\n')[s].toUpperCase();
+            var category = categories.split('\n')[s].toUpperCase();
+            const lat = latitudes.split('\n')[s];
+            const long = longitudes.split('\n')[s];
+            const star = stars.split('\n')[s];
+            const business_id = business_ids.split('\n')[s];
+            const address = addresses.split('\n')[s];
+            await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
 }
