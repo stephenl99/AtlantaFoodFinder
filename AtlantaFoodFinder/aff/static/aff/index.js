@@ -322,6 +322,7 @@ function getFavorites() {
     return favorites
 }
 function clearMarkers() {
+    alert("hello")
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
     }
