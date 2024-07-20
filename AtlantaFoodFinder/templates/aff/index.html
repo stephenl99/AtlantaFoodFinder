@@ -20,7 +20,7 @@
   <input type="text" id="restaurantStar" onkeyup="getRestaurantRating()" placeholder="Search by rating">
 {#  <input type="text" id="restaurantRadius" onkeyup="getRestaurantRadius()" placeholder="Search by radius (km)">#}
 {#    Following button displays favorites on map (showFavorites()), might not need after doing frontend stuff#}
-  <button onclick="showFavorites()">Show favorites</button>
+  <button id="getFavorites" onclick="showFavorites()">Show favorites</button>
     <div class="cuisine_type_list">
 {#        The following button probably wont be needed, just shows the drop down menu for Chinese, Cuban, etc.#}
         <button class="list_button" onclick="display_list()">

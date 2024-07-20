@@ -283,6 +283,10 @@ async function name(inputName, fav) {
 }
 
 async function showFavorites() {
+    let input = document.getElementById('getFavorites');
+    input.addEventListener("dblclick", showFavoritesHelper);
+}
+async function showFavoritesHelper() {
     clearMarkers();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
