@@ -292,7 +292,7 @@ async function showFavorites() {
     alert("yes indeed")
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
-    let htmlList = document.getElementById("favoritesList")
+    let htmlList = document.getElementById('favoritesList')
     //htmlList.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
@@ -322,7 +322,6 @@ function getFavorites() {
     return favorites
 }
 function clearMarkers() {
-    alert("hello")
     for (let j = 0; j < markersList.length; j++) {
       markersList[j].map = null;
     }
