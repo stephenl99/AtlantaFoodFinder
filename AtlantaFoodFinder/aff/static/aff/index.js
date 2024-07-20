@@ -282,16 +282,16 @@ async function name(inputName, fav) {
     alert(userName + ", " + favorites);
 }
 
-function showFavorites() {
+async function showFavorites() {
     let input = document.getElementById('getFavorites');
     input.addEventListener("dblclick", showFavoritesHelper);
 }
-function showFavoritesHelper() {
+async function showFavoritesHelper() {
     clearMarkers();
     //alert(ids.split('\n')[0]);
     //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
     let htmlList = document.getElementById("favoritesList")
-    htmlList.innerHTML = '';
+    //htmlList.innerHTML = '';
     for (let i = 0; i < length; i++) {
         let tempID = String(business_ids.split('\n')[i]);
         //alert(tempID);
@@ -299,7 +299,7 @@ function showFavoritesHelper() {
             let s = favorites[j];
             //alert(s);
             if (s === tempID) {
-                alert("working, " + s);
+                //alert("working, " + s);
                 let actName = names.split('\n')[i].toUpperCase();
                 let category = categories.split('\n')[i].toUpperCase();
                 let lat = latitudes.split('\n')[i];
@@ -310,7 +310,8 @@ function showFavoritesHelper() {
                 const li = document.createElement('li');
                 li.textContent = actName;
                 htmlList.appendChild(li);
-                makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
+                alert(li.textContent)
+                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
             }
         }
     }
