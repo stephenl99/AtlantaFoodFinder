@@ -293,11 +293,10 @@ async function showFavorites() {
     clearMarkers();
     let htmlList = document.getElementById("restaurantList")
     htmlList.innerHTML = "";
-    for (var j = 0; j < favorites.length; j++) {
-        var s = favorites[j];
+    for (let j = 0; j < favorites.length; j++) {
+        const s = favorites[j];
         //alert("working, " + s);
         if (s >= 0 && s <= length) {
-            alert("working, " + s);
             let actName = names.split('\n')[s].toUpperCase();
             let realName = names.split('\n')[s];
             let category = categories.split('\n')[s].toUpperCase();
@@ -309,7 +308,8 @@ async function showFavorites() {
             let item = document.createElement('li')
             item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
             htmlList.appendChild(item)
-            await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
+            alert("working, " + s);
+            makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
 }
