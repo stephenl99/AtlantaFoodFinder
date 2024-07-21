@@ -299,7 +299,7 @@ async function showFavorites() {
         if (s >= 0 && s <= length) {
             alert("working, " + s);
             let actName = names.split('\n')[s].toUpperCase();
-            let realName = names.split('\n')[i];
+            let realName = names.split('\n')[s];
             let category = categories.split('\n')[s].toUpperCase();
             let lat = latitudes.split('\n')[s];
             let long = longitudes.split('\n')[s];
