@@ -21,7 +21,7 @@
               class="company-logo-icon"
               loading="lazy"
               alt=""
-              src="{% static 'public/company-logo.svg' %}"
+              src="{% static '' %}./public/screenshot-20240720-193819-1@2x.png"
             />
 
             <div class="join-our-newsletter">
@@ -186,14 +186,14 @@
       var linkContainer2 = document.getElementById("linkContainer2");
       if (linkContainer2) {
         linkContainer2.addEventListener("click", function (e) {
-          window.location.href = "../explore";
+          window.location.href = "{% url 'map_view'%}";
         });
       }
       
       var linkContainer3 = document.getElementById("linkContainer3");
       if (linkContainer3) {
         linkContainer3.addEventListener("click", function (e) {
-          window.location.href = "../favorites";
+          window.location.href = "{% url 'map_view'%}";
         });
       }
 
