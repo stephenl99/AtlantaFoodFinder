@@ -82,7 +82,7 @@ async function showPosition(position) {
 }
 
 async function getRestaurantGeneral() {
-  let input = document.getElementById("restaurant");
+  let input = document.getElementById("restaurantSearch");
   filter = input.value.toUpperCase();
   input.addEventListener("dblclick", getRestaurantGeneralHelper);
 }
