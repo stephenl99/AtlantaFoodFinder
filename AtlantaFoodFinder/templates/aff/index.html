@@ -13,24 +13,14 @@
   <body>
 
 <div id="search">
+    <button class="button105"  id="clearMarker" onclick="clearMarkers()">
+        <div class="button106">Clear Markers</div>
+    </button>
     <div id="restaurantsBox">
         <h2>Favorite Restaurants</h2>
         <ul id="restaurantList">
         </ul>
     </div>
-    <style>
-        .center {
-  margin: 0;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-    </style>
-    <button class="button105" id="clearMarker" onclick="clearMarkers()">
-        <div class="center">Clear Markers</div>
-    </button>
 </div>
 {#You can decide if need this button, just clears markers for clarity.#}
 {#All of the following stuff is essential, displays map, loads js file, and gets data of current user and restaurants associated#}
