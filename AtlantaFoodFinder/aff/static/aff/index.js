@@ -279,7 +279,7 @@ function addToFavorites(name) {
 async function name(inputName, fav) {
     userName = inputName;
     favorites = fav;
-    alert(userName + ", " + favorites);
+    //alert(userName + ", " + favorites);
 }
 
 async function favorite() {
@@ -308,17 +308,9 @@ async function showFavorites() {
             let item = document.createElement('li')
             item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
             htmlList.appendChild(item)
-            alert("working, " + s);
             makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
-}
-function getFavorites() {
-    let list = document.getElementById("favoritesPrint")
-    for (let i = 0; i < favorites.length; i++) {
-        list.appendChild(favorites[i])
-    }
-    return favorites;
 }
 
 function clearMarkers() {
