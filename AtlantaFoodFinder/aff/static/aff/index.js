@@ -84,7 +84,7 @@ async function showPosition(position) {
 async function getRestaurantGeneral() {
   let input = document.getElementById("restaurantSearch");
   filter = input.value.toUpperCase();
-  input.addEventListener("dblclick", getRestaurantGeneralHelper);
+  input.addEventListener("click", getRestaurantGeneralHelper);
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -125,7 +125,7 @@ async function choiceCuisine(name) {
 async function getRestaurantCuisine() {
   let input = document.getElementById("restaurantCuisine");
   filter = input.value.toUpperCase();
-  input.addEventListener("dblclick", getRestaurantCuisineHelper);
+  input.addEventListener("click", getRestaurantCuisineHelper);
 }
 
 async function getRestaurantCuisineHelper() {
@@ -147,26 +147,26 @@ async function getRestaurantCuisineHelper() {
 async function getRestaurantRating5() {
     let input = document.getElementById("restaurantStar5");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRatingHelper);
+  input.addEventListener("click", getRestaurantRatingHelper);
 }
 async function getRestaurantRating4() {
     let input = document.getElementById("restaurantStar4");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRatingHelper);
+  input.addEventListener("click", getRestaurantRatingHelper);
 }
 async function getRestaurantRating3() {
     let input = document.getElementById("restaurantStar3");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRatingHelper);
+  input.addEventListener("click", getRestaurantRatingHelper);
 }async function getRestaurantRating2() {
     let input = document.getElementById("restaurantStar2");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRatingHelper);
+  input.addEventListener("click", getRestaurantRatingHelper);
 }
 async function getRestaurantRating1() {
     let input = document.getElementById("restaurantStar1");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRatingHelper);
+  input.addEventListener("click", getRestaurantRatingHelper);
 }
 async function getRestaurantRatingHelper() {
     clearMarkers();
@@ -187,7 +187,7 @@ async function getRestaurantRatingHelper() {
 async function getRestaurantRadius() {
     let input = document.getElementById("restaurantRadius");
     filter = input.value;
-  input.addEventListener("dblclick", getRestaurantRadiusHelper);
+  input.addEventListener("click", getRestaurantRadiusHelper);
 }
 async function getRestaurantRadiusHelper() {
     clearMarkers();
@@ -286,7 +286,7 @@ async function favorite() {
     const input = document.getElementById('favorites');
     filter = input.value;
     alert(filter);
-    input.addEventListener("dblclick", showFavorites);
+    input.addEventListener("click", showFavorites);
 }
 
 async function showFavorites() {
