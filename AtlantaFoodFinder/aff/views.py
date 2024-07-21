@@ -130,5 +130,6 @@ def favorites(request):
         return render(request, "aff/../../templates/favorites.html")
 
 def explore(request):
-    template_name = "aff/explore.html"
-    return render(request, "aff/../../templates/explore.html")
+    # template_name = "aff/explore.html"
+    # return render(request, "aff/../../templates/explore.html")
+    return redirect('map_view')
