@@ -16,142 +16,285 @@
 
   </head>
   <body>
-    <div class="fiiller">
-      <div class="main">
-        <div class="topbar-32">
-          <div class="container7">
-            <div class="text-input12">
-              <img
-                class="icon-search3"
-                alt=""
-                src="{% static '' %}./public/icon--search.svg"
-              />
-                <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search by keyword">
-            </div>
-            <div class="column20">
-              <div class="nav-link20">
-                <img
-                  class="icon-bell2"
-                  loading="lazy"
-                  alt=""
-                  src="{% static '' %}./public/icon--bell.svg"
-                />
-              </div>
-              <div class="profile3">
-                <img
-                  class="avatar-image-icon3"
-                  alt=""
-                  src="{% static '' %}./public/avatar-image@2x.png"
-                />
+    <div class="navfilter">
+      <div class="container11">
+        <div class="column21">
+          <img
+            class="company-logo-icon9"
+            loading="lazy"
+            alt=""
+            src={% static '' %}./public/icon--filter.svg"
+          />
 
-
-                  {% if user.is_authenticated %}
-                      <div class="text">{{ user.username }}</div>
-                  {% else %}
-                      <div class="text">username</div>
-                  {% endif %}
+          <button class="column22">
+            <div class="nav-link21" id="navLinkContainer">
+              <div class="nav-link-dropdown1">
+                <div class="link57">Cuisine</div>
                 <img
-                  class="chevron-down-icon5"
+                  class="chevron-down-icon6"
                   alt=""
                   src="{% static '' %}./public/chevron-down-1.svg"
                 />
               </div>
             </div>
-          </div>
+          </button>
+          <button class="nav-link22" id="navLink">
+            <div class="nav-link-dropdown2">
+              <div class="link58">Rating</div>
+              <img
+                class="chevron-down-icon7"
+                alt=""
+                src="{% static '' %}./public/chevron-down-1.svg"
+              />
+            </div>
+          </button>
+          <button class="nav-link23" id="navLink1">
+            <div class="nav-link-dropdown3">
+              <div class="link59">Distance</div>
+              <img
+                class="chevron-down-icon8"
+                alt=""
+                src="{% static '' %}./public/chevron-down-1.svg"
+              />
+            </div>
+          </button>
+          <button class="nav-link24">
+            <div class="nav-link-dropdown4">
+              <div class="link60">Favorites</div>
+              <img
+                class="chevron-down-icon9"
+                alt=""
+                src="{% static '' %}./public/chevron-down-1.svg"
+              />
+            </div>
+          </button>
         </div>
-        <button class="button94" id="button">
-          <img class="icon-filter2" alt="" src="{% static '' %}./public/icon--filter.svg" />
+        <div class="column23">
+          <div class="text-input15">
+            <img class="icon-search4" alt="" src="{% static '' %}./public/icon--search.svg" />
 
-          <div class="button95">Filters</div>
-        </button>
+            <input type="text" id="restaurant" onkeyup="getRestaurantGeneral()" placeholder="Search by keyword">
+          </div>
+          <div class="nav-link25">
+            <img
+              class="icon-bell3"
+              loading="lazy"
+              alt=""
+              src="{% static '' %}./public/icon--bell.svg"
+            />
+          </div>
+          <img
+            class="avatar-image-icon4"
+            loading="lazy"
+            alt=""
+            src="{% static '' %}./public/avatar-image@2x.png"
+          />
+        </div>
       </div>
     </div>
 
-    <div id="sidefilterPopup" class="popup-overlay" style="display: none">
-      <div class="sidefilter">
-        <h3 class="heading25">Filters</h3>
-        <section class="content87">
-          <div class="modal-footer3">
-            <div class="primary-buttons">
-              <div class="button96">
-                <div class="button97">Clear all</div>
-              </div>
-            </div>
-            <button class="button98">
-              <div class="button99">Apply</div>
-            </button>
-          </div>
-          <div class="filters3">
-            <div class="filter-one-container">
-              <div class="row22">
-                <div class="filter-one3">Cuisines</div>
-                <div class="clear-button">
-                  <div class="clear9">Clear</div>
-                </div>
-              <input type="text" id="restaurantCuisine" onkeyup="getRestaurantCuisine()" placeholder="Search by cuisine">
-              </div>
-            </div>
-            <div class="filter-three-container1">
-              <div class="filter-three5">
-                <div class="row23">
-                  <div class="filter-three6">Ratings</div>
-                  <div class="clear10">Clear</div>
-                </div>
-                <div class="option-wrapper3">
-                  <button class="checkbox-35">
-                      <input type="text" id="restaurantStar5" ondblclick="getRestaurantRating5()" value=5.0 placeholder="5.0" readonly>
-                  </button>
-                  <button class="checkbox-36">
-                      <input type="text" id="restaurantStar4" ondblclick="getRestaurantRating4()" value=4.0 placeholder="4.0" readonly>
-                  </button>
-                  <button class="checkbox-43">
-                      <input type="text" id="restaurantStar3" ondblclick="getRestaurantRating3()" value=3.0 placeholder="3.0" readonly>
-                  </button>
-                  <button class="checkbox-53">
-                    <input type="text" id="restaurantStar2" ondblclick="getRestaurantRating2()" value=2.0 placeholder="2.0" readonly>
-                  </button>
-                  <button class="checkbox-63">
-{#                    <div class="button104" id="1 star button" onclick="getRestaurantRating(1.0)">1.0</div>#}
-                    <input type="text" id="restaurantStar1" ondblclick="getRestaurantRating1()" value=1.0 placeholder="1.0" readonly>
+    <div id="cuisinePopup" class="popup-overlay" style="display: none">
+      <div class="cuisine1">
+        <div class="banner-61">
+          <div class="container10">
+            <div class="content93">
+              <img
+                class="icon-relume13"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon--relume.svg"
+              />
 
-                  </button>
+              <div class="content94">
+                <div class="heading28">Select your cuisine here!</div>
+                <div class="text36">
+                  Options include: American, Chinese, Cuban, Italian, Japanese,
+                  Korean, Mediterranean, Mexican, and Vietnamese
                 </div>
               </div>
             </div>
-            <div class="filter-six-container">
-              <div class="filter-six-controls">
-                <div class="row24">
-                  <div class="filter-six3">Distance</div>
-                  <div class="clear-button1">
-                    <div class="clear11">Clear</div>
-                  </div>
+            <div class="content95">
+              <div class="form5">
+                <div class="text-input14">
+                  <input type="text" id="restaurantCuisine" onkeyup="getRestaurantCuisine()" placeholder="Search by cuisine">
                 </div>
-                <div class="slider-control">
-                  <div class="slider3">
-                    <div class="slider-track">
-                      <div class="progress-bar3"></div>
-                      <div class="circle3"></div>
-                    </div>
-                  </div>
-                </div>
+                <button class="button117">
+                  <div class="button118">Apply</div>
+                </button>
               </div>
-              <div class="empty-container">
-                <input class="input9" id="restaurantRadius" onkeyup="getRestaurantRadius()" placeholder="0" type="text" />
-              </div>
+              <img
+                class="icon2"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon.svg"
+                id="popupicon"
+              />
             </div>
-            <div class="filters-child"></div>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+
+    <div id="ratingsPopup" class="popup-overlay" style="display: none">
+      <div class="ratings">
+        <div class="banner-8">
+          <div class="container8">
+            <div class="content88">
+              <img
+                class="icon-relume11"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon--relume.svg"
+              />
+
+              <div class="content89">
+                <div class="heading26">Select your star rating!</div>
+                <div class="content-description">
+                  Looking for something with a certain quality? Select your star
+                  rating here!
+                </div>
+              </div>
+            </div>
+            <div class="actions10">
+              <div class="buttons3">
+                <button class="button105">
+                  <input type="text" id="restaurantStar5" ondblclick="getRestaurantRating5()" value=5.0 placeholder="5.0" readonly>
+                </button>
+                <button class="button107">
+                  <input type="text" id="restaurantStar4" ondblclick="getRestaurantRating4()" value=4.0 placeholder="4.0" readonly>
+                </button>
+                <button class="button109">
+                  <input type="text" id="restaurantStar3" ondblclick="getRestaurantRating3()" value=3.0 placeholder="3.0" readonly>
+                </button>
+                <button class="button111">
+                  <input type="text" id="restaurantStar2" ondblclick="getRestaurantRating2()" value=2.0 placeholder="2.0" readonly>
+                </button>
+                <button class="button113">
+                  <input type="text" id="restaurantStar1" ondblclick="getRestaurantRating1()" value=1.0 placeholder="1.0" readonly>
+                </button>
+              </div>
+              <img
+                class="icon"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon.svg"
+                id="popupicon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="distancePopup" class="popup-overlay" style="display: none">
+      <div class="distance">
+        <div class="banner-6">
+          <div class="container9">
+            <div class="content90">
+              <img
+                class="icon-relume12"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon--relume.svg"
+              />
+
+              <div class="content91">
+                <div class="heading27">
+                  Find restaurants within a certain distance!
+                </div>
+                <div class="paragraph">
+                  Looking for something within your reach? Just enter your
+                  distance here!
+                </div>
+                  <div class="empty-container">
+                    <input class="input9" id="restaurantRadius" onkeyup="getRestaurantRadius()" placeholder="0" type="text" />
+                  </div>
+              </div>
+            </div>
+            <div class="content92">
+              <div class="form4">
+                <div class="text-input13">
+                  <input
+                    class="placeholder1"
+                    placeholder="Distance (km)"
+                    type="text"
+                  />
+                </div>
+                <button class="button115">
+                  <div class="button116">Apply</div>
+                </button>
+              </div>
+              <img
+                class="icon1"
+                loading="lazy"
+                alt=""
+                src="{% static '' %}./public/icon.svg"
+                id="popupicon"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script>
-      let button = document.getElementById("button");
-      if(button) {
-        button.addEventListener("click", function () {
-          let popup = document.getElementById("sidefilterPopup");
+        var popupicon = document.getElementById("popupicon");
+        if(popupicon) {
+          popupicon.addEventListener("click", function (e) {
+            var popup = e.currentTarget.parentNode;
+            function isOverlay(node) {
+              return !!(node && node.classList && node.classList.contains("popup-overlay"));
+            }
+            while(popup && !isOverlay(popup)) {
+              popup = popup.parentNode;
+            }
+            if(isOverlay(popup)) {
+              popup.style.display = "none";
+            }
+          });
+        }
+
+
+        var popupicon = document.getElementById("popupicon");
+        if(popupicon) {
+          popupicon.addEventListener("click", function (e) {
+            var popup = e.currentTarget.parentNode;
+            function isOverlay(node) {
+              return !!(node && node.classList && node.classList.contains("popup-overlay"));
+            }
+            while(popup && !isOverlay(popup)) {
+              popup = popup.parentNode;
+            }
+            if(isOverlay(popup)) {
+              popup.style.display = "none";
+            }
+          });
+        }
+
+
+        var popupicon = document.getElementById("popupicon");
+        if(popupicon) {
+          popupicon.addEventListener("click", function (e) {
+            var popup = e.currentTarget.parentNode;
+            function isOverlay(node) {
+              return !!(node && node.classList && node.classList.contains("popup-overlay"));
+            }
+            while(popup && !isOverlay(popup)) {
+              popup = popup.parentNode;
+            }
+            if(isOverlay(popup)) {
+              popup.style.display = "none";
+            }
+          });
+        }
+
+
+      var navLinkContainer = document.getElementById("navLinkContainer");
+      if(navLinkContainer) {
+        navLinkContainer.addEventListener("click", function () {
+          var popup = document.getElementById("cuisinePopup");
           if(!popup) return;
-          let popupStyle = popup.style;
+          var popupStyle = popup.style;
           if(popupStyle) {
             popupStyle.display = "flex";
             popupStyle.zIndex = 100;
@@ -161,7 +304,55 @@
           }
           popup.setAttribute("closable", "");
 
-          let onClick = popup.onClick || function(e) {
+          var onClick = popup.onClick || function(e) {
+            if(e.target === popup && popup.hasAttribute("closable")) {
+              popupStyle.display = "none";
+            }
+          };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var navLink = document.getElementById("navLink");
+      if(navLink) {
+        navLink.addEventListener("click", function () {
+          var popup = document.getElementById("ratingsPopup");
+          if(!popup) return;
+          var popupStyle = popup.style;
+          if(popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+           popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick = popup.onClick || function(e) {
+            if(e.target === popup && popup.hasAttribute("closable")) {
+              popupStyle.display = "none";
+            }
+          };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var navLink1 = document.getElementById("navLink1");
+      if(navLink1) {
+        navLink1.addEventListener("click", function () {
+          var popup = document.getElementById("distancePopup");
+          if(!popup) return;
+          var popupStyle = popup.style;
+          if(popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+           popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick = popup.onClick || function(e) {
             if(e.target === popup && popup.hasAttribute("closable")) {
               popupStyle.display = "none";
             }

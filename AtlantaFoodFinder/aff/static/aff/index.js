@@ -98,12 +98,12 @@ async function getRestaurantGeneralHelper() {
           let long = longitudes.split('\n')[i]
           let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id, address);
+          makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
 async function display_list() {
-    let list = document.getElementById("cuisine_id");
+    var list = document.getElementById("cuisine_id");
     if (list.style.display === "block") {
         list.style.display = "none"
     } else {
@@ -117,7 +117,7 @@ async function choiceCuisine(name) {
         if (categories.split('\n')[i].toUpperCase().includes(name.toUpperCase())) {
             let lat = latitudes.split('\n')[i];
             let long = longitudes.split('\n')[i];
-            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i], addresses.split('\n')[i]);
+            await makeMarker(lat, long, names.split('\n')[i], categories.split('\n')[i], stars.split('\n')[i], business_ids.split('\n')[i], addresses.split('\n')[i], i);
         }
     }
 }
@@ -140,7 +140,7 @@ async function getRestaurantCuisineHelper() {
           let long = longitudes.split('\n')[i]
           let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
-          makeMarker(lat, long, actName, category, star, business_id, address);
+          makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -180,7 +180,7 @@ async function getRestaurantRatingHelper() {
           let long = longitudes.split('\n')[i];
           let star = stars.split('\n')[i];
           let business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id, address);
+          await makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -200,7 +200,7 @@ async function getRestaurantRadiusHelper() {
           let address = addresses.split('\n')[i].toUpperCase();
           let star = stars.split('\n')[i];
           let business_id = business_ids.split('\n')[i];
-          await makeMarker(lat, long, actName, category, star, business_id, address);
+          await makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
     }
 }
@@ -222,7 +222,7 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
-async function makeMarker(lat, long, name, category, star, business_id, address) {
+async function makeMarker(lat, long, name, category, star, business_id, address, index) {
     let newName = name.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
     let newAddress = address.replaceAll("'", "`");
@@ -245,11 +245,11 @@ async function makeMarker(lat, long, name, category, star, business_id, address)
             <p><strong>Business ID:</strong> ${business_id}</p>
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
-                <input type="hidden" name="name" value=${business_id} required>
+                <input type="hidden" name="name" value=${index} required>
                 <button type="submit">Add to favorites</button>
             </form>
             <form method="get" action=${"'removeMapView/'"}>
-                <input type="hidden" name="name" value=${business_id} required>
+                <input type="hidden" name="name" value=${index} required>
                 <button type="submit">Remove from favorites</button>
             </form>
         </div>
@@ -282,33 +282,34 @@ async function name(inputName, fav) {
     alert(userName + ", " + favorites);
 }
 
+async function favorite() {
+    const input = document.getElementById('favorites');
+    filter = input.value;
+    alert(filter);
+    input.addEventListener("dblclick", showFavorites);
+}
+
 async function showFavorites() {
     clearMarkers();
     let htmlList = document.getElementById("restaurantList")
     htmlList.innerHTML = "";
-    //alert(ids.split('\n')[0]);
-    //alert(ids.split('\n')[0] === 'z8-_6l5EhX5NuPfWzJYQMA');
-    for (let i = 0; i < length; i++) {
-        let tempID = String(business_ids.split('\n')[i]);
-        //alert(tempID);
-        for (let j = 0; j < favorites.length; j++) {
-            let s = favorites[j];
-            //alert(s);
-            if (s === tempID) {
-                alert("working, " + s);
-                let realName = names.split('\n')[i];
-                let actName = names.split('\n')[i].toUpperCase();
-                let category = categories.split('\n')[i].toUpperCase();
-                let lat = latitudes.split('\n')[i];
-                let long = longitudes.split('\n')[i];
-                let star = stars.split('\n')[i];
-                let business_id = business_ids.split('\n')[i];
-                let address = addresses.split('\n')[i];
-                let item = document.createElement('li')
-                item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
-                htmlList.appendChild(item)
-                await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address);
-            }
+    for (var j = 0; j < favorites.length; j++) {
+        var s = favorites[j];
+        //alert("working, " + s);
+        if (s >= 0 && s <= length) {
+            alert("working, " + s);
+            let actName = names.split('\n')[s].toUpperCase();
+            let realName = names.split('\n')[i];
+            let category = categories.split('\n')[s].toUpperCase();
+            let lat = latitudes.split('\n')[s];
+            let long = longitudes.split('\n')[s];
+            let star = stars.split('\n')[s];
+            let business_id = business_ids.split('\n')[s];
+            let address = addresses.split('\n')[s];
+            let item = document.createElement('li')
+            item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
+            htmlList.appendChild(item)
+            await makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
 }

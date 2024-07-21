@@ -21,7 +21,7 @@
               class="company-logo-icon7"
               loading="lazy"
               alt=""
-              src="{% static '' %}./public/company-logo.svg"
+              src="{% static '' %}./public/screenshot-20240720-193819-1@2x.png"
             />
 
             <div class="column14">
@@ -102,7 +102,7 @@
       let link4 = document.getElementById("link4");
       if(link4) {
         link4.addEventListener("click", function (e) {
-          window.location.href = "../favorites"
+          window.location.href = "{% url 'map_view'%}"
         });
       }
 
@@ -158,7 +158,7 @@
       let getInTouch = document.getElementById("getInTouch");
       if(getInTouch) {
         getInTouch.addEventListener("click", function (e) {
-          window.location.href = "../explore"
+          window.location.href = "{% url 'map_view'%}"
         });
       }
     </script>
