@@ -304,8 +304,7 @@ async function showFavorites() {
             let actName = names.split('\n')[s].toUpperCase();
             let realName = names.split('\n')[s];
             let category = categories.split('\n')[s].toUpperCase();
-            let realCategory = categories.split('\n')[s]
-            realCategory = String(realCategory)
+            let realCategory = categories.split('\n')[s].replaceAll(",", "")
             let lat = latitudes.split('\n')[s];
             let long = longitudes.split('\n')[s];
             let star = stars.split('\n')[s];
@@ -323,7 +322,7 @@ async function showFavorites() {
                     <p><strong>Address:</strong> ${address}</p>
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
                     <p>
-                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, ${realCategory}, ${star}, ${business_id}, ${address}, ${index})">
+                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, `${realCategory}`, ${star}, ${business_id}, ${address}, ${index})">
                         <div class="button106">Display Marker</div>
                     </button></p>
                    </div>
