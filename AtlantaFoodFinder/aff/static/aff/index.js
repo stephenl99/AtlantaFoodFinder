@@ -314,7 +314,7 @@ async function showFavorites() {
             if (needs === true) {
                 let item = document.createElement('li')
                 // item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
-                let content =  `
+                item.innerHTML = `
                    <div>
                     <h3>${realName}</h3>
                     <p><strong>Categories:</strong> ${realCategory}</p>
@@ -323,7 +323,6 @@ async function showFavorites() {
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
                    </div>
                     `;
-                item.textContent = content;
                 htmlList.appendChild(item)
             }
             //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
