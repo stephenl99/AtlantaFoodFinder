@@ -311,6 +311,9 @@ async function showFavorites() {
             let business_id = business_ids.split('\n')[s];
             let index = s;
             let address = addresses.split('\n')[s];
+            let newName = realName.replaceAll("'", "`");
+            let newCategory = realCategory.replaceAll("'", "`");
+            let newAddress = address.replaceAll("'", "`");
             let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
             if (needs === true) {
                 let item = document.createElement('li')
@@ -322,7 +325,7 @@ async function showFavorites() {
                     <p><strong>Address:</strong> ${address}</p>
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
                     <p>
-                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, ${realCategory}, ${star}, ${business_id}, ${address}, ${index})">
+                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${newName}, ${newCategory}, ${star}, ${business_id}, ${newAddress}, ${index})">
                         <div class="button106">Display Marker</div>
                     </button></p>
                    </div>
