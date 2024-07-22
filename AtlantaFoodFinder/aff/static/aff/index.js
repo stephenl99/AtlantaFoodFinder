@@ -268,7 +268,7 @@ async function makeMarker(lat, long, name, category, star, business_id, address,
 }
 
 
-async function makeMarkerOne(i) {
+function makeMarkerOne(i) {
     clearMarkers();
     let lat = latitudes.split('\n')[i];
     let long = longitudes.split('\n')[i];
@@ -284,7 +284,7 @@ async function makeMarkerOne(i) {
     let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
     let leaveReview = "https://www.yelp.com/writeareview/biz/" + business_id + "?return_url=%2Fbiz%2F" + business_id + "&review_origin=biz-details-war-button";
     //alert(newBusiness_id);
-    let {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
+    let {AdvancedMarkerElement} = google.maps.importLibrary("marker");
     let location = {lat: parseFloat(lat), lng: parseFloat(long)};
     let marker = new AdvancedMarkerElement({
         map: map,
