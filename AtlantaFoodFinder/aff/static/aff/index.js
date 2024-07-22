@@ -309,11 +309,11 @@ async function showFavorites() {
             let long = longitudes.split('\n')[s];
             let star = stars.split('\n')[s];
             let business_id = business_ids.split('\n')[s];
+            let index = s;
             let address = addresses.split('\n')[s];
             let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
             if (needs === true) {
                 let item = document.createElement('li')
-                // item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
                 item.innerHTML = `
                    <div style="font-family: Roboto">
                     <h3>${realName}</h3>
@@ -321,6 +321,10 @@ async function showFavorites() {
                     <p><strong>Rating:</strong> ${star}</p>
                     <p><strong>Address:</strong> ${address}</p>
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
+                    <p>
+                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, ${realCategory}, ${star}, ${business_id}, ${address}, ${index})">
+                        <div class="button106">Display Marker</div>
+                    </button></p>
                    </div>
                     `;
                 htmlList.appendChild(item)
