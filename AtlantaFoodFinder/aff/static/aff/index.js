@@ -243,7 +243,7 @@ async function makeMarker(lat, long, name, category, star, business_id, address,
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
             <p><strong>Address:</strong> ${newAddress}</p>
-            <p><strong>Business ID:</strong> ${business_id}</p>
+            <!--<p><strong>Business ID:</strong> ${business_id}</p> -->
             <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
             <form method="get" action=${"'processMapView/'"}>
                 <input type="hidden" name="name" value=${index} required>
