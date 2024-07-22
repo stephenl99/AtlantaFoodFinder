@@ -266,63 +266,6 @@ async function makeMarker(lat, long, name, category, star, business_id, address,
     });
     markersList.push(marker);
 }
-
-
-function makeMarkerOne(i) {
-    clearMarkers();
-    let lat = latitudes.split('\n')[i];
-    let long = longitudes.split('\n')[i];
-    let actName = names.split('\n')[i].toUpperCase();
-    let category = categories.split('\n')[i].toUpperCase();
-    let address = addresses.split('\n')[i].toUpperCase();
-    let star = stars.split('\n')[i];
-    let business_id = business_ids.split('\n')[i];
-    let index = i;
-    let newName = actName.replaceAll("'", "`");
-    let newCategory = category.replaceAll("'", "`");
-    let newAddress = address.replaceAll("'", "`");
-    let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
-    let leaveReview = "https://www.yelp.com/writeareview/biz/" + business_id + "?return_url=%2Fbiz%2F" + business_id + "&review_origin=biz-details-war-button";
-    //alert(newBusiness_id);
-    let {AdvancedMarkerElement} = google.maps.importLibrary("marker");
-    let location = {lat: parseFloat(lat), lng: parseFloat(long)};
-    let marker = new AdvancedMarkerElement({
-        map: map,
-        position: location,
-        title: newName,
-    });
-    let contentString = `
-        <div>
-            <h3>${newName}</h3>
-            <p><strong>Categories:</strong> ${newCategory}</p>
-            <p><strong>Rating:</strong> ${star}</p>
-            <p><strong>Address:</strong> ${newAddress}</p>
-            <p><strong>Business ID:</strong> ${business_id}</p>
-            <p><a href="${leaveReview}" target = "_blank">Leave a review on Yelp</a></p>
-            <form method="get" action=${"'processMapView/'"}>
-                <input type="hidden" name="name" value=${index} required>
-                <button type="submit">Add to favorites</button>
-            </form>
-            <form method="get" action=${"'removeMapView/'"}>
-                <input type="hidden" name="name" value=${index} required>
-                <button type="submit">Remove from favorites</button>
-            </form>
-        </div>
-    `;
-    let infowindow = new google.maps.InfoWindow({
-        content: contentString,
-        ariaLabel: name,
-    });
-    marker.addListener("click", () => {
-        infowindow.open({
-            anchor: marker,
-            map,
-        });
-    });
-    markersList.push(marker);
-}
-
-
 function addToFavorites(name) {
     //let fs = require('fs');
     //fs.writeFile('userFavoritesList.txt', "hello", err => {
@@ -380,10 +323,6 @@ async function showFavorites() {
                     <p><strong>Rating:</strong> ${star}</p>
                     <p><strong>Address:</strong> ${address}</p>
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
-                    <p>
-                    <button id="makeMarker" onclick="makeMarkerOne(${index})">
-                        <div class="button106">Display Marker</div>
-                    </button></p>
                    </div>
                     `;
                 htmlList.appendChild(item)
