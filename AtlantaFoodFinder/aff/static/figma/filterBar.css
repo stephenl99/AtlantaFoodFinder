@@ -654,8 +654,13 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 16px;
+  height: 30px;
   min-width: 260px;
   max-width: 100%;
+}
+.button70 {
+  float: right;
+  height: 30px;
 }
 .icon1 {
   height: 32px;
