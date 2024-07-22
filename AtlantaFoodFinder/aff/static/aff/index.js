@@ -322,7 +322,7 @@ async function showFavorites() {
                     <p><strong>Address:</strong> ${address}</p>
                     <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
                     <p>
-                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, `${realCategory}`, ${star}, ${business_id}, ${address}, ${index})">
+                    <button id="makeMarker" onclick="makeMarker(${lat}, ${long}, ${realName}, ${realCategory}, ${star}, ${business_id}, ${address}, ${index})">
                         <div class="button106">Display Marker</div>
                     </button></p>
                    </div>
