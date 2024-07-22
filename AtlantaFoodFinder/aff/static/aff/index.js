@@ -309,9 +309,18 @@ async function showFavorites() {
             let star = stars.split('\n')[s];
             let business_id = business_ids.split('\n')[s];
             let address = addresses.split('\n')[s];
+            let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
             if (needs === true) {
                 let item = document.createElement('li')
-                item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
+                // item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
+                item.textContent = ` <div>
+                    <h3>${realName}</h3>
+                    <p><strong>Categories:</strong> ${category}</p>
+                    <p><strong>Rating:</strong> ${star}</p>
+                    <p><strong>Address:</strong> ${address}</p>
+                    <p><a href="${newBusiness_id}" target="_blank">View on Yelp</a></p>
+                    </div>
+                    `
                 htmlList.appendChild(item)
             }
             //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
