@@ -290,8 +290,12 @@ async function favorite() {
 }
 
 async function showFavorites() {
-    clearMarkers();
+    //clearMarkers();
+    let needs = true
     let htmlList = document.getElementById("restaurantList")
+    if (htmlList.innerHTML !== "") {
+        needs = false
+    }
     htmlList.innerHTML = "";
     for (let j = 0; j < favorites.length; j++) {
         const s = favorites[j];
@@ -305,10 +309,12 @@ async function showFavorites() {
             let star = stars.split('\n')[s];
             let business_id = business_ids.split('\n')[s];
             let address = addresses.split('\n')[s];
-            let item = document.createElement('li')
-            item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
-            htmlList.appendChild(item)
-            makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
+            if (needs === true) {
+                let item = document.createElement('li')
+                item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
+                htmlList.appendChild(item)
+            }
+            //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
 }
