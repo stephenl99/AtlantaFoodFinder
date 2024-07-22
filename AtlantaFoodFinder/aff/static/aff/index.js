@@ -305,6 +305,7 @@ async function showFavorites() {
             let realName = names.split('\n')[s];
             let category = categories.split('\n')[s].toUpperCase();
             let realCategory = categories.split('\n')[s]
+            realCategory = String(realCategory)
             let lat = latitudes.split('\n')[s];
             let long = longitudes.split('\n')[s];
             let star = stars.split('\n')[s];
