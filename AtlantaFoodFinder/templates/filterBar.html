@@ -248,7 +248,7 @@
           });
         }
 
-
+/*
       var navLinkContainer = document.getElementById("navLinkContainer");
       if(navLinkContainer) {
         navLinkContainer.addEventListener("click", function () {
@@ -272,7 +272,34 @@
           popup.addEventListener("click", onClick);
         });
       }
+*/
+document.addEventListener("DOMContentLoaded", function() {
+  var navLinkContainer = document.getElementById('navLinkContainer');
+  var popup = document.getElementById('cuisinePopup');
 
+  if (navLinkContainer && popup) {
+    navLinkContainer.addEventListener('click', function() {
+      // Toggle the visibility of the popup
+      if (popup.style.display === 'none') {
+            popup.style.display = "flex";
+            popup.style.zIndex = 100;
+            popup.style.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popup.style.alignItems = "center";
+            popup.style.justifyContent = "center";
+      } else {
+        popup.style.display = 'none';
+      }
+    });
+
+    // Close popup when clicked directly on it
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  }
+});
+/*
       var navLink = document.getElementById("navLink");
       if(navLink) {
         navLink.addEventListener("click", function () {
@@ -320,6 +347,61 @@
           popup.addEventListener("click", onClick);
         });
       }
+*/
+
+document.addEventListener("DOMContentLoaded", function() {
+  var navLinkContainer = document.getElementById('navLink');
+  var popup = document.getElementById('ratingsPopup');
+
+  if (navLinkContainer && popup) {
+    navLinkContainer.addEventListener('click', function() {
+      // Toggle the visibility of the popup
+      if (popup.style.display === 'none') {
+            popup.style.display = "flex";
+            popup.style.zIndex = 100;
+            popup.style.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popup.style.alignItems = "center";
+            popup.style.justifyContent = "center";
+      } else {
+        popup.style.display = 'none';
+      }
+    });
+
+    // Close popup when clicked directly on it
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var navLinkContainer = document.getElementById('navLink1');
+  var popup = document.getElementById('distancePopup');
+
+  if (navLinkContainer && popup) {
+    navLinkContainer.addEventListener('click', function() {
+      // Toggle the visibility of the popup
+      if (popup.style.display === 'none') {
+            popup.style.display = "flex";
+            popup.style.zIndex = 100;
+            popup.style.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popup.style.alignItems = "center";
+            popup.style.justifyContent = "center";
+      } else {
+        popup.style.display = 'none';
+      }
+    });
+
+    // Close popup when clicked directly on it
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  }
+});
     </script>
   </body>
 </html>
