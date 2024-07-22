@@ -671,7 +671,7 @@
   justify-content: center;
   min-width: 200px;
   max-width: 200px;
-  height: 30px;
+  height: 50px;
 }
 .clearOutside:hover {
   background-color: rgba(51, 51, 51, 0.09);
