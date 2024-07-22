@@ -1,6 +1,7 @@
 // Initialize and add the map
 let map;
 markersList = [];
+let currentInfowindow = null;
 let favorites = [];
 let userLat = 0.0;
 let userLong = 0.0;
@@ -259,10 +260,16 @@ async function makeMarker(lat, long, name, category, star, business_id, address,
         ariaLabel: name,
     });
     marker.addListener("click", () => {
+        if (currentInfowindow) {
+            currentInfowindow.close();
+        }
+
         infowindow.open({
             anchor: marker,
             map,
         });
+
+        currentInfowindow = infowindow;
     });
     markersList.push(marker);
 }
