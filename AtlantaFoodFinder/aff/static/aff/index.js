@@ -277,8 +277,7 @@ async function makeMarkerOne(i) {
     let address = addresses.split('\n')[i].toUpperCase();
     let star = stars.split('\n')[i];
     let business_id = business_ids.split('\n')[i];
-
-
+    let index = i;
     let newName = actName.replaceAll("'", "`");
     let newCategory = category.replaceAll("'", "`");
     let newAddress = address.replaceAll("'", "`");
