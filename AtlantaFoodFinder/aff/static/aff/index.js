@@ -304,16 +304,16 @@ async function showFavorites() {
             let actName = names.split('\n')[s].toUpperCase();
             let realName = names.split('\n')[s];
             let category = categories.split('\n')[s].toUpperCase();
-            let realCategory = categories.split('\n')[s].replaceAll(",", "")
+            let realCategory = categories.split('\n')[s]
             let lat = latitudes.split('\n')[s];
             let long = longitudes.split('\n')[s];
             let star = stars.split('\n')[s];
             let business_id = business_ids.split('\n')[s];
             let index = s;
             let address = addresses.split('\n')[s];
-            let newName = realName.replaceAll("'", "`");
-            let newCategory = realCategory.replaceAll("'", "`");
-            let newAddress = address.replaceAll("'", "`");
+            let newName = actName.replaceAll(",", "");
+            let newCategory = category.replaceAll(",", "");
+            let newAddress = address.toUpperCase().replaceAll(",", "");
             let newBusiness_id = "https://www.yelp.com/biz/" + business_id;
             if (needs === true) {
                 let item = document.createElement('li')
