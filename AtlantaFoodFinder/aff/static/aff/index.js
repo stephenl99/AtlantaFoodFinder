@@ -315,7 +315,7 @@ async function showFavorites() {
                 let item = document.createElement('li')
                 // item.textContent = "Name: " + realName + ", Address: " + address + ", Star: " + star
                 item.innerHTML = `
-                   <div style="font-family: Roboto">
+                   <div style="font-family: Roboto font-size: 16px;">
                     <h3>${realName}</h3>
                     <p><strong>Categories:</strong> ${realCategory}</p>
                     <p><strong>Rating:</strong> ${star}</p>
