@@ -304,6 +304,7 @@ async function showFavorites() {
     }
     htmlList.innerHTML = "";
     if (favorites.length === 0) {
+        alert(favorites.length)
         alert("You have no favorites yet")
     }
     for (let j = 0; j < favorites.length; j++) {
