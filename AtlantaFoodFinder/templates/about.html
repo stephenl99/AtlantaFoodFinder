@@ -326,27 +326,31 @@
                     and registration, as well as development of UI.
                   </div>
                 </div>
-                <div class="social-icons3">
+                <div class="social-icons1">
+                    <a href="https://www.linkedin.com/in/charles-mchenry-6a96a1235/" target = "_blank">
                   <img
-                    class="icon-linkedin4"
+                    class="icon-linkedin2"
                     loading="lazy"
                     alt=""
                     src="{% static '' %}./public/icon--linkedin.svg"
                   />
-
+                    </a>
+                    <a href="https://www.instagram.com/cmchenry66/" target = "_blank">
                   <img
-                    class="icon-x4"
+                    class="icon-x1"
                     loading="lazy"
                     alt=""
-                    src="{% static '' %}./public/icon--x.svg"
+                    src="{% static '' %}./public/icon--instagram.svg"
                   />
-
+                    </a>
+                    <a href="https://github.com/cmchenry6" target = "_blank">
                   <img
-                    class="icon-dribble3"
+                    class="icon-dribble"
                     loading="lazy"
                     alt=""
-                    src="{% static '' %}./public/icon--dribble.svg"
+                    src="{% static '' %}./public/githublogo-1@2x.png"
                   />
+                    </a>
                 </div>
               </div>
               <div class="card4">
@@ -367,20 +371,31 @@
                     restaurants.
                   </div>
                 </div>
-                <div class="social-icons4">
+                <div class="social-icons1">
+                    <a href="https://www.linkedin.com/school/georgia-institute-of-technology/posts/?feedView=all" target = "_blank">
                   <img
-                    class="icon-linkedin5"
+                    class="icon-linkedin2"
+                    loading="lazy"
                     alt=""
                     src="{% static '' %}./public/icon--linkedin.svg"
                   />
-
-                  <img class="icon-x5" alt="" src="{% static '' %}./public/icon--x.svg" />
-
+                    </a>
+                    <a href="https://www.instagram.com/georgiatech/" target = "_blank">
                   <img
-                    class="icon-dribble4"
+                    class="icon-x1"
+                    loading="lazy"
                     alt=""
-                    src="{% static '' %}./public/icon--dribble.svg"
+                    src="{% static '' %}./public/icon--instagram.svg"
                   />
+                    </a>
+                    <a href="https://github.com/torvalds" target = "_blank">
+                  <img
+                    class="icon-dribble"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/githublogo-1@2x.png"
+                  />
+                    </a>
                 </div>
               </div>
               <div class="card5">
@@ -400,20 +415,31 @@
                     Guided the team through development processes.
                   </div>
                 </div>
-                <div class="social-icons5">
+                <div class="social-icons1">
+                    <a href="https://www.linkedin.com/school/georgia-institute-of-technology/posts/?feedView=all" target = "_blank">
                   <img
-                    class="icon-linkedin6"
+                    class="icon-linkedin2"
+                    loading="lazy"
                     alt=""
                     src="{% static '' %}./public/icon--linkedin.svg"
                   />
-
-                  <img class="icon-x6" alt="" src="{% static '' %}./public/icon--x.svg" />
-
+                    </a>
+                    <a href="https://www.instagram.com/georgiatech/" target = "_blank">
                   <img
-                    class="icon-dribble5"
+                    class="icon-x1"
+                    loading="lazy"
                     alt=""
-                    src="{% static '' %}./public/icon--dribble.svg"
+                    src="{% static '' %}./public/icon--instagram.svg"
                   />
+                    </a>
+                    <a href="https://github.com/torvalds" target = "_blank">
+                  <img
+                    class="icon-dribble"
+                    loading="lazy"
+                    alt=""
+                    src="{% static '' %}./public/githublogo-1@2x.png"
+                  />
+                    </a>
                 </div>
               </div>
             </div>
@@ -435,7 +461,7 @@
       let button = document.getElementById("button");
       if (button) {
         button.addEventListener("click", function (e) {
-          window.location.href = "../notfound";
+          window.location.href = "{% url 'map_view'%}"
         });
       }
       </script>
