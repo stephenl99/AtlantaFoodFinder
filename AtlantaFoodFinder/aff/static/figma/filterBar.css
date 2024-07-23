@@ -14,7 +14,7 @@
   color: #000;
   text-align: left;
   display: inline-block;
-  min-width: 53px;
+  min-width: 46px;
   white-space: nowrap;
 }
 .chevron-down-icon6 {
@@ -94,7 +94,7 @@
   color: #000;
   text-align: left;
   display: inline-block;
-  min-width: 63px;
+  min-width: 46px;
   white-space: nowrap;
 }
 .chevron-down-icon8 {
@@ -117,7 +117,6 @@
   border: none;
   padding: 8px 16px;
   background-color: transparent;
-  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -131,7 +130,7 @@
   color: #000;
   text-align: left;
   display: inline-block;
-  min-width: 66px;
+  min-width: 46px;
   white-space: nowrap;
 }
 .chevron-down-icon9 {
