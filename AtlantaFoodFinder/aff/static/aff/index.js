@@ -303,6 +303,9 @@ async function showFavorites() {
         needs = false
     }
     htmlList.innerHTML = "";
+    if (favorites.length === 0) {
+        alert("You have no favorites yet")
+    }
     for (let j = 0; j < favorites.length; j++) {
         const s = favorites[j];
         //alert("working, " + s);
@@ -336,9 +339,6 @@ async function showFavorites() {
             }
             //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
-    }
-    if (htmlList.innerHTML === "") {
-        alert("You have no favorites yet")
     }
 }
 
