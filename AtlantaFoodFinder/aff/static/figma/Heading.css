@@ -118,6 +118,7 @@
 }
 .content73 {
   width: 459px;
+  background-color: #fffce2;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -248,7 +249,7 @@
 }
 .navbar-91 {
   flex: 1;
-  background-color: #fff;
+  background-color: #fffce2;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -263,7 +264,7 @@
 .heading22 {
   width: 100%;
   position: sticky;
-  background-color: #fff;
+  background-color: #fffce2;
   overflow: hidden;
   display: flex;
   flex-direction: row;
