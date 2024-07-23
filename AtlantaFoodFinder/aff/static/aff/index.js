@@ -337,6 +337,9 @@ async function showFavorites() {
             //makeMarker(parseFloat(lat), parseFloat(long), actName, category, star, business_id, address, s);
         }
     }
+    if (htmlList.innerHTML === "") {
+        alert("You have no favorites yet")
+    }
 }
 
 function clearMarkers() {
