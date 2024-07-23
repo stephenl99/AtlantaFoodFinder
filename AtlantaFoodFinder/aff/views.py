@@ -92,7 +92,7 @@ def MapView(request):
 def processMapView(request):
     if request.method == 'GET':
         name = request.GET.get('name')
-        if not favoriteRestaurant.objects.filter(restaurant=name).exists() & request.user.is_authenticated:
+        if (not favoriteRestaurant.objects.filter(restaurant=name).exists()) and request.user.is_authenticated:
             newRestaurant = favoriteRestaurant.objects.create(associatedUser=request.user.username, restaurant=name)
             newRestaurant.save()
         return redirect('map_view')
