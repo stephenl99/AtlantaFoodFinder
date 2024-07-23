@@ -14,7 +14,8 @@ import sqlite3
 from django.contrib.auth import get_user_model
 #User = get_user_model()
 #User.add_to_class('favorites', [])
-
+import tkinter
+from tkinter import messagebox
 def index(request):
     #template = loader.get_template("html.html")
     # return render(request, "aff/../templates/html.html")
@@ -92,6 +93,10 @@ def MapView(request):
 def processMapView(request):
     if request.method == 'GET':
         name = request.GET.get('name')
+        root = tkinter.Tk()
+        root.withdraw()
+        if not request.user.is_authenticated:
+            messagebox.showinfo("Cannot add to favorites while signed out", "Please sign in to add to favorites")
         if (not favoriteRestaurant.objects.filter(restaurant=name).exists()) and request.user.is_authenticated:
             newRestaurant = favoriteRestaurant.objects.create(associatedUser=request.user.username, restaurant=name)
             newRestaurant.save()
