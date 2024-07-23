@@ -41,7 +41,7 @@ async function initMap() {
 
     // The map, centered in Atlanta
     map = new Map(document.getElementById("map"), {
-        zoom: 9,
+        zoom: 11,
         center: {lat: 33.7488, lng: -84.3877},
         mapId: "DEMO_MAP_ID",
     });
