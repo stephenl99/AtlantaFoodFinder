@@ -204,7 +204,17 @@
             </div>
             <div class="content92">
               <div class="form4">
-                  <input class="text-input13" id="restaurantRadius" onclick="getRestaurantRadius()" placeholder="Distance (km)" type="text" />
+                  <input class="text-input13" id="restaurantRadius" placeholder="Distance (km)" type="text" />
+                  <button id="radiusButton" onclick="getRestaurantRadius()">Go!</button>
+                  <script>
+                    document.getElementById("restaurantRadius").addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); // Prevent default form submission if the input is inside a form
+                        getRestaurantRadius();
+                        getRestaurantRadiusHelper();
+                    }
+                    });
+                  </script>
               </div>
             </div>
           </div>

@@ -203,8 +203,16 @@ async function getRestaurantRatingHelper() {
 }
 async function getRestaurantRadius() {
     let input = document.getElementById("restaurantRadius");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRadiusHelper);
+  let button= document.getElementById("radiusButton");
+  filter = input.value.toUpperCase();
+  input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+          event.preventDefault();
+          getRestaurantRadius();
+          getRestaurantRadiusHelper();
+      }
+  });
+  button.addEventListener("click", getRestaurantRadiusHelper);
 }
 async function getRestaurantRadiusHelper() {
     clearMarkers();
