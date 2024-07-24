@@ -85,7 +85,7 @@ async function showPosition(position) {
 async function getRestaurantGeneral() {
   let input = document.getElementById("restaurantSearch");
   filter = input.value.toUpperCase();
-  input.addEventListener("click", getRestaurantGeneralHelper);
+  input.addEventListener("dblclick", getRestaurantGeneralHelper);
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -126,7 +126,7 @@ async function choiceCuisine(name) {
 async function getRestaurantCuisine() {
   let input = document.getElementById("restaurantCuisine");
   filter = input.value.toUpperCase();
-  input.addEventListener("click", getRestaurantCuisineHelper);
+  input.addEventListener("dblclick", getRestaurantCuisineHelper);
 }
 
 async function getRestaurantCuisineHelper() {
@@ -188,7 +188,7 @@ async function getRestaurantRatingHelper() {
 async function getRestaurantRadius() {
     let input = document.getElementById("restaurantRadius");
     filter = input.value;
-  input.addEventListener("click", getRestaurantRadiusHelper);
+  input.addEventListener("dblclick", getRestaurantRadiusHelper);
 }
 async function getRestaurantRadiusHelper() {
     clearMarkers();
