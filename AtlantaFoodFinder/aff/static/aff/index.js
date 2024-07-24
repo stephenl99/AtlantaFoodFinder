@@ -20,6 +20,7 @@ let length = 1000;
 let keywordFilter = '';
 let cuisineFilter = '';
 let ratingFilter = '';
+let radiusFilter = '';
 //let length = names.split('\n').length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
@@ -93,16 +94,16 @@ async function applyFilters() {
         let category = categories.split('\n')[i].toUpperCase();
         let address = addresses.split('\n')[i].toUpperCase();
         let star = stars.split('\n')[i];
+        let lat = latitudes.split('\n')[i];
+        let long = longitudes.split('\n')[i];
 
         // Check if both filters match
         let keywordMatch = keywordFilter === '' || actName.includes(keywordFilter) || category.includes(keywordFilter) || address.includes(keywordFilter);
         let cuisineMatch = cuisineFilter === '' || category.includes(cuisineFilter);
         let ratingMatch = ratingFilter === '' || (parseFloat(star) >= parseFloat(ratingFilter) && parseFloat(star) < (parseFloat(ratingFilter) + 1));
+        let radiusMatch = radiusFilter === '' || getDistanceFromLatLonInKm(userLat, userLong, lat, long) <= parseFloat(radiusFilter);
 
-        if (keywordMatch && cuisineMatch && ratingMatch) {
-            let lat = latitudes.split('\n')[i];
-            let long = longitudes.split('\n')[i];
-            let star = stars.split('\n')[i];
+        if (keywordMatch && cuisineMatch && ratingMatch && radiusMatch) {
             let business_id = business_ids.split('\n')[i];
             makeMarker(lat, long, actName, category, star, business_id, address, i);
         }
@@ -136,6 +137,7 @@ async function getRestaurantGeneralHelper() {
       if (actName === filter || actName.includes(filter) || category.includes(filter) || address.includes(filter)) {
           let lat = latitudes.split('\n')[i]
           let long = longitudes.split('\n')[i]
+          let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
           makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
@@ -250,15 +252,19 @@ async function getRestaurantRatingHelper() {
 async function getRestaurantRadius() {
     let input = document.getElementById("restaurantRadius");
   let button= document.getElementById("radiusButton");
-  filter = input.value.toUpperCase();
+  radiusFilter = input.value.toUpperCase();
   input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
           event.preventDefault();
-          getRestaurantRadius();
-          getRestaurantRadiusHelper();
+          getFilters();
+          applyFilters();
       }
   });
-  button.addEventListener("click", getRestaurantRadiusHelper);
+  button.addEventListener("click", () => {
+        radiusFilter = input.value.toUpperCase();
+        getFilters();
+        applyFilters();
+    });
 }
 async function getRestaurantRadiusHelper() {
     clearMarkers();
