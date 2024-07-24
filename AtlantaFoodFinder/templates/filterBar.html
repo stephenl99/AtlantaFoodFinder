@@ -80,7 +80,17 @@
                   <div class="clearInside">Clear Markers</div>
             </button>
             <div class="form4">
-                  <input class="text-input15" id="restaurantSearch" onclick="getRestaurantGeneral()" placeholder="Search by keyword" type="text" />
+                  <input class="text-input15" id="restaurantSearch" placeholder="Search by keyword" type="text" />
+                  <button onclick="getRestaurantGeneral()" class ="restaurantButton" id="restaurantButton">Go!</button>
+                  <script>
+                    document.getElementById("restaurantCuisine").addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); // Prevent default form submission if the input is inside a form
+                        getRestaurantGeneral();
+                        getRestaurantGeneralHelper();
+                    }
+                    });
+                  </script>
               </div>
         </div>
       </div>
@@ -108,7 +118,17 @@
             </div>
             <div class="content95">
               <div class="form4">
-                  <input class="text-input13" id="restaurantCuisine" onclick="getRestaurantCuisine()" placeholder="Search by cuisine" type="text" />
+                  <input class="text-input13" id="restaurantCuisine" placeholder="Search by cuisine" type="text" />
+                  <button onclick="getRestaurantCuisine()" id="cuisineButton">Go!</button>
+                  <script>
+                    document.getElementById("restaurantCuisine").addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); // Prevent default form submission if the input is inside a form
+                        getRestaurantCuisine();
+                        getRestaurantCuisineHelper();
+                    }
+                    });
+                  </script>
               </div>
               </div>
             </div>

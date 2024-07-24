@@ -207,6 +207,29 @@
   gap: 12px;
   max-width: 100%;
 }
+.restaurantButton {
+  height: 42px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Center text inside the button */
+  padding: 8px 12px;
+  gap: 12px;
+  max-width: 100%;
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.restaurantButton:hover {
+  background-color: #f0f0f0; /* Slightly darker background on hover */
+}
+
+.restaurantButton:active {
+  background-color: #e0e0e0; /* Even darker background when clicked */
+}
 .icon-bell3 {
   height: 24px;
   width: 24px;

@@ -84,8 +84,16 @@ async function showPosition(position) {
 
 async function getRestaurantGeneral() {
   let input = document.getElementById("restaurantSearch");
+  let button = document.getElementById("restaurantButton")
   filter = input.value.toUpperCase();
-  input.addEventListener("click", getRestaurantGeneralHelper);
+  input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+          event.preventDefault();
+          getRestaurantGeneral();
+          getRestaurantGeneralHelper();
+      }
+  });
+  button.addEventListener("click", getRestaurantGeneralHelper);
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -125,8 +133,16 @@ async function choiceCuisine(name) {
 
 async function getRestaurantCuisine() {
   let input = document.getElementById("restaurantCuisine");
+  let button= document.getElementById("cuisineButton");
   filter = input.value.toUpperCase();
-  input.addEventListener("click", getRestaurantCuisineHelper);
+  input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+          event.preventDefault();
+          getRestaurantCuisine();
+          getRestaurantCuisineHelper();
+      }
+  });
+  button.addEventListener("click", getRestaurantCuisineHelper);
 }
 
 async function getRestaurantCuisineHelper() {
