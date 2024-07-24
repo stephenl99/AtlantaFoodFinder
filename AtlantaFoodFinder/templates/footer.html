@@ -36,15 +36,25 @@
                     type="text"
                   />
                 </div>
-                <button class="button" id="button300">
+                <button class="button" id="button300" onclick="greetSubscriber()">
                   <div class="button1">Subscribe</div>
                 </button>
+                  <script>
+                      function greetSubscriber() {
+                          alert("Thanks for subscribing to our newsletter! If we ever make one, we will remember to include you!")
+                      }
+                  </script>
               </div>
               <div class="by-subscribing-you-container">
                 By subscribing you agree to with our
-                <span class="privacy-policy">Privacy Policy</span> and provide
+                <span class="privacy-policy" onclick="greetPolicy()">Privacy Policy</span> and provide
                 consent to receive updates from our company.
               </div>
+                <script>
+                    function greetPolicy() {
+                        alert("Our policy is that you shouldn't give us any data you don't want us to have.")
+                    }
+                </script>
             </div>
           </div>
           <div class="links">
