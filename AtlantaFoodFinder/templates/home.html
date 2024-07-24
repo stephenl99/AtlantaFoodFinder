@@ -217,7 +217,7 @@
                   locations and reviews.
                 </div>
                 <div class="button60">
-                  <div class="button61">Learn more</div>
+                  <div class="button61" id="buttonFind">Learn more</div>
                   <img
                     class="icon-chevron-right4"
                     loading="lazy"
@@ -241,7 +241,7 @@
                   Search for specific restaurants as well!
                 </div>
                 <div class="button62">
-                  <div class="button63" id="button">Learn more</div>
+                  <div class="button63" id="buttonFilter">Learn more</div>
                   <img
                     class="icon-chevron-right5"
                     loading="lazy"
@@ -266,7 +266,7 @@
                   so you can get access to it even faster than before.
                 </div>
                 <div class="button64">
-                  <div class="button65">Learn more</div>
+                  <div class="button65" id="buttonFavorite">Learn more</div>
                   <img
                     class="icon-chevron-right6"
                     loading="lazy"
@@ -289,7 +289,7 @@
                   reviews left by other users as well.
                 </div>
                 <div class="button66">
-                  <div class="button67">Learn more</div>
+                  <div class="button67" id="buttonReview">Learn more</div>
                   <img
                     class="icon-chevron-right7"
                     loading="lazy"
@@ -472,7 +472,6 @@
           window.location.href = "../explore";
         });
       }
-      
       let button1 = document.getElementById("button1");
       if (button1) {
         button1.addEventListener("click", function (e) {
@@ -505,6 +504,30 @@
       if (button3) {
         button3.addEventListener("click", function (e) {
           window.location.href = "../about";
+        });
+      }
+      let button4 = document.getElementById("buttonFind");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "../explore";
+        });
+      }
+      let button5 = document.getElementById("buttonFilter");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "../explore";
+        });
+      }
+      let button6 = document.getElementById("buttonFavorite");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "../login";
+        });
+      }
+      let button7 = document.getElementById("buttonReview");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          window.location.href = "https://www.yelp.com/writeareview";
         });
       }
       </script>
