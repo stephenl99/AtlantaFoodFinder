@@ -1517,6 +1517,7 @@
     padding-left: 32px;
     padding-right: 32px;
     box-sizing: border-box;
+    min-width: 100%;
   }
 
   .content52 {
