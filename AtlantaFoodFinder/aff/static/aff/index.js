@@ -173,7 +173,7 @@ async function getRestaurantCuisine() {
       }
   });
   button.addEventListener("click", () => {
-        keywordFilter = input.value.toUpperCase();
+        cuisineFilter = input.value.toUpperCase();
         getFilters();
         applyFilters();
     });
