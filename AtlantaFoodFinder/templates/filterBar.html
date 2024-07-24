@@ -81,13 +81,13 @@
             </button>
             <div class="form4">
                   <input class="text-input15" id="restaurantSearch" placeholder="Search by keyword" type="text" />
-                  <button onclick="getRestaurantGeneral()" class ="restaurantButton" id="restaurantButton">Go!</button>
+                  <button onclick="getFilters()" class ="restaurantButton" id="restaurantButton">Go!</button>
                   <script>
-                    document.getElementById("restaurantCuisine").addEventListener("keydown", function(event) {
+                    document.getElementById("restaurantSearch").addEventListener("keydown", function(event) {
                     if (event.key === "Enter") {
                         event.preventDefault(); // Prevent default form submission if the input is inside a form
-                        getRestaurantGeneral();
-                        getRestaurantGeneralHelper();
+                        getFilters();
+                        applyFilters();
                     }
                     });
                   </script>
@@ -119,13 +119,13 @@
             <div class="content95">
               <div class="form4">
                   <input class="text-input13" id="restaurantCuisine" placeholder="Search by cuisine" type="text" />
-                  <button onclick="getRestaurantCuisine()" id="cuisineButton">Go!</button>
+                  <button onclick="getFilters()" id="cuisineButton">Go!</button>
                   <script>
                     document.getElementById("restaurantCuisine").addEventListener("keydown", function(event) {
                     if (event.key === "Enter") {
                         event.preventDefault(); // Prevent default form submission if the input is inside a form
-                        getRestaurantCuisine();
-                        getRestaurantCuisineHelper();
+                        getFilters();
+                        applyFilters();
                     }
                     });
                   </script>

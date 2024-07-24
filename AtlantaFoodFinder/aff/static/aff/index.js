@@ -17,6 +17,8 @@ let addresses;
 let attributes;
 let business_ids;
 let length = 1000;
+let keywordFilter = '';
+let cuisineFilter = '';
 //let length = names.split('\n').length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
@@ -81,19 +83,50 @@ async function showPosition(position) {
         title: "Your Location",
     });
 }
+function getFilters() {
+    getRestaurantGeneral();
+    getRestaurantCuisine();
+    getRestaurantRating5();
+    getRestaurantRating4();
+    getRestaurantRating3();
+    getRestaurantRating2();
+    getRestaurantRating1();
+    getRestaurantRadius();
+}
+
+async function applyFilters() {
+    clearMarkers();
+    for (let i = 0; i < length; i++) {
+        let actName = names.split('\n')[i].toUpperCase();
+        let category = categories.split('\n')[i].toUpperCase();
+        let address = addresses.split('\n')[i].toUpperCase();
+
+        // Check if both filters match
+        let keywordMatch = keywordFilter === '' || actName.includes(keywordFilter) || category.includes(keywordFilter) || address.includes(keywordFilter);
+        let cuisineMatch = cuisineFilter === '' || category.includes(cuisineFilter);
+
+        if (keywordMatch && cuisineMatch) {
+            let lat = latitudes.split('\n')[i];
+            let long = longitudes.split('\n')[i];
+            let star = stars.split('\n')[i];
+            let business_id = business_ids.split('\n')[i];
+            makeMarker(lat, long, actName, category, star, business_id, address, i);
+        }
+    }
+}
 
 async function getRestaurantGeneral() {
   let input = document.getElementById("restaurantSearch");
   let button = document.getElementById("restaurantButton")
-  filter = input.value.toUpperCase();
+  keywordFilter = input.value.toUpperCase();
   input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
           event.preventDefault();
-          getRestaurantGeneral();
-          getRestaurantGeneralHelper();
+          getFilters();
+          applyFilters();
       }
   });
-  button.addEventListener("click", getRestaurantGeneralHelper);
+  button.addEventListener("click", applyFilters);
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -134,15 +167,15 @@ async function choiceCuisine(name) {
 async function getRestaurantCuisine() {
   let input = document.getElementById("restaurantCuisine");
   let button= document.getElementById("cuisineButton");
-  filter = input.value.toUpperCase();
+  cuisineFilter = input.value.toUpperCase();
   input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
           event.preventDefault();
-          getRestaurantCuisine();
-          getRestaurantCuisineHelper();
+          getFilters();
+          applyFilters();
       }
   });
-  button.addEventListener("click", getRestaurantCuisineHelper);
+  button.addEventListener("click", applyFilters);
 }
 
 async function getRestaurantCuisineHelper() {
