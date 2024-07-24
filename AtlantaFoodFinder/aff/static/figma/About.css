@@ -546,6 +546,7 @@
   overflow: hidden;
   flex-shrink: 0;
   min-height: 24px;
+  object-fit: contain;
 }
 .social-icons {
   display: flex;
