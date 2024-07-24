@@ -681,19 +681,19 @@
   min-width: 23px;
 }
 .clearOutside {
-  cursor: pointer;
+  height: 42px;
+  background-color: #fff;
   border: 1px solid #000;
-  /*padding: 6px 19px;*/
-  background-color: transparent;
-  flex: 1;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  max-width: 200px;
-  height: 50px;
+  justify-content: center; /* Center text inside the button */
+  padding: 8px 12px;
+  gap: 12px;
+  max-width: 100%;
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
 }
 .clearOutside:hover {
   background-color: rgba(51, 51, 51, 0.09);
