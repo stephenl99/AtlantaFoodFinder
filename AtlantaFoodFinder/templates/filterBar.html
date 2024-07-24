@@ -81,16 +81,7 @@
             </button>
             <div class="form4">
                   <input class="text-input15" id="restaurantSearch" placeholder="Search by keyword" type="text" />
-                  <button onclick="getFilters()" class ="restaurantButton" id="restaurantButton">Go!</button>
-                  <script>
-                    document.getElementById("restaurantSearch").addEventListener("keydown", function(event) {
-                    if (event.key === "Enter") {
-                        event.preventDefault(); // Prevent default form submission if the input is inside a form
-                        getFilters();
-                        applyFilters();
-                    }
-                    });
-                  </script>
+                  <button class ="restaurantButton" id="restaurantButton">Go!</button>
               </div>
         </div>
       </div>
@@ -119,16 +110,8 @@
             <div class="content95">
               <div class="form4">
                   <input class="text-input13" id="restaurantCuisine" placeholder="Search by cuisine" type="text" />
-                  <button onclick="getFilters()" id="cuisineButton">Go!</button>
-                  <script>
-                    document.getElementById("restaurantCuisine").addEventListener("keydown", function(event) {
-                    if (event.key === "Enter") {
-                        event.preventDefault(); // Prevent default form submission if the input is inside a form
-                        getFilters();
-                        applyFilters();
-                    }
-                    });
-                  </script>
+                  <button id="cuisineButton">Go!</button>
+
               </div>
               </div>
             </div>
@@ -159,19 +142,19 @@
             </div>
             <div class="actions10">
               <div class="buttons3">
-                  <button class="button105" value=5.0 id="restaurantStar5" onclick="getRestaurantRating5()">
+                  <button class="button105" value=5.0 id="restaurantStar5">
                   <div class="button106">5.0</div>
                 </button>
-                  <button class="button107" value=4.0 id="restaurantStar4" onclick="getRestaurantRating4()">
+                  <button class="button107" value=4.0 id="restaurantStar4">
                   <div class="button108">4.0</div>
                 </button>
-                  <button class="button109" value=3.0 id="restaurantStar3" onclick="getRestaurantRating3()">
+                  <button class="button109" value=3.0 id="restaurantStar3">
                   <div class="button110">3.0</div>
                 </button>
-                  <button class="button111" value=2.0 id="restaurantStar2" onclick="getRestaurantRating2()">
+                  <button class="button111" value=2.0 id="restaurantStar2">
                   <div class="button112">2.0</div>
                 </button>
-                  <button class="button113" value=1.0 id="restaurantStar1" onclick="getRestaurantRating1()">
+                  <button class="button113" value=1.0 id="restaurantStar1">
                   <div class="button114">1.0</div>
                 </button>
               </div>

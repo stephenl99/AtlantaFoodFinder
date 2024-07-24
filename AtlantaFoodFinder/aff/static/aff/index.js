@@ -19,6 +19,7 @@ let business_ids;
 let length = 1000;
 let keywordFilter = '';
 let cuisineFilter = '';
+let ratingFilter = '';
 //let length = names.split('\n').length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
@@ -56,11 +57,7 @@ async function initMap() {
 
   await getRestaurantGeneral();
   await getRestaurantCuisine();
-  await getRestaurantRating5();
-  await getRestaurantRating4();
-  await getRestaurantRating3();
-  await getRestaurantRating2();
-  await getRestaurantRating1();
+  setupRatingFilters();
   await getRestaurantRadius();
   await choiceCuisine("empty");
   await clearMarkers();
@@ -86,11 +83,6 @@ async function showPosition(position) {
 function getFilters() {
     getRestaurantGeneral();
     getRestaurantCuisine();
-    getRestaurantRating5();
-    getRestaurantRating4();
-    getRestaurantRating3();
-    getRestaurantRating2();
-    getRestaurantRating1();
     getRestaurantRadius();
 }
 
@@ -100,12 +92,14 @@ async function applyFilters() {
         let actName = names.split('\n')[i].toUpperCase();
         let category = categories.split('\n')[i].toUpperCase();
         let address = addresses.split('\n')[i].toUpperCase();
+        let star = stars.split('\n')[i];
 
         // Check if both filters match
         let keywordMatch = keywordFilter === '' || actName.includes(keywordFilter) || category.includes(keywordFilter) || address.includes(keywordFilter);
         let cuisineMatch = cuisineFilter === '' || category.includes(cuisineFilter);
+        let ratingMatch = ratingFilter === '' || (parseFloat(star) >= parseFloat(ratingFilter) && parseFloat(star) < (parseFloat(ratingFilter) + 1));
 
-        if (keywordMatch && cuisineMatch) {
+        if (keywordMatch && cuisineMatch && ratingMatch) {
             let lat = latitudes.split('\n')[i];
             let long = longitudes.split('\n')[i];
             let star = stars.split('\n')[i];
@@ -126,7 +120,11 @@ async function getRestaurantGeneral() {
           applyFilters();
       }
   });
-  button.addEventListener("click", applyFilters);
+  button.addEventListener("click", () => {
+        keywordFilter = input.value.toUpperCase();
+        getFilters();
+        applyFilters();
+    });
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -175,7 +173,11 @@ async function getRestaurantCuisine() {
           applyFilters();
       }
   });
-  button.addEventListener("click", applyFilters);
+  button.addEventListener("click", () => {
+        keywordFilter = input.value.toUpperCase();
+        getFilters();
+        applyFilters();
+    });
 }
 
 async function getRestaurantCuisineHelper() {
@@ -194,30 +196,42 @@ async function getRestaurantCuisineHelper() {
       }
     }
 }
+async function setupRatingFilters() {
+    let ratingButtons = document.querySelectorAll("[id^='restaurantStar']");
+    ratingButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            ratingFilter = button.value;
+            getFilters();
+            applyFilters();
+        });
+    });
+}
+/*
 async function getRestaurantRating5() {
     let input = document.getElementById("restaurantStar5");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRatingHelper);
+    ratingFilter = input.value;
+  input.addEventListener("click", applyFilters);
 }
 async function getRestaurantRating4() {
     let input = document.getElementById("restaurantStar4");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRatingHelper);
+    ratingFilter = input.value;
+  input.addEventListener("click", applyFilters);
 }
 async function getRestaurantRating3() {
     let input = document.getElementById("restaurantStar3");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRatingHelper);
+    ratingFilter = input.value;
+  input.addEventListener("click", applyFilters);
 }async function getRestaurantRating2() {
     let input = document.getElementById("restaurantStar2");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRatingHelper);
+    ratingFilter = input.value;
+  input.addEventListener("click", applyFilters);
 }
 async function getRestaurantRating1() {
     let input = document.getElementById("restaurantStar1");
-    filter = input.value;
-  input.addEventListener("click", getRestaurantRatingHelper);
+    ratingFilter = input.value;
+  input.addEventListener("click", applyFilters);
 }
+*/
 async function getRestaurantRatingHelper() {
     clearMarkers();
     for (let i = 0; i < length; i++) {
