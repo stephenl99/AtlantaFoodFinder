@@ -136,7 +136,6 @@ async function getRestaurantGeneralHelper() {
       if (actName === filter || actName.includes(filter) || category.includes(filter) || address.includes(filter)) {
           let lat = latitudes.split('\n')[i]
           let long = longitudes.split('\n')[i]
-          let star = stars.split('\n')[i]
           let business_id = business_ids.split('\n')[i]
           makeMarker(lat, long, actName, category, star, business_id, address, i);
       }
