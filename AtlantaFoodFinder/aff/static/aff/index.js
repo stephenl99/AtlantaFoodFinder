@@ -16,8 +16,8 @@ let stars;
 let addresses;
 let attributes;
 let business_ids;
-let length = 1000;
-//let length = names.split('\n').length;
+//let length = 1000;
+let length = names.split('\n').length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
     latitudes = await lats.text();
