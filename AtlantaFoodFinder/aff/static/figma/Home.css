@@ -890,7 +890,7 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  object-fit: cover;
+  object-fit: contain;
   min-width: 192px;
   cursor: pointer;
 }
@@ -1006,7 +1006,7 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  object-fit: cover;
+  object-fit: contain;
   min-width: 192px;
   cursor: pointer;
 }
