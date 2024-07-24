@@ -17,7 +17,7 @@ let addresses;
 let attributes;
 let business_ids;
 //let length = 1000;
-let length = names.split('\n').length;
+let length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
     latitudes = await lats.text();
@@ -35,7 +35,7 @@ async function initMap() {
     attributes = await at.text();
     let bid = await fetch('aff/../static/business_id.txt');
     business_ids = await bid.text();
-
+    length = names.split('\n').length;
 
     let {Map} = await google.maps.importLibrary("maps");
 
