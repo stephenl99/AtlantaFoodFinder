@@ -21,6 +21,11 @@ let keywordFilter = '';
 let cuisineFilter = '';
 let ratingFilter = '';
 let radiusFilter = '';
+
+let isGeneralListenersAdded = false;
+let isCuisineListenersAdded = false;
+let isRatingsListenersAdded = false;
+let isRadiusListenersAdded = false;
 //let length = names.split('\n').length;
 async function initMap() {
     let lats = await fetch('aff/../static/latitude.txt');
@@ -114,18 +119,21 @@ async function getRestaurantGeneral() {
   let input = document.getElementById("restaurantSearch");
   let button = document.getElementById("restaurantButton")
   keywordFilter = input.value.toUpperCase();
-  input.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-          event.preventDefault();
+  if(!isGeneralListenersAdded) {
+      input.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+              event.preventDefault();
+              getFilters();
+              applyFilters();
+          }
+      });
+      button.addEventListener("click", () => {
+          keywordFilter = input.value.toUpperCase();
           getFilters();
           applyFilters();
-      }
-  });
-  button.addEventListener("click", () => {
-        keywordFilter = input.value.toUpperCase();
-        getFilters();
-        applyFilters();
-    });
+      });
+      isGeneralListenersAdded = true;
+  }
 }
 async function getRestaurantGeneralHelper() {
     clearMarkers();
@@ -167,18 +175,21 @@ async function getRestaurantCuisine() {
   let input = document.getElementById("restaurantCuisine");
   let button= document.getElementById("cuisineButton");
   cuisineFilter = input.value.toUpperCase();
-  input.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-          event.preventDefault();
+  if(!isCuisineListenersAdded) {
+      input.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+              event.preventDefault();
+              getFilters();
+              applyFilters();
+          }
+      });
+      button.addEventListener("click", () => {
+          cuisineFilter = input.value.toUpperCase();
           getFilters();
           applyFilters();
-      }
-  });
-  button.addEventListener("click", () => {
-        cuisineFilter = input.value.toUpperCase();
-        getFilters();
-        applyFilters();
-    });
+      });
+      isCuisineListenersAdded = true;
+  }
 }
 
 async function getRestaurantCuisineHelper() {
@@ -199,13 +210,16 @@ async function getRestaurantCuisineHelper() {
 }
 async function setupRatingFilters() {
     let ratingButtons = document.querySelectorAll("[id^='restaurantStar']");
-    ratingButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            ratingFilter = button.value;
-            getFilters();
-            applyFilters();
+    if(!isRatingsListenersAdded) {
+        ratingButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                ratingFilter = button.value;
+                getFilters();
+                applyFilters();
+            });
         });
-    });
+        isRatingsListenersAdded = true;
+    }
 }
 /*
 async function getRestaurantRating5() {
@@ -253,18 +267,21 @@ async function getRestaurantRadius() {
     let input = document.getElementById("restaurantRadius");
   let button= document.getElementById("radiusButton");
   radiusFilter = input.value.toUpperCase();
-  input.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-          event.preventDefault();
+  if(!isRadiusListenersAdded) {
+      input.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+              event.preventDefault();
+              getFilters();
+              applyFilters();
+          }
+      });
+      button.addEventListener("click", () => {
+          radiusFilter = input.value.toUpperCase();
           getFilters();
           applyFilters();
-      }
-  });
-  button.addEventListener("click", () => {
-        radiusFilter = input.value.toUpperCase();
-        getFilters();
-        applyFilters();
-    });
+      });
+      isRadiusListenersAdded = true;
+  }
 }
 async function getRestaurantRadiusHelper() {
     clearMarkers();
