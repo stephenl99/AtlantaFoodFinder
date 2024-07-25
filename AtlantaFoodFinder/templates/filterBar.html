@@ -245,6 +245,10 @@
                          $("#restaurantStar1").addClass('button-clicked');
                          currentRating="#restaurantStar1"
                         });
+                      $("#clearMarker").click(function() {
+                          $(currentRating).removeClass('button-clicked');
+                          $(currentRating).addClass('button105');
+                        });
                   </script>
     <script>
         var popupicon = document.getElementById("popupicon");
