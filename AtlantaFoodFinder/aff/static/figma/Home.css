@@ -151,7 +151,7 @@
 }
 .logos-icon5 {
   align-self: stretch;
-  width: 140px;
+  width: 160px;
   position: relative;
   max-height: 100%;
   overflow: hidden;
@@ -222,10 +222,11 @@
   max-width: 100%;
 }
 .logo-1 {
+  align-self: stretch;
   background-color: #135d66;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: 80px 64px;
