@@ -287,6 +287,11 @@
   letter-spacing: normal;
   line-height: normal;
 }
+.popup-overlay{
+  position: sticky;
+  top: max(30px, 8.5%);
+}
+
 
 @media screen and (max-width: 1200px) {
   .container11 {
