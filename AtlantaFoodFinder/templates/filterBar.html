@@ -145,16 +145,16 @@
                   <button class="button105" value=5.0 id="restaurantStar5">
                   <div class="button106">5.0</div>
                 </button>
-                  <button class="button107" value=4.0 id="restaurantStar4">
+                  <button class="button105" value=4.0 id="restaurantStar4">
                   <div class="button108">4.0</div>
                 </button>
-                  <button class="button109" value=3.0 id="restaurantStar3">
+                  <button class="button105" value=3.0 id="restaurantStar3">
                   <div class="button110">3.0</div>
                 </button>
-                  <button class="button111" value=2.0 id="restaurantStar2">
+                  <button class="button105" value=2.0 id="restaurantStar2">
                   <div class="button112">2.0</div>
                 </button>
-                  <button class="button113" value=1.0 id="restaurantStar1">
+                  <button class="button105" value=1.0 id="restaurantStar1">
                   <div class="button114">1.0</div>
                 </button>
               </div>
@@ -195,7 +195,57 @@
         </div>
       </div>
     </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                  <script>
+                      var currentRating = "";
+                      $( document ).ready(function() {
+                      $("#restaurantStar5").click(function() {
+                          if(!(currentRating==="")) {
+                              $(currentRating).removeClass('button-clicked');
+                              $(currentRating).addClass('button105');
+                          }
+                          $("#restaurantStar5").removeClass('button105');
+                         $("#restaurantStar5").addClass('button-clicked');
+                         currentRating="#restaurantStar5"
+                        });
+                      $("#restaurantStar4").click(function() {
+                          if(!(currentRating==="")) {
+                              $(currentRating).removeClass('button-clicked');
+                              $(currentRating).addClass('button105');
+                          }
+                          $("#restaurantStar4").removeClass('button105');
+                         $("#restaurantStar4").addClass('button-clicked');
+                         currentRating="#restaurantStar4"
+                        });
+                      $("#restaurantStar3").click(function() {
+                          if(!(currentRating==="")) {
+                              $(currentRating).removeClass('button-clicked');
+                              $(currentRating).addClass('button105');
+                          }
+                          $("#restaurantStar3").removeClass('button105');
+                         $("#restaurantStar3").addClass('button-clicked');
+                         currentRating="#restaurantStar3"
+                        });
+                      });
+                      $("#restaurantStar2").click(function() {
+                          if(!(currentRating==="")) {
+                              $(currentRating).removeClass('button-clicked');
+                              $(currentRating).addClass('button105');
+                          }
+                          $("#restaurantStar2").removeClass('button105');
+                         $("#restaurantStar2").addClass('button-clicked');
+                         currentRating="#restaurantStar2"
+                        });
+                      $("#restaurantStar1").click(function() {
+                          if(!(currentRating==="")) {
+                              $(currentRating).removeClass('button-clicked');
+                              $(currentRating).addClass('button105');
+                          }
+                          $("#restaurantStar1").removeClass('button105');
+                         $("#restaurantStar1").addClass('button-clicked');
+                         currentRating="#restaurantStar1"
+                        });
+                  </script>
     <script>
         var popupicon = document.getElementById("popupicon");
         if(popupicon) {
