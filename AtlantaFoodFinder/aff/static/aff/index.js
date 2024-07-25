@@ -441,5 +441,16 @@ function clearMarkers() {
     }
     markersList = [];
 }
+// attached to clear markers button
+function clearMarkersAndFilters() {
+    for (let j = 0; j < markersList.length; j++) {
+        markersList[j].map = null;
+    }
+    markersList = [];
+    keywordFilter = '';
+    cuisineFilter = '';
+    ratingFilter = '';
+    radiusFilter = '';
+}
 
 initMap();
