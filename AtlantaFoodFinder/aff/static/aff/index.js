@@ -16,7 +16,7 @@ let stars;
 let addresses;
 let attributes;
 let business_ids;
-let length = 1000;
+let length;
 let keywordFilter = '';
 let cuisineFilter = '';
 let ratingFilter = '';
@@ -44,7 +44,7 @@ async function initMap() {
     attributes = await at.text();
     let bid = await fetch('aff/../static/business_id.txt');
     business_ids = await bid.text();
-
+    length = names.split('\n').length;
 
     let {Map} = await google.maps.importLibrary("maps");
 

@@ -448,7 +448,7 @@
               <h1 class="heading8">Start Exploring!</h1>
               <div class="text10">Start exploring restaurants here.</div>
             </div>
-            <button class="button26" id="button">
+            <button class="button26" id="buttonView">
               <div class="button27">Explore</div>
             </button>
           </div>
@@ -460,6 +460,12 @@
       let button = document.getElementById("button");
       if (button) {
         button.addEventListener("click", function (e) {
+          window.location.href = "{% url 'map_view'%}"
+        });
+      }
+      let buttonView = document.getElementById("buttonView");
+      if (buttonView) {
+        buttonView.addEventListener("click", function (e) {
           window.location.href = "{% url 'map_view'%}"
         });
       }
