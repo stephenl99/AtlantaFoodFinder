@@ -331,7 +331,43 @@ async function makeMarker(lat, long, name, category, star, business_id, address,
         title: newName,
     });
     let contentString = `
-        <div>
+<style>
+        /* Custom styles for the info window content */
+        .info-window-content {
+            font-family: Roboto;
+            font-size: 14px;
+            padding: 10px;
+        }
+        .info-window-content h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .info-window-content p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+        .info-window-content a {
+            /* color: #007BFF; */
+            color: #89824c;
+            text-decoration: none;
+        }
+        .info-window-content a:hover {
+            text-decoration: underline;
+        }
+        .info-window-content button {
+            background-color: #ffeda9;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .info-window-content button:hover {
+            background-color: #b5835a;
+        }
+    </style>
+        <div class="info-window-content">
             <h3>${newName}</h3>
             <p><strong>Categories:</strong> ${newCategory}</p>
             <p><strong>Rating:</strong> ${star}</p>
