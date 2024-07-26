@@ -36,7 +36,7 @@ Click on the link to see the website live!
 * [Milind Sharma](https://github.com/Milind-D-Sharma)
 
 
-## Aknowledgements
+## Acknowledgements
 
 - [Figma](https://www.figma.com/)
 - [PyCharm](https://www.jetbrains.com/pycharm/)
